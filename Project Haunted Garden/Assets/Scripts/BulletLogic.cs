@@ -7,16 +7,16 @@ public class BulletLogic : MonoBehaviour
     [SerializeField] float speed = 1f;
     private Vector2 direction;
 
+    public int bulletPower = 1;
+
     public bool dieAfterTime = false;
     private int lifeSpan;
 
     private Rigidbody2D rb;
-    public Color bulletColor;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        bulletColor = this.GetComponent<SpriteRenderer>().color;
     }
 
     void Update()
@@ -33,7 +33,7 @@ public class BulletLogic : MonoBehaviour
     {
         if(collision.collider.CompareTag("Enemy"))
         {
-            ; // hurt enemy
+            collision.gameObject.GetComponent<EnemyHealth>().damage(bulletPower);
         }
         Destroy( gameObject );
     }
