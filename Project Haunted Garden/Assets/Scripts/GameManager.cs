@@ -30,6 +30,15 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
         }
+
+
+
+        if( Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Prototype Scene v1");
+        }
+
+
     }
 
     public void Quit()
