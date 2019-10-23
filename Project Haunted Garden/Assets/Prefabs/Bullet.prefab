@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6283175096195431750}
   - component: {fileID: 684661042828589471}
   - component: {fileID: 649486156}
+  - component: {fileID: 6825421057187920962}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Projectile
@@ -94,7 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631105590dad5a1489953c4885c0977c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
+  dieAfterTime: 0
   bulletColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &649486156
 Rigidbody2D:
@@ -117,3 +119,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &6825421057187920962
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283175096195431746}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
