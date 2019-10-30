@@ -402,7 +402,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[R]eset'
+  m_Text: '[R]eset
+
+    New [T]ower
+
+    [F] Move Tower'
 --- !u!222 &309525496
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -939,6 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   pauseMenu: {fileID: 0}
+  towerPrefab: {fileID: 0}
 --- !u!4 &947791269
 Transform:
   m_ObjectHideFlags: 0
