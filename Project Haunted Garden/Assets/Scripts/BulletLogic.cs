@@ -10,7 +10,7 @@ public class BulletLogic : MonoBehaviour
     public int bulletPower = 1;
 
     public bool dieAfterTime = false;
-    private int lifeSpan;
+    private int lifeSpan = 100;
 
     private Rigidbody2D rb;
 
@@ -19,14 +19,27 @@ public class BulletLogic : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         rb.velocity = direction * speed;
+        --lifeSpan;
+        if( lifeSpan <= 0 )
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetDirection( Vector2 newDir )
     {
         direction = newDir;
+    }
+    public void SetLife( int ls )
+    {
+        lifeSpan = ls;
+    }
+    public void SetSpeed( float s )
+    {
+        speed = s;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

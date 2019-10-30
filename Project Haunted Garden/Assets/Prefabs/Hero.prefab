@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2487668139321629389}
   - component: {fileID: 2487668139321629377}
   - component: {fileID: 2487668139321629388}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 2487668140445348025}
   - component: {fileID: 2487668140445348026}
   - component: {fileID: 2487668140445348027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -214,8 +214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  horizontalControl: Horizontal
-  verticalControl: Vertical
   shootControl: Fire1
   rawInputOn: 1
 --- !u!114 &2487668140445348027
