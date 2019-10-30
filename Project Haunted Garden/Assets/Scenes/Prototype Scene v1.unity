@@ -917,6 +917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947791269}
   - component: {fileID: 947791268}
+  - component: {fileID: 947791270}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -952,6 +953,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &947791270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947791267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de53e872df0be014d9da719d8a474b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemySprite: {fileID: 330237551877917498, guid: 19f4f8d9f601a54428117aa53cf69c49,
+    type: 3}
+  Max: 0
+  count: 0
+  horde: 0
 --- !u!1 &1182468254
 GameObject:
   m_ObjectHideFlags: 0
