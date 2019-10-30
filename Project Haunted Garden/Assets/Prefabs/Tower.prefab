@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8744794943159106497}
   - component: {fileID: 757202705692120464}
   - component: {fileID: 8126632639870245886}
+  - component: {fileID: 5161895532925938212}
+  - component: {fileID: 1641380456108432574}
   m_Layer: 9
   m_Name: Tower
   m_TagString: Tower
@@ -95,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6283175096195431746, guid: e168eb5d96a619641a4d34920262fa02,
     type: 3}
+  seesTarget: 0
   Notes: 'Towers will shoot when an enemy is in their radius.
 
     Radius can be changed in the CircleCollider2D below.
@@ -102,9 +105,39 @@ MonoBehaviour:
     Select what kind of tower this game object is.
 
     Selecting multiple types will turn on all selected types.'
-  TurnOnRing: 0
+  TurnOnRing: 1
   numBullets_ring: 30
   circleSpawnRadius: 0.2
   cooldown: 50
   bulletLife: 50
   bulletSpeed: 10
+--- !u!58 &5161895532925938212
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531769536847327795}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
+--- !u!114 &1641380456108432574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531769536847327795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6243c6a1942b77b46a1ecb0b4feb8806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickedUp: 0
+  nearbyParent: {fileID: 0}

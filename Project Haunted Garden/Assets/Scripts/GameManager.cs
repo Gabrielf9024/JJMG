@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public bool paused;
     public GameObject pauseMenu;
+    public GameObject towerPrefab = null;
 
 
     private void Awake()
@@ -36,6 +37,10 @@ public class GameManager : MonoBehaviour
         if( Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("Prototype Scene v1");
+        }
+        if( Input.GetKeyDown(KeyCode.T))
+        {
+            Instantiate(towerPrefab, transform.position, Quaternion.identity);
         }
 
 

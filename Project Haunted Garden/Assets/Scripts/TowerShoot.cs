@@ -5,7 +5,7 @@ using UnityEngine;
 public class TowerShoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public bool shouldShoot = false;
+    public bool seesTarget = false;
 
     [TextArea]
     public string Notes = "Towers will shoot when an enemy is in their radius. Radius can be changed in the CircleCollider2D below. Select what kind of tower this game object is. Selecting multiple types will turn on all selected types.";
@@ -32,7 +32,7 @@ public class TowerShoot : MonoBehaviour
     void FixedUpdate()
     {
         ++count;
-        if (count % cooldown == 0 && shouldShoot ) {
+        if (count % cooldown == 0 && seesTarget ) {
             if( TurnOnRing ) {
                 SpawnBulletRing();
             }
@@ -46,11 +46,13 @@ public class TowerShoot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        shouldShoot = true;
+        if( collision.gameObject.tag == "Enemy" )
+            seesTarget = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        shouldShoot = false;
+        if( collision.gameObject.tag == "Enemy" )
+            seesTarget = false;
     }
 
     public void SpawnBulletRing()
