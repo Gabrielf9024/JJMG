@@ -10,8 +10,13 @@ public class GunLogic : MonoBehaviour
     private string shootControl;
     private bool currentlyShooting = false;
     private float nextFire = 0f;
+    
+
     [SerializeField] float autoSecBetweenShots = 1f;
     [SerializeField] GameObject bullet;
+
+    public bool straight = true;
+    public bool spread = false;
 
     void Awake()
     {
@@ -33,16 +38,18 @@ public class GunLogic : MonoBehaviour
 
         if (Input.GetAxisRaw(shootControl) != 0) {
             if (!currentlyShooting || Time.time > nextFire) {
-                Shoot(centerToMouseDir);
+                if( straight )
+                    ShootStraight(centerToMouseDir);
             }
         }
-        if (Input.GetAxisRaw(shootControl) == 0) {
+        if (Input.GetAxisRaw(shootControl) == 0)
+        {
             currentlyShooting = false;
         }
 
     }
 
-    public void Shoot( Vector2 direction )
+            public void ShootStraight( Vector2 direction )
     {
         currentlyShooting = true;
 

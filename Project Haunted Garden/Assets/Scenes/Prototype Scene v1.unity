@@ -368,7 +368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 62.450012, y: -25}
+  m_AnchoredPosition: {x: 62.44995, y: -25}
   m_SizeDelta: {x: 124.899994, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309525495
@@ -943,7 +943,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   pauseMenu: {fileID: 0}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2531769536847327795, guid: 4e4c1b88646ee764183abd239c2d4022,
+    type: 3}
 --- !u!4 &947791269
 Transform:
   m_ObjectHideFlags: 0
@@ -1332,28 +1333,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8126632639870245886, guid: 4e4c1b88646ee764183abd239c2d4022,
+        type: 3}
+      propertyPath: bulletsPierce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641380456108432574, guid: 4e4c1b88646ee764183abd239c2d4022,
+        type: 3}
+      propertyPath: nearbyParent
+      value: 
+      objectReference: {fileID: 1370804326}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4c1b88646ee764183abd239c2d4022, type: 3}
---- !u!1 &1641380456108432573 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2531769536847327795, guid: 4e4c1b88646ee764183abd239c2d4022,
-    type: 3}
-  m_PrefabInstance: {fileID: 1641380456108432572}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1641380456108432574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641380456108432573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6243c6a1942b77b46a1ecb0b4feb8806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickedUp: 0
-  nearbyParent: {fileID: 1370804326}
 --- !u!1001 &2487668140102069963
 PrefabInstance:
   m_ObjectHideFlags: 0
