@@ -4,65 +4,33 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-	private Vector3 WayPoint;
+	private List<Vector3> WayPoints;
 	public float speed;
-	private Rigidbody rb;
+    private int index;
 
 	void Start(){
-		// WayPoints = new List<Vector3>();
-		// enemy = Instantiate(enemy,new Vector3(6,-4,0),Quaternion.identity);
-		// WayPoints.Add(new Vector3(6,-2,0));	
-		// WayPoints.Add(new Vector3(1,-2,0));	
-		// WayPoints.Add(new Vector3(1,2,0));	
-		// WayPoints.Add(new Vector3(-6,2,0));	
-		// WayPoints.Add(new Vector3(6,4,0));
-		// WayPoints.Add(new Vector3(6,0,0));	
-		// WayPoints.Add(new Vector3(3,0,0));
-		WayPoint = new Vector3 (5, 5, 0);
-	    speed = 5.0f;
-	}
+        WayPoints = new List<Vector3>();
+        WayPoints.Add(new Vector3(4.5f, -1.5f, 0.0f));
+        WayPoints.Add(new Vector3(-6.5f, -1.5f, 0.0f));
+        WayPoints.Add(new Vector3(-6.5f, 0.5f, 0.0f));
+        WayPoints.Add(new Vector3(6.5f, 0.5f, 0.0f));
+        WayPoints.Add(new Vector3(6.5f, 2.5f, 0.0f));
+        WayPoints.Add(new Vector3(-6.5f, 2.5f, 0.0f));
+        WayPoints.Add(new Vector3(-6.5f, 4.0f, 0.0f));
+        speed = 5f;
+        index = 0;
+    }
 
 	
     void Update(){
-    	 float step = speed * Time.deltaTime;
-    	  transform.Translate(Vector3.up * step);
-
+        if (index < WayPoints.Count)
+            MoveTo();
     }
-
-    // void makeMove(float step){
-    // 		switch(n){
-    // 		case 0:
-    // 			enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(6,-2,0), step);
-    // 			n++;
-    // 			break;
-    // 		case 1:
-    // 			enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(1,-2,0), step);
-    // 			n++;
-    // 			break;
-    // 		case 2:
-    // 			enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(1,2,0), step);
-    // 			n++;
-    // 			break;
-    // 		case 3:
-    // 			enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(-6,2,0), step);
-    // 			n++;
-    // 			break;
-
-    // 		case 4:
-    // 			enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(6,4,0), step);
-    // 			n++;
-    // 			break;
-    // 		case 5:
-    // 			enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(6,0,0), step);
-    // 			n++;
-    // 			break;
-    // 		case 6:
-    // 			enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(3,0,0), step);
-    // 			n++;
-    // 			break;
-
-    // 		default:
-    //           break;
-    //       }
-    // 	}
+    void MoveTo(){
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position,WayPoints[index],step);
+        if (Vector3.Distance(transform.position, WayPoints[index]) < 0.001f){
+            index++;
+        }
+    }
 }

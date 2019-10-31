@@ -10,7 +10,7 @@ public class EnemySpawn : MonoBehaviour
 	public bool horde;
 	private float mtime;
     void Start(){
-    	Max = 30;
+    	Max = 2;
     	count = 0;
     	mtime = 2;
     	horde = false;
@@ -27,19 +27,9 @@ public class EnemySpawn : MonoBehaviour
 
     public void EnemySpawner(float Position_x){
     	 if (count < Max){
-    	 	int HordeNumber = Random.Range(2,7);
-    	 	if (Random.Range(0f,1f) > 0.9 && horde){
-    	 		for (int num = 0; num < HordeNumber; num++){    	 			
-    	 			Vector3 NewSpritePosition = new Vector3(Position_x + Random.Range(-1f,1f),-4,0);
-	    			Instantiate(EnemySprite,NewSpritePosition,Quaternion.identity);
-	    			count++;
-    	 		}
-    	 	}
-    	 	else{ 
-		    	Vector3 NewSpritePosition = new Vector3(Position_x,-4,0);
+		    	Vector3 NewSpritePosition = new Vector3(4.5f,-5f);
 		    	Instantiate(EnemySprite,NewSpritePosition,Quaternion.identity);
 		    	count++;
-	    	}
 	    }
     }
 }
