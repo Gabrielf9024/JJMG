@@ -8,17 +8,18 @@ public class TowerShoot : MonoBehaviour
     public bool seesTarget = false;
 
     [TextArea]
-    public string Notes = "Towers will shoot when an enemy is in their radius. Radius can be changed in the CircleCollider2D below. Select what kind of tower this game object is. Selecting multiple types will turn on all selected types.";
+    public string Notes = "Towers will shoot when an enemy is in their radius. Select what kind of tower this game object is. Selecting multiple types will turn on all selected types.";
 
     public bool TurnOnRing = false;
-
+    public bool bulletsPierce = false;
+    public int bulletSpeed = 10;
+    public int bulletPower = 1;
+    public int cooldown = 20;
+    public int bulletLife = 20;
 
     [Header("RingShooter")]
     public int numBullets_ring = 12;
     public float circleSpawnRadius = 3f;
-    public int cooldown = 20;
-    public int bulletLife = 20;
-    public int bulletSpeed = 10;
 
     private int count = 0;
 
@@ -44,17 +45,6 @@ public class TowerShoot : MonoBehaviour
             count = 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if( collision.gameObject.tag == "Enemy" )
-            seesTarget = true;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if( collision.gameObject.tag == "Enemy" )
-            seesTarget = false;
-    }
-
     public void SpawnBulletRing()
     {
         Vector3 center = gameObject.transform.position;
@@ -64,6 +54,8 @@ public class TowerShoot : MonoBehaviour
             GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
             newBullet.gameObject.GetComponent<BulletLogic>().SetLife(bulletLife);
             newBullet.gameObject.GetComponent<BulletLogic>().SetSpeed(bulletSpeed);
+            newBullet.gameObject.GetComponent<BulletLogic>().SetPower(bulletPower);
+            newBullet.gameObject.GetComponent<BulletLogic>().SetPierce(bulletsPierce);
             newBullet.gameObject.GetComponent<BulletLogic>().SetDirection(pos - center);
         }
     }

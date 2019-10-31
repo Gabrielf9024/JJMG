@@ -8,7 +8,7 @@ public class BulletLogic : MonoBehaviour
     private Vector2 direction;
 
     public int bulletPower = 1;
-
+    public bool piercing = false;
     public bool dieAfterTime = false;
     private int lifeSpan = 100;
 
@@ -41,13 +41,29 @@ public class BulletLogic : MonoBehaviour
     {
         speed = s;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void SetPower( int p )
     {
-        if(collision.collider.CompareTag("Enemy"))
+        bulletPower = p;
+    }
+    public void SetPierce( bool p )
+    {
+        piercing = p;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().damage(bulletPower);
         }
-        Destroy( gameObject );
+
+        if (piercing)
+        {
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
