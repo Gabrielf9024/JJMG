@@ -8,9 +8,9 @@ public class BulletLogic : MonoBehaviour
     private Vector2 direction;
 
     public int bulletPower = 1;
-
+    public bool piercing = false;
     public bool dieAfterTime = false;
-    private int lifeSpan;
+    private int lifeSpan = 100;
 
     private Rigidbody2D rb;
 
@@ -19,22 +19,51 @@ public class BulletLogic : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         rb.velocity = direction * speed;
+        --lifeSpan;
+        if( lifeSpan <= 0 )
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetDirection( Vector2 newDir )
     {
         direction = newDir;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void SetLife( int ls )
     {
-        if(collision.collider.CompareTag("Enemy"))
+        lifeSpan = ls;
+    }
+    public void SetSpeed( float s )
+    {
+        speed = s;
+    }
+    public void SetPower( int p )
+    {
+        bulletPower = p;
+    }
+    public void SetPierce( bool p )
+    {
+        piercing = p;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().damage(bulletPower);
         }
-        Destroy( gameObject );
+
+        if (piercing)
+        {
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
