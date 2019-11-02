@@ -5,15 +5,14 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
 	public GameObject EnemySprite;
-	public int Max;
-	public int count;
-	public bool horde;
-	private float mtime;
-    void Start(){
-    	Max = 2;
-    	count = 0;
-    	mtime = 2;
-    	horde = false;
+	public int Max = 2;
+	public int count = 0;
+	public bool horde = false;
+	public float mtime = 2;
+
+    void Start()
+    {
+
     }
     void Update()
     {

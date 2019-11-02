@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  bulletPower: 1
+  bulletPower: 5
   piercing: 0
   dieAfterTime: 0
 --- !u!50 &649486156
