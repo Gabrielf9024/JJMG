@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("HealthUI")]
-    public int maxHealth = 10;
+    public int maxHealth = 100;
     [SerializeField] int currentHealth;
     public Slider slider;
 

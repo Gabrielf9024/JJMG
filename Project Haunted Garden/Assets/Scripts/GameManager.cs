@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-
+        // DO NOT KEEP; JUST FOR PROTOTYPING
         if( Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("Prototype Scene v1");

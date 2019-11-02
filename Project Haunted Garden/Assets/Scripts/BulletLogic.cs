@@ -7,7 +7,7 @@ public class BulletLogic : MonoBehaviour
     [SerializeField] float speed = 1f;
     private Vector2 direction;
 
-    public int bulletPower = 1;
+    public int bulletPower = 5;
     public bool piercing = false;
     public bool dieAfterTime = false;
     private int lifeSpan = 100;
