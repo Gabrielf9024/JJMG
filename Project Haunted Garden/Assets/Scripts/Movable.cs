@@ -20,7 +20,7 @@ public class Movable : MonoBehaviour
 
 
         if (pickedUp)
-            gameObject.transform.parent = nearbyParent.gameObject.transform;
+            gameObject.transform.position = nearbyParent.gameObject.transform.position;
         else
             gameObject.transform.parent = null;
     }
@@ -36,7 +36,7 @@ public class Movable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Hand")
             nearbyParent = collision.gameObject;
     }
 

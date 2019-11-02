@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Vector2Extension Courtesy of:
+// https://answers.unity.com/questions/661383/whats-the-most-efficient-way-to-rotate-a-vector2-o.html
+// Used in ShootSpread()
 public static class Vector2Extension
 {
 
