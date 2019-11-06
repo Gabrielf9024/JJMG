@@ -38,10 +38,12 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Prototype Scene v1");
         }
+        /*
         if( Input.GetKeyDown(KeyCode.T))
         {
             Instantiate(towerPrefab, transform.position, Quaternion.identity);
         }
+        */
 
 
     }

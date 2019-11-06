@@ -26,15 +26,19 @@ public class HandLogic : MonoBehaviour
             pickupBeingUsed = true;
             if (!holding && showHand)
             {
+                GameObject temp = closest;
                 showHand = false;
                 holding = true;
                 PickUp(closest);
+                GetComponent<CircleCollider2D>().enabled = false;
+                closest = temp;
             }
             else if (holding)
             {
                 showHand = true;
                 holding = false;
                 PutDown(closest);
+                GetComponent<CircleCollider2D>().enabled = true;
             }
         }
 

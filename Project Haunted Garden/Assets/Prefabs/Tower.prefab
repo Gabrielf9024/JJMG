@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 58dd472fe1f46a447ac3a39160957fbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.1764706}
   m_FlipX: 0
@@ -142,6 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8744794943159106497}
   - component: {fileID: 5898462845572777509}
+  - component: {fileID: 1542952492}
   m_Layer: 9
   m_Name: Tower
   m_TagString: Tower
@@ -179,6 +180,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickedUp: 0
   nearbyParent: {fileID: 0}
+--- !u!58 &1542952492
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531769536847327795}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1 &6944944583507451218
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +210,7 @@ GameObject:
   - component: {fileID: 2516467691040488874}
   m_Layer: 9
   m_Name: Base
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,10 +303,10 @@ MonoBehaviour:
   TurnOnRing: 1
   bulletsPierce: 1
   bulletSpeed: 50
-  bulletPower: 1
+  bulletPower: 3
   cooldown: 15
   bulletLife: 10
-  numBullets_ring: 15
+  numBullets_ring: 20
   circleSpawnRadius: 0.2
 --- !u!58 &2516467691040488874
 CircleCollider2D:

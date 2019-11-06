@@ -75,6 +75,20 @@ public class GunLogic : MonoBehaviour
             currentlyShooting = false;
         }
 
+        if(Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            if( straight )
+            {
+                straight = false;
+                spread = true;
+            }
+            else
+            {
+                straight = true;
+                spread = false;
+            }
+        }
+
     }
 
     public void ShootStraight( Vector2 direction )
