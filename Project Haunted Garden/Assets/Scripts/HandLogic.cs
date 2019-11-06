@@ -10,6 +10,7 @@ public class HandLogic : MonoBehaviour
     public bool showHand = false;
     public Sprite handSprite = null;
     public string pickupControl = "Fire2";
+    public bool pickupBeingUsed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +21,25 @@ public class HandLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw(pickupControl) != 0)
+        if(Input.GetAxisRaw(pickupControl) != 0 && !pickupBeingUsed)
         {
+            pickupBeingUsed = true;
             if (!holding && showHand)
             {
+                showHand = false;
                 holding = true;
                 PickUp(closest);
             }
             else if (holding)
             {
+                showHand = true;
                 holding = false;
                 PutDown(closest);
             }
         }
+
+        if (Input.GetAxisRaw(pickupControl) == 0)
+            pickupBeingUsed = false;
 
         if (showHand)
             gameObject.GetComponent<SpriteRenderer>().sprite = handSprite;
@@ -61,6 +68,6 @@ public class HandLogic : MonoBehaviour
     }
     public void PutDown( GameObject c)
     {
-        c.GetComponent <Movable>().PutDown();
+        c.GetComponent<Movable>().PutDown();
     }
 }

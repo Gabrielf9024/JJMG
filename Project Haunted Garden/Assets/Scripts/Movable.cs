@@ -17,12 +17,8 @@ public class Movable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (pickedUp)
-            gameObject.transform.position = nearbyParent.gameObject.transform.position;
-        else
-            gameObject.transform.parent = null;
+            gameObject.transform.position = nearbyParent.gameObject.transform.position;;
     }
 
     public void PickUp()

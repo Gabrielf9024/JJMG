@@ -982,33 +982,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &706872573 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1051848415, guid: 4e4c1b88646ee764183abd239c2d4022,
-    type: 3}
-  m_PrefabInstance: {fileID: 1641380456108432572}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &706872578
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706872573}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &747115424
 GameObject:
   m_ObjectHideFlags: 0
@@ -6549,18 +6522,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1051848417, guid: 4e4c1b88646ee764183abd239c2d4022, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071699214527775064, guid: 4e4c1b88646ee764183abd239c2d4022,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071699214527775064, guid: 4e4c1b88646ee764183abd239c2d4022,
-        type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 1051848418, guid: 4e4c1b88646ee764183abd239c2d4022, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

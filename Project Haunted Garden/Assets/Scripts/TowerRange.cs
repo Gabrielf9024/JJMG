@@ -19,11 +19,11 @@ public class TowerRange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-            gameObject.GetComponentInParent<TowerShoot>().seesTarget = true;
+            gameObject.transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-            gameObject.GetComponentInParent<TowerShoot>().seesTarget = false;
+            gameObject.transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = false;
     }
 }
