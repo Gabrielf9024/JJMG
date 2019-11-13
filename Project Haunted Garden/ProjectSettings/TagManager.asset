@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Tower
   - Hand
+  - Waypoint
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Projectile
   - Friend
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 
