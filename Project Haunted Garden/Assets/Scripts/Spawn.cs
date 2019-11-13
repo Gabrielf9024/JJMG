@@ -17,6 +17,7 @@ public class Spawn : MonoBehaviour
         public string Name = "Enemy";
         public GameObject enemy;
         public int groupSize;
+        public float speed;
         public float delayWithinGroup = 0.2f;
         public float delayAfterPrevGroup = 1.0f;
    }
@@ -49,7 +50,9 @@ public class Spawn : MonoBehaviour
         yield return new WaitForSeconds(ee.delayAfterPrevGroup);
         for ( int i = 0; i < ee.groupSize; ++i)
         {
-            Instantiate(ee.enemy, transform.position, transform.rotation);
+            GameObject newEnemy = Instantiate(ee.enemy, transform.position, transform.rotation);
+            newEnemy.GetComponent<EnemyMovement>().SetSpeed(ee.speed);
+
             yield return new WaitForSeconds(ee.delayWithinGroup);
         }
         waiting = false;

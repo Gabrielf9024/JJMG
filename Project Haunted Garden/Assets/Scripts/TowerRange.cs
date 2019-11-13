@@ -13,7 +13,10 @@ public class TowerRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponentInParent<Movable>().pickedUp)
+            GetComponent<SpriteRenderer>().enabled = true;
+        else
+            GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

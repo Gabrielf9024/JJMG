@@ -13,6 +13,11 @@ public class EnemyMovement : MonoBehaviour
     {
     }
 
+    public void SetSpeed( float s )
+    {
+        speed = s;
+    }
+
     public void MoveTo( Transform destination )
     {
         float step = speed * Time.deltaTime;
