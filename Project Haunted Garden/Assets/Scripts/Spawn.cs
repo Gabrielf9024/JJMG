@@ -4,27 +4,54 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public List<Dictionary<GameObject, int>> SpawnList;
-    public float delayInterval = 1.0f;
-    public int amountToSpawn = 1;
+    /*
+    public GameObject[] enemies;
+    public int[] groupSizes;
 
-    public GameObject pathEnemy;
-    public GameObject flyEnemy;
+    private Dictionary<GameObject, int> dict;
 
-    void OnEnable()
+    */
+    [System.Serializable]
+    public class EnemyEntry
     {
-        StartSpawning();
-    }
+        public string Name = "Enemy";
+        public GameObject enemy;
+        public int groupSize;
+        public float delayWithinGroup = 0.2f;
+        public float delayAfterPrevGroup = 1.0f;
+   }
+    public EnemyEntry[] enemyGroupList;
 
-    // Update is called once per frame
-    void Update()
+    public bool doneSpawning = false;
+    private bool waiting = false;
+
+
+    private void Start()
     {
-
+        StartCoroutine(StartSpawning());
     }
 
     IEnumerator StartSpawning()
     {
-        Instantiate(pathEnemy);
-        yield return new WaitForSeconds(delayInterval);
+        foreach(EnemyEntry e in enemyGroupList)
+        {
+            if( !waiting )
+            {
+                yield return StartCoroutine(SpawnGroup(e));
+            }
+        }
+        doneSpawning = true;
+    }
+
+    IEnumerator SpawnGroup( EnemyEntry ee )
+    {
+        waiting = true;
+        yield return new WaitForSeconds(ee.delayAfterPrevGroup);
+        for ( int i = 0; i < ee.groupSize; ++i)
+        {
+            Instantiate(ee.enemy, transform.position, transform.rotation);
+            yield return new WaitForSeconds(ee.delayWithinGroup);
+        }
+        waiting = false;
     }
 }

@@ -14,6 +14,9 @@ public class PathEnemy : MonoBehaviour
     void Awake()
     {
         waypoints = GameObject.Find("WaypointManager").GetComponent<WaypointManager>().Waypoints;
+    }
+    private void Start()
+    {
         nextWaypoint = waypoints[currentWPindex].transform;
     }
 
@@ -31,7 +34,6 @@ public class PathEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit')");
         if (collision.CompareTag("Waypoint"))
         {
             ++currentWPindex;
