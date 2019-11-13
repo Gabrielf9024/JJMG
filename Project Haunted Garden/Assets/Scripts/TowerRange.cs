@@ -13,7 +13,8 @@ public class TowerRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponentInParent<Movable>().pickedUp)
+        if (GetComponentInParent<Movable>().pickedUp &&
+            GetComponentInParent<Movable>().canBeDropped)
             GetComponent<SpriteRenderer>().enabled = true;
         else
             GetComponent<SpriteRenderer>().enabled = false;

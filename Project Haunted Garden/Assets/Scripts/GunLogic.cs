@@ -23,6 +23,7 @@ public static class Vector2Extension
 
 public class GunLogic : MonoBehaviour
 {
+    public bool allowedToShoot = true;
     [Header("GunMovement")]
     public float armLength = 1f;
     private Transform rotationPoint;
@@ -61,12 +62,16 @@ public class GunLogic : MonoBehaviour
         transform.position = rotationPoint.position + gunDistanceFromSelf;
 
         if (Input.GetAxisRaw(shootControl) != 0) {
-            if (!currentlyShooting || Time.time > nextFire) {
-                if( straight )
-                    ShootStraight(centerToMouseDir);
-                if( spread )
+            if (allowedToShoot)
+            {
+                if (!currentlyShooting || Time.time > nextFire)
                 {
-                    ShootSpread(centerToMouseDir);
+                    if (straight)
+                        ShootStraight(centerToMouseDir);
+                    if (spread)
+                    {
+                        ShootSpread(centerToMouseDir);
+                    }
                 }
             }
         }

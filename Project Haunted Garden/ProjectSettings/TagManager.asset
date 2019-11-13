@@ -9,6 +9,7 @@ TagManager:
   - Tower
   - Hand
   - Waypoint
+  - Path
   layers:
   - Default
   - TransparentFX

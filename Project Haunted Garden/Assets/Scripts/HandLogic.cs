@@ -32,13 +32,16 @@ public class HandLogic : MonoBehaviour
                 PickUp(closest);
                 GetComponent<CircleCollider2D>().enabled = false;
                 closest = temp;
+                GetComponentInParent<GunLogic>().allowedToShoot = false;
             }
-            else if (holding)
+            else if (holding && closest.GetComponent<Movable>().canBeDropped)
             {
                 showHand = true;
                 holding = false;
                 PutDown(closest);
                 GetComponent<CircleCollider2D>().enabled = true;
+                GetComponentInParent<GunLogic>().allowedToShoot = true;
+
             }
         }
 

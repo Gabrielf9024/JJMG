@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Movable : MonoBehaviour
 {
+    public bool canBeDropped = true;
     public bool pickedUp = false;
     public GameObject nearbyParent = null;
     
@@ -18,22 +19,36 @@ public class Movable : MonoBehaviour
     void Update()
     {
         if (pickedUp)
+        {
             gameObject.transform.position = nearbyParent.gameObject.transform.position;;
+        }
     }
 
     public void PickUp()
     {
         pickedUp = true;
+        GetComponentInChildren<TowerShoot>().allowedToShoot = false;
     }
     public void PutDown()
     {
         pickedUp = false;
+        GetComponentInChildren<TowerShoot>().allowedToShoot = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Hand")
             nearbyParent = collision.gameObject;
+        if (collision.CompareTag("Path"))
+            canBeDropped = false;
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Path"))
+        {
+            canBeDropped = true;
+        }
+    }
+
 
 }
