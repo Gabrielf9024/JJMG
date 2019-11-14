@@ -12,6 +12,10 @@ public class HandLogic : MonoBehaviour
     public string pickupControl = "Fire2";
     public bool pickupBeingUsed = false;
 
+    // tissue test
+    public bool shopping = false;
+    public GameObject tower;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +28,22 @@ public class HandLogic : MonoBehaviour
         if(Input.GetAxisRaw(pickupControl) != 0 && !pickupBeingUsed)
         {
             pickupBeingUsed = true;
-            if (!holding && showHand)
+
+            //For the towerbox, throw away after tissue test
+            if (!holding && shopping) //if they right click the box
+            {
+                GameObject newTower = Instantiate(tower, transform.position, transform.rotation);
+                newTower.GetComponent<Movable>().PickUp();
+                newTower.GetComponent<Movable>().nearbyParent = gameObject;
+                holding = true; showHand = false;
+                GetComponent<CircleCollider2D>().enabled = false;
+                GetComponentInParent<GunLogic>().allowedToShoot = false;
+                closest = newTower;
+
+            }
+            //
+
+            else if (!holding && showHand) //if they want to pick up
             {
                 GameObject temp = closest;
                 showHand = false;
@@ -34,7 +53,7 @@ public class HandLogic : MonoBehaviour
                 closest = temp;
                 GetComponentInParent<GunLogic>().allowedToShoot = false;
             }
-            else if (holding && closest.GetComponent<Movable>().canBeDropped)
+            else if (holding && closest.GetComponent<Movable>().canBeDropped) //if they want to drop
             {
                 showHand = true;
                 holding = false;
@@ -43,6 +62,7 @@ public class HandLogic : MonoBehaviour
                 GetComponentInParent<GunLogic>().allowedToShoot = true;
 
             }
+
         }
 
         if (Input.GetAxisRaw(pickupControl) == 0)
@@ -61,12 +81,23 @@ public class HandLogic : MonoBehaviour
             closest = collision.gameObject;
             showHand = true;
         }
+
+        if(collision.tag == "Shop")
+        {
+            shopping = true;
+            showHand = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         closest = null;
         showHand = false;
+
+        if (collision.tag == "Shop")
+        {
+            shopping = false;
+        }
     }
 
     public void PickUp( GameObject c)

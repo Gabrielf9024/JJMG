@@ -6,15 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public bool paused;
-    public GameObject pauseMenu;
-    public GameObject towerPrefab = null;
+    public bool paused = false;
+    public bool lost = false;
+    private GameObject pauseMenu;
+    private GameObject loserText;
 
+    public int baseHealth = 100;
+    public Text baseHealthUI;
 
     private void Awake()
     {
+        loserText = GameObject.Find("Loser");
         pauseMenu = GameObject.Find("Quit");
+        baseHealthUI = GameObject.Find("HealthLeftUI").GetComponent<Text>();
     }
+
+    private void Start()
+    {
+        UpdateUI();
+    }
+
     private void Update()
     {
         if( Input.GetKeyDown(KeyCode.Escape)){
@@ -28,35 +39,30 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1;
+            if( !lost )
+                Time.timeScale = 1;
             pauseMenu.SetActive(false);
         }
 
-
-        // DO NOT KEEP; JUST FOR PROTOTYPING
-        if( Input.GetKeyDown(KeyCode.R))
+        if (lost)
         {
-            SceneManager.LoadScene("Prototype Scene v1");
+            loserText.SetActive(true);
         }
-        /*
-        if( Input.GetKeyDown(KeyCode.T))
+        else
         {
-            Instantiate(towerPrefab, transform.position, Quaternion.identity);
+            loserText.SetActive(false);
         }
-        */
-
-
     }
 
-    public void Quit()
-    {
-        Application.Quit();
-    }
+    public void Quit() { Application.Quit(); }
 
     public void EndGame()
     {
+        lost = true;
         Time.timeScale = 0;
+        loserText.SetActive(true);
     }
+
     public void ClearScreen()
     {
         GameObject[] bullets;
@@ -66,6 +72,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(bullet);
         }
+    }
+
+    public void UpdateUI()
+    {
+        baseHealthUI.text = baseHealth.ToString();
+        if (baseHealth == 0)
+            EndGame();
     }
 
 }
