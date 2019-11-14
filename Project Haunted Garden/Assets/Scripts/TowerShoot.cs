@@ -6,7 +6,7 @@ public class TowerShoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public bool seesTarget = false;
-
+    public bool allowedToShoot = true;
     [TextArea]
     public string Notes = "Towers will shoot when an enemy is in their radius. Select what kind of tower this game object is. Selecting multiple types will turn on all selected types.";
 
@@ -34,7 +34,7 @@ public class TowerShoot : MonoBehaviour
     {
         ++count;
         if (count % cooldown == 0 && seesTarget ) {
-            if( TurnOnRing ) {
+            if( TurnOnRing && allowedToShoot ) {
                 SpawnBulletRing();
             }
         }

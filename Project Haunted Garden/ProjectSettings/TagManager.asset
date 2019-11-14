@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Tower
   - Hand
+  - Waypoint
+  - Path
   layers:
   - Default
   - TransparentFX
