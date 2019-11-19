@@ -32,14 +32,17 @@ public class HandLogic : MonoBehaviour
             //For the towerbox, throw away after tissue test
             if (!holding && shopping) //if they right click the box
             {
-                GameObject newTower = Instantiate(tower, transform.position, transform.rotation);
-                newTower.GetComponent<Movable>().PickUp();
-                newTower.GetComponent<Movable>().nearbyParent = gameObject;
-                holding = true; showHand = false;
-                GetComponent<CircleCollider2D>().enabled = false;
-                GetComponentInParent<GunLogic>().allowedToShoot = false;
-                closest = newTower;
-
+                if (GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney > 0)
+                {
+                    GameObject newTower = Instantiate(tower, transform.position, transform.rotation);
+                    newTower.GetComponent<Movable>().PickUp();
+                    newTower.GetComponent<Movable>().nearbyParent = gameObject;
+                    holding = true; showHand = false;
+                    GetComponent<CircleCollider2D>().enabled = false;
+                    GetComponentInParent<GunLogic>().allowedToShoot = false;
+                    closest = newTower;
+                    GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney -= 100;
+                }
             }
             //
 

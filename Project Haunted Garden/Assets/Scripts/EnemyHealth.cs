@@ -9,9 +9,12 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     [SerializeField] int currentHealth;
     public Slider slider;
+    public Text baseMoneyUI;
+    public int myWorth;
 
     void Start()
     {
+        baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
         currentHealth = maxHealth;
         UpdateHealthUI();
 
@@ -33,6 +36,8 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth == 0)
         {
+            GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney += myWorth;
+            baseMoneyUI.text = GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney.ToString();
             Destroy(gameObject);
         }
     }

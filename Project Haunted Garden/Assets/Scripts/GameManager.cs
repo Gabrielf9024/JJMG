@@ -13,12 +13,15 @@ public class GameManager : MonoBehaviour
 
     public int baseHealth = 100;
     public Text baseHealthUI;
+    public Text baseMoneyUI;
+    public int baseMoney;
 
     private void Awake()
     {
         loserText = GameObject.Find("Loser");
         pauseMenu = GameObject.Find("Quit");
         baseHealthUI = GameObject.Find("HealthLeftUI").GetComponent<Text>();
+        baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
     }
 
     private void Start()
@@ -28,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if( Input.GetKeyDown(KeyCode.Escape)){
+        if ( Input.GetKeyDown(KeyCode.Escape)){
             paused = !paused;
         }
 
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
         {
             loserText.SetActive(false);
         }
+        baseMoneyUI.text = baseMoney.ToString();
     }
 
     public void Quit() { Application.Quit(); }
@@ -76,9 +80,11 @@ public class GameManager : MonoBehaviour
 
     public void UpdateUI()
     {
+        baseMoneyUI.text = baseMoney.ToString();
         baseHealthUI.text = baseHealth.ToString();
         if (baseHealth == 0)
             EndGame();
+        
     }
 
 }

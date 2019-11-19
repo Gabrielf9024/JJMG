@@ -367,6 +367,9 @@ MonoBehaviour:
   maxHealth: 150
   currentHealth: 0
   slider: {fileID: 330237552331936922}
+  baseMoneyUI: {fileID: 0}
+  currentMoney: 0
+  myWorth: 100
 --- !u!114 &8701336469365222067
 MonoBehaviour:
   m_ObjectHideFlags: 0
