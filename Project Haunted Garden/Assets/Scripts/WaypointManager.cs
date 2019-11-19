@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class WaypointManager : MonoBehaviour
 {
-    public List<GameObject> Waypoints;
+    public List<GameObject> Waypoints = null;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Waypoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
+        Waypoints = Waypoints.OrderBy(e => e.GetComponent<WaypointLogic>().ordinal).ToList();
         Waypoints.Reverse();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         

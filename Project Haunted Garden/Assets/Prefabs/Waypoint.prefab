@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  ordinal: -1
 --- !u!61 &2209333902250113016
 BoxCollider2D:
   m_ObjectHideFlags: 0

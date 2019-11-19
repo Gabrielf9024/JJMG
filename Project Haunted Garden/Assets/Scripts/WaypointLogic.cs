@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class WaypointLogic : MonoBehaviour
 {
     public GameObject manager;
-
+    public int ordinal = 0;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         manager = GameObject.Find("WaypointManager");
-
-        manager.GetComponent<WaypointManager>().Waypoints.Add(gameObject);
+        //        int existing = GameObject.FindGameObjectsWithTag("Waypoint").Length;
+        string numInName = Regex.Replace(gameObject.name, "[^0-9]", "");
+        ordinal = int.Parse(numInName);
+        //manager.GetComponent<WaypointManager>().Waypoints.Add(gameObject);
     }
 
     // Update is called once per frame
