@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool lost = false;
     private GameObject pauseMenu;
     private GameObject loserText;
+    private GameObject Store;
 
     public int baseHealth = 100;
     public Text baseHealthUI;
@@ -22,10 +23,12 @@ public class GameManager : MonoBehaviour
         pauseMenu = GameObject.Find("Quit");
         baseHealthUI = GameObject.Find("HealthLeftUI").GetComponent<Text>();
         baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
+        Store = GameObject.Find("StorePanel");
     }
 
     private void Start()
     {
+        Store.SetActive(false);
         UpdateUI();
     }
 

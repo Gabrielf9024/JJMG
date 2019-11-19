@@ -5,8 +5,9 @@ using UnityEngine;
 public class StoreGameManager : MonoBehaviour
 {
     public List<StoreScript> list = new List<StoreScript>();
-    public GameObject StoreStand;
+    public GameObject player;
     public GameObject StorePanel;
+    public static StoreGameManager instance;
 
     void UpdateItemSlots()
     {
@@ -31,6 +32,7 @@ public class StoreGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         UpdateItemSlots();
     }
 

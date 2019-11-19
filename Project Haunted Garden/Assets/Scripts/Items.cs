@@ -6,14 +6,9 @@ using UnityEngine;
 public class Items : StoreScript
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Use()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameObject player = StoreGameManager.instance.player;
+        player.GetComponent<HandLogic>().createObject(ItemObject);
     }
 }

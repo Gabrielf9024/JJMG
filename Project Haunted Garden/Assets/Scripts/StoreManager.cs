@@ -15,6 +15,7 @@ public class StoreManager : MonoBehaviour
         {
             displayText.text = store.ItemName;
             displayImage.sprite = store.ItemImage;
+            displayImage.color = Color.white;
 
         }
         else
@@ -26,10 +27,7 @@ public class StoreManager : MonoBehaviour
     }
     public void Use()
     {
-        if (store)
-        {
-            Debug.Log("You clicked: " + store.ItemName);
-        }
+        store.Use();
     }
     void Start()
     {

@@ -11,6 +11,7 @@ public class HandLogic : MonoBehaviour
     public Sprite handSprite = null;
     public string pickupControl = "Fire2";
     public bool pickupBeingUsed = false;
+    private GameObject Store;
 
     // tissue test
     public bool shopping = false;
@@ -19,7 +20,7 @@ public class HandLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Store = GameObject.Find("StorePanel");
     }
 
     // Update is called once per frame
@@ -32,19 +33,11 @@ public class HandLogic : MonoBehaviour
             //For the towerbox, throw away after tissue test
             if (!holding && shopping) //if they right click the box
             {
-                if (GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney > 0)
-                {
-                    GameObject newTower = Instantiate(tower, transform.position, transform.rotation);
-                    newTower.GetComponent<Movable>().PickUp();
-                    newTower.GetComponent<Movable>().nearbyParent = gameObject;
-                    holding = true; showHand = false;
-                    GetComponent<CircleCollider2D>().enabled = false;
-                    GetComponentInParent<GunLogic>().allowedToShoot = false;
-                    closest = newTower;
-                    GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney -= 100;
-                }
+                Store.SetActive(true);
+                holding = true; showHand = false;
+                GetComponent<CircleCollider2D>().enabled = false;
+                GetComponentInParent<GunLogic>().allowedToShoot = false;
             }
-           //
 
             else if (!holding && showHand) //if they want to pick up
             {
@@ -75,6 +68,28 @@ public class HandLogic : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = handSprite;
         else
             gameObject.GetComponent<SpriteRenderer>().sprite = null;
+    }
+    public void createObject(GameObject icon)
+    {
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney > 0 && icon != null)
+        {
+            GameObject newTower = Instantiate(icon, transform.position, transform.rotation);
+            newTower.GetComponent<Movable>().PickUp();
+            newTower.GetComponent<Movable>().nearbyParent = gameObject;
+            holding = true; showHand = false;
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponentInParent<GunLogic>().allowedToShoot = false;
+            closest = newTower;
+            GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney -= 100;
+            Store.SetActive(false);
+        }
+        else
+        {
+            holding = false; showHand = false;
+            GetComponent<CircleCollider2D>().enabled = true;
+            GetComponentInParent<GunLogic>().allowedToShoot = true;
+            Store.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
