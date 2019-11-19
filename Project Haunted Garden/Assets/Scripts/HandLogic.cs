@@ -44,7 +44,7 @@ public class HandLogic : MonoBehaviour
                     GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney -= 100;
                 }
             }
-            //
+           //
 
             else if (!holding && showHand) //if they want to pick up
             {

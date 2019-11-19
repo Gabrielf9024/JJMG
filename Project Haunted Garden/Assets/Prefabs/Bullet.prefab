@@ -95,10 +95,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631105590dad5a1489953c4885c0977c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 7
   bulletPower: 9
-  piercing: 0
-  dieAfterTime: 0
+  piercing: 1
+  foggy: 1
+  fogSlowdown: 0.2
+  dieAfterTime: 1
+  dieSlowly: 1
+  slowDeathSpeed: 1
+  shotFromGun: 1
+  randomVariator: 50
+  lifeSpan: 100
 --- !u!50 &649486156
 Rigidbody2D:
   serializedVersion: 4

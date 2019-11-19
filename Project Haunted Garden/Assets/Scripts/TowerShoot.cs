@@ -56,7 +56,10 @@ public class TowerShoot : MonoBehaviour
             newBullet.gameObject.GetComponent<BulletLogic>().SetSpeed(bulletSpeed);
             newBullet.gameObject.GetComponent<BulletLogic>().SetPower(bulletPower);
             newBullet.gameObject.GetComponent<BulletLogic>().SetPierce(bulletsPierce);
+            newBullet.gameObject.GetComponent<BulletLogic>().SetSlowDeath(false);
+            newBullet.gameObject.GetComponent<BulletLogic>().SetFoggy(false);
             newBullet.gameObject.GetComponent<BulletLogic>().SetDirection(pos - center);
+            newBullet.gameObject.GetComponent<BulletLogic>().SetShotFromGun(false);
         }
     }
 
