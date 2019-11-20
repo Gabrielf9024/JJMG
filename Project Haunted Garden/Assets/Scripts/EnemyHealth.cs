@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("HealthUI")]
     public int maxHealth = 100;
-    [SerializeField] int currentHealth;
+    [SerializeField] float currentHealth;
     public Slider slider;
     public Text baseMoneyUI;
     public int myWorth;
@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
         baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
         currentHealth = maxHealth;
         UpdateHealthUI();
+        slider.maxValue = maxHealth;
 
     }
 
@@ -25,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
-    public void damage( int d )
+    public void damage( float d )
     {
         currentHealth -= d;
 

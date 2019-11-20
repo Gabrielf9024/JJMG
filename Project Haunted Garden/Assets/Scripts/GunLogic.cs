@@ -24,6 +24,9 @@ public static class Vector2Extension
 public class GunLogic : MonoBehaviour
 {
     public bool allowedToShoot = true;
+    [SerializeField] GameObject bullet;
+    private BulletLogic bl;
+
     [Header("GunMovement")]
     public float armLength = 1f;
     private Transform rotationPoint;
@@ -32,24 +35,34 @@ public class GunLogic : MonoBehaviour
     private float nextFire = 0f;
     
 
-    [SerializeField] float autoSecBetweenShots = 1f;
-    [SerializeField] GameObject bullet;
 
+    [Header("Gun Mode")]
+    public bool automatic = false;
     public bool straight = true;
     public bool spread = false;
 
+    [Header("Straight")]
+    public float semiAutoDamage = 50;
+    public float semiAutoBulletSpeed = 10f;
+    public float cooldownInSec = 1f;
+
     [Header("Spread")]
+    [SerializeField] float secBetweenShots = 1f;
+    public float fogDamage = 1;
+    public float fogDamageMitigationBeforeStopped = 0.5f;
     public int bulletsPerArc = 5;
     public float arcWidth = 5f;
-    public int arcBulletDamage = 1;
+    public float fogBulletSpeed = 1f;
+
 
     void Awake()
     {
+        bl = bullet.GetComponent<BulletLogic>();
         rotationPoint = transform.parent.transform;
         shootControl = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().shootControl;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Get direction from player to mouse
         Vector3 centerToMouseDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - rotationPoint.position;
@@ -64,14 +77,41 @@ public class GunLogic : MonoBehaviour
         if (Input.GetAxisRaw(shootControl) != 0) {
             if (allowedToShoot)
             {
-                if (!currentlyShooting || Time.time > nextFire)
+                if( automatic )
                 {
-                    if (straight)
-                        ShootStraight(centerToMouseDir);
-                    if (spread)
+                    if (!currentlyShooting || Time.time > nextFire)
                     {
-                        ShootSpread(centerToMouseDir);
+                        if (spread)
+                        {
+                            bl.SetPierce(true);
+                            bl.SetFoggy(true);
+                            bl.useRandomSpeed = true;
+                            bl.SetSpeed(fogBulletSpeed);
+                            bl.SetDiameter(.1f);
+
+                            bl.SetPower(fogDamage * fogDamageMitigationBeforeStopped);
+                            currentlyShooting = true;
+                            ShootSpread(centerToMouseDir);
+                        }
                     }
+                 }
+                else
+                {
+                    if (!currentlyShooting)
+                    {
+                        bl.SetPierce(false);
+                        bl.SetFoggy(false);
+                        bl.useRandomSpeed = false;
+                        bl.SetSpeed(semiAutoBulletSpeed);
+                        bl.SetDiameter(.75f);
+
+                        bl.SetPower(semiAutoDamage);
+
+                        currentlyShooting = true;
+                        if (straight)
+                            ShootStraight(centerToMouseDir);
+                    }
+
                 }
             }
         }
@@ -85,12 +125,12 @@ public class GunLogic : MonoBehaviour
             if( straight )
             {
                 straight = false;
-                spread = true;
+                spread = automatic = true;
             }
             else
             {
                 straight = true;
-                spread = false;
+                spread = automatic = false;
             }
         }
 
@@ -98,29 +138,34 @@ public class GunLogic : MonoBehaviour
 
     public void ShootStraight( Vector2 direction )
     {
-        currentlyShooting = true;
-
-        nextFire = Time.time + autoSecBetweenShots;
+        nextFire = Time.time + secBetweenShots;
         GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity );
         newBullet.GetComponent<BulletLogic>().SetDirection( direction.normalized );
+        StartCoroutine(Wait(cooldownInSec));
+    }
+    IEnumerator Wait( float cd )
+    {
+        allowedToShoot = false;
+        yield return new WaitForSecondsRealtime(cd);
+        allowedToShoot = true;
 
     }
 
     public void ShootSpread( Vector2 direction )
     {
-        currentlyShooting = true;
         Vector2 original = direction;
-        nextFire = Time.time + autoSecBetweenShots;
-
+        nextFire = Time.time + secBetweenShots;
+        GameObject newBullet = null;
         for ( int i = 0; i < bulletsPerArc; ++i )
         {
-            GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             float offset = Random.Range(-arcWidth, arcWidth);
             direction = direction.Rotate(offset);
             newBullet.GetComponent<BulletLogic>().SetDirection(direction.normalized);
-            newBullet.GetComponent<BulletLogic>().SetPower(arcBulletDamage);
             direction = original;
+
         }
+
 
     }
 }
