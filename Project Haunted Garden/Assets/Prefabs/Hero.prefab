@@ -97,18 +97,20 @@ MonoBehaviour:
   allowedToShoot: 1
   bullet: {fileID: 6283175096195431746, guid: e168eb5d96a619641a4d34920262fa02, type: 3}
   armLength: 1
-  automatic: 0
-  straight: 1
-  spread: 0
+  automatic: 1
+  straight: 0
+  spread: 1
   semiAutoDamage: 50
   semiAutoBulletSpeed: 15
   cooldownInSec: 1
+  semiAutoBulletDiameter: 0.75
   secBetweenShots: 0.1
   fogDamage: 3
   fogDamageMitigationBeforeStopped: 0.3
   bulletsPerArc: 7
   arcWidth: 20
   fogBulletSpeed: 7
+  fogBulletDiameter: 0.1
 --- !u!1 &2487668140445348006
 GameObject:
   m_ObjectHideFlags: 0

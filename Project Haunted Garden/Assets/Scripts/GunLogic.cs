@@ -45,6 +45,7 @@ public class GunLogic : MonoBehaviour
     public float semiAutoDamage = 50;
     public float semiAutoBulletSpeed = 10f;
     public float cooldownInSec = 1f;
+    public float semiAutoBulletDiameter = .75f;
 
     [Header("Spread")]
     [SerializeField] float secBetweenShots = 1f;
@@ -53,6 +54,7 @@ public class GunLogic : MonoBehaviour
     public int bulletsPerArc = 5;
     public float arcWidth = 5f;
     public float fogBulletSpeed = 1f;
+    public float fogBulletDiameter = .1f;
 
 
     void Awake()
@@ -87,7 +89,7 @@ public class GunLogic : MonoBehaviour
                             bl.SetFoggy(true);
                             bl.useRandomSpeed = true;
                             bl.SetSpeed(fogBulletSpeed);
-                            bl.SetDiameter(.1f);
+                            bl.SetDiameter(fogBulletDiameter);
 
                             bl.SetPower(fogDamage * fogDamageMitigationBeforeStopped);
                             currentlyShooting = true;
@@ -103,7 +105,7 @@ public class GunLogic : MonoBehaviour
                         bl.SetFoggy(false);
                         bl.useRandomSpeed = false;
                         bl.SetSpeed(semiAutoBulletSpeed);
-                        bl.SetDiameter(.75f);
+                        bl.SetDiameter(semiAutoBulletDiameter);
 
                         bl.SetPower(semiAutoDamage);
 
