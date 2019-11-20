@@ -83,7 +83,7 @@ public class GunLogic : MonoBehaviour
                     {
                         if (spread)
                         {
-                            bl.SetPierce(true);
+                            bl.SetPierce(false);
                             bl.SetFoggy(true);
                             bl.useRandomSpeed = true;
                             bl.SetSpeed(fogBulletSpeed);

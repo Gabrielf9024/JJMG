@@ -43,6 +43,8 @@ public class BulletLogic : MonoBehaviour
         if( foggy )
         {
             StartCoroutine(SlowBullets());
+            SetPierce(true);
+
             transform.localScale = new Vector3(Mathf.Lerp(0.1f, 0.5f, t), Mathf.Lerp(0.1f, 0.5f, t), 0);
             GetComponent<SpriteRenderer>().color = Color.Lerp(startingFog, endingFog, t);
             t += 0.5f * Time.deltaTime;
@@ -72,8 +74,9 @@ public class BulletLogic : MonoBehaviour
         if (speed < 0)
         {
             speed = 0;
+            bulletPower = GameObject.Find("Gun").GetComponent<GunLogic>().fogDamage;
         }
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(.5f);
     }
 
     public void SetDirection( Vector2 newDir ) {direction = newDir;}
