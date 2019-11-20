@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeekerEnemy : MonoBehaviour
+public class SeekerEnemy : EnemyMovement
 {
     // Start is called before the first frame update
 
-    public float speed;
     public float rotateSpeed;
 
     public float Minrange;
@@ -41,14 +40,16 @@ public class SeekerEnemy : MonoBehaviour
         if (distance <= Maxrange && distance >= Minrange)
         {
             myBody.rotation = angle;
-            myBody.MovePosition((Vector2)myself.position + (move * speed * Time.deltaTime));
+            //myBody.MovePosition((Vector2)myself.position + (move * speed * Time.deltaTime));
+            MoveTo(target);
         }
 
 
         else if (distance <= Maxrange && distance > stop)
         {
             myBody.rotation = angle;
-            myBody.MovePosition((Vector2)myself.position + (move * speed * Time.deltaTime));
+            //myBody.MovePosition((Vector2)myself.position + (move * speed * Time.deltaTime));
+            MoveTo(target);
         }
         else if (distance <= stop)
         {

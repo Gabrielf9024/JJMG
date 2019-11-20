@@ -15060,12 +15060,12 @@ PrefabInstance:
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
       propertyPath: enemyGroupList.Array.data[0].groupSize
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
       propertyPath: enemyGroupList.Array.data[0].speed
-      value: 9
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
@@ -15091,7 +15091,7 @@ PrefabInstance:
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
       propertyPath: enemyGroupList.Array.data[1].speed
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
