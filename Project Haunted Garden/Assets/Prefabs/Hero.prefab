@@ -94,14 +94,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03135d5c4fffd0f4990caa213c5d10a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armLength: 1
-  autoSecBetweenShots: 0.05
+  allowedToShoot: 1
   bullet: {fileID: 6283175096195431746, guid: e168eb5d96a619641a4d34920262fa02, type: 3}
-  straight: 1
-  spread: 0
-  bulletsPerArc: 5
-  arcWidth: 10
-  arcBulletDamage: 1
+  armLength: 1
+  automatic: 1
+  straight: 0
+  spread: 1
+  semiAutoDamage: 50
+  semiAutoBulletSpeed: 15
+  cooldownInSec: 1
+  semiAutoBulletDiameter: 0.75
+  secBetweenShots: 0.1
+  fogDamage: 3
+  fogDamageMitigationBeforeStopped: 0.3
+  bulletsPerArc: 7
+  arcWidth: 20
+  fogBulletSpeed: 7
+  fogBulletDiameter: 0.1
 --- !u!1 &2487668140445348006
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10075ca497835ae45b70fce479aff250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 7
   shootControl: Fire1
   rawInputOn: 1
 --- !u!114 &2487668140445348027
@@ -353,6 +362,8 @@ MonoBehaviour:
   handSprite: {fileID: 21300000, guid: afd838bfa04e83549837008ca68c89b7, type: 3}
   pickupControl: Fire2
   pickupBeingUsed: 0
+  shopping: 0
+  tower: {fileID: 2531769536847327795, guid: 4e4c1b88646ee764183abd239c2d4022, type: 3}
 --- !u!58 &5708849449402134461
 CircleCollider2D:
   m_ObjectHideFlags: 0

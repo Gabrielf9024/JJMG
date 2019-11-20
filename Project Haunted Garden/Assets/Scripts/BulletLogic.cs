@@ -6,20 +6,27 @@ public class BulletLogic : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
     private Vector2 direction;
+    public float bulletPower = 5;
 
-    public int bulletPower = 5;
+    [Header("Toggles")]
     public bool piercing = false;
     public bool foggy = false;
-    public float fogSlowdown = .1f;
     public bool dieAfterTime = true;
-    public bool dieSlowly = false;
-    public float slowDeathSpeed = 1.0f;
-    private bool doneDying = false;
     public bool shotFromGun = false;
+    public bool useRandomSpeed = false;
+
+    [Header("Viewable for Debugging")]
+    public float fogSlowdown = .1f;
+    public float slowDeathSpeed = 1.0f;
     public float randomVariator = 10f; //affects the variability of stats
     public float lifeSpan = 100;
     private float randomSpeed;
     private SpriteRenderer r;
+
+    public Color startingFog;
+    public Color endingFog;
+
+    private float t = 0.0f;
 
     private Rigidbody2D rb;
 
@@ -29,8 +36,6 @@ public class BulletLogic : MonoBehaviour
         randomSpeed = Random.Range(0.5f, 1.5f);
         rb = GetComponent<Rigidbody2D>();
         lifeSpan += Random.Range(-randomVariator, randomVariator);
-        if (foggy)
-            GetComponent<CircleCollider2D>().enabled = false;
     }
 
     void FixedUpdate()
@@ -38,26 +43,28 @@ public class BulletLogic : MonoBehaviour
         if( foggy )
         {
             StartCoroutine(SlowBullets());
+            SetPierce(true);
+
+            transform.localScale = new Vector3(Mathf.Lerp(0.1f, 0.5f, t), Mathf.Lerp(0.1f, 0.5f, t), 0);
+            GetComponent<SpriteRenderer>().color = Color.Lerp(startingFog, endingFog, t);
+            t += 0.5f * Time.deltaTime;
+
         }
 
         rb.velocity = direction * speed;
         if (shotFromGun)
         {
-            rb.velocity *= randomSpeed;
+            if(useRandomSpeed)
+                rb.velocity *= randomSpeed;
             rb.velocity += GetComponentInParent<Rigidbody2D>().velocity;
         }
 
+
+
         --lifeSpan;
-        if( lifeSpan <= 0 && dieAfterTime)
+        if( lifeSpan <= 0)
         {
-            if (dieSlowly)
-            {
-                StartCoroutine(SlowDeath(0f, slowDeathSpeed));
-                if (doneDying)
-                    Destroy(gameObject);
-            }
-            else
-                Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -66,33 +73,23 @@ public class BulletLogic : MonoBehaviour
         speed -= fogSlowdown ;
         if (speed < 0)
         {
-            GetComponent<CircleCollider2D>().enabled = true;
             speed = 0;
+            bulletPower = GameObject.Find("Gun").GetComponent<GunLogic>().fogDamage;
         }
-        yield return new WaitForSecondsRealtime(1f);
-    }
-
-    IEnumerator SlowDeath( float aValue, float aTime )
-    {
-        float alpha = r.material.color.a;
-
-        for( float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime )
-        {
-            Color newColor = new Color(r.color.r, r.color.g, r.color.b, Mathf.Lerp(alpha, aValue, t));
-            r.material.color = newColor;
-            yield return null;
-        }
-        doneDying = true;
+        yield return new WaitForSecondsRealtime(.5f);
     }
 
     public void SetDirection( Vector2 newDir ) {direction = newDir;}
     public void SetLife( int ls ) {lifeSpan = ls;}
     public void SetSpeed( float s ) {speed = s;}
-    public void SetPower( int p ) {bulletPower = p;}
+    public void SetPower( float p ) {bulletPower = p;}
     public void SetPierce( bool p ) {piercing = p;}
     public void SetFoggy( bool f ) {foggy = f;}
-    public void SetSlowDeath( bool sd ) { dieSlowly = sd;}
     public void SetShotFromGun( bool fg ) { shotFromGun = fg; }
+    public void SetDiameter( float d )
+    {
+        transform.localScale = new Vector3(d, d, transform.localScale.z);
+    }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {

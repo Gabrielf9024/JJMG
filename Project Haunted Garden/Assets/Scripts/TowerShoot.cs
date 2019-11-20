@@ -52,14 +52,15 @@ public class TowerShoot : MonoBehaviour
         {
             Vector3 pos = Circle(center, i, circleSpawnRadius, numBullets_ring);
             GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
-            newBullet.gameObject.GetComponent<BulletLogic>().SetLife(bulletLife);
-            newBullet.gameObject.GetComponent<BulletLogic>().SetSpeed(bulletSpeed);
-            newBullet.gameObject.GetComponent<BulletLogic>().SetPower(bulletPower);
-            newBullet.gameObject.GetComponent<BulletLogic>().SetPierce(bulletsPierce);
-            newBullet.gameObject.GetComponent<BulletLogic>().SetSlowDeath(false);
-            newBullet.gameObject.GetComponent<BulletLogic>().SetFoggy(false);
-            newBullet.gameObject.GetComponent<BulletLogic>().SetDirection(pos - center);
-            newBullet.gameObject.GetComponent<BulletLogic>().SetShotFromGun(false);
+            BulletLogic newBulletLogic = newBullet.gameObject.GetComponent<BulletLogic>();
+            newBulletLogic.SetLife(bulletLife);
+            newBulletLogic.SetSpeed(bulletSpeed);
+            newBulletLogic.SetPower(bulletPower);
+            newBulletLogic.SetPierce(bulletsPierce);
+            newBulletLogic.SetFoggy(false);
+            newBulletLogic.SetDirection(pos - center);
+            newBulletLogic.SetShotFromGun(false);
+            newBulletLogic.SetDiameter(0.2f);
         }
     }
 
