@@ -27,12 +27,12 @@ public class Movable : MonoBehaviour
     public void PickUp()
     {
         pickedUp = true;
-        GetComponentInChildren<TowerShoot>().allowedToShoot = false;
+        //GetComponentInChildren<TowerShoot>().allowedToShoot = false;
     }
     public void PutDown()
     {
         pickedUp = false;
-        GetComponentInChildren<TowerShoot>().allowedToShoot = true;
+        //GetComponentInChildren<TowerShoot>().allowedToShoot = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

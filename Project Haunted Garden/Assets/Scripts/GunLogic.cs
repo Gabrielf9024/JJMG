@@ -20,7 +20,7 @@ public static class Vector2Extension
         return v;
     }
 }
-
+/// End Courtesy///
 public class GunLogic : MonoBehaviour
 {
     public bool allowedToShoot = true;
@@ -122,7 +122,8 @@ public class GunLogic : MonoBehaviour
             currentlyShooting = false;
         }
 
-        if(Input.GetAxis("Mouse ScrollWheel") != 0)
+        //if(Input.GetAxis("Mouse ScrollWheel") != 0)
+        if( Input.GetKeyDown(KeyCode.Q))
         {
             if( straight )
             {
