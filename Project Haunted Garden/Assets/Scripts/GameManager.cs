@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         {
             loserText.SetActive(false);
         }
-        baseMoneyUI.text = baseMoney.ToString();
+        baseMoneyUI.text = "$ " + baseMoney.ToString();
     }
 
     public void Quit() { Application.Quit(); }

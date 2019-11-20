@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth == 0)
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney += myWorth;
-            baseMoneyUI.text = GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney.ToString();
+            baseMoneyUI.text = "$ " + GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney.ToString();
             Destroy(gameObject);
         }
     }

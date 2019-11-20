@@ -327,7 +327,7 @@ MonoBehaviour:
   TurnOnRing: 1
   bulletsPierce: 1
   bulletSpeed: 50
-  bulletPower: 3
+  bulletPower: 10
   cooldown: 15
   bulletLife: 16
   numBullets_ring: 20
