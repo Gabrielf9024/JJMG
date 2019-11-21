@@ -37,6 +37,7 @@ public class HandLogic : MonoBehaviour
                 holding = true; showHand = false;
                 GetComponent<CircleCollider2D>().enabled = false;
                 GetComponentInParent<GunLogic>().allowedToShoot = false;
+                GetComponentInParent<Rigidbody2D>().velocity = new Vector3 (0,0,0);
                 GetComponentInParent<HeroMovement>().enabled = false;
             }
 

@@ -31,7 +31,6 @@ public class DTowerRange : MonoBehaviour
         {
             size++;
             CollidedWith.Add(collision.gameObject);
-            Debug.Log(FocusObj);
         }
             //gameObject.transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = true;
     }
@@ -42,6 +41,7 @@ public class DTowerRange : MonoBehaviour
             CollidedWith.Remove(collision.gameObject);
             size--;
             Debug.Log(NumMax);
+            Debug.Log(FocusObj);
         }
         //if (collision.gameObject.tag == "Enemy")
         //gameObject.transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = false;
