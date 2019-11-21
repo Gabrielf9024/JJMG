@@ -11,6 +11,7 @@ TagManager:
   - Waypoint
   - Path
   - Shop
+  - Spawner
   layers:
   - Default
   - TransparentFX

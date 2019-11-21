@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public delegate void ChangeEvent(bool alive);
+    public static event ChangeEvent deathEvent;
+    public bool alive = true;
+
+
     [Header("HealthUI")]
     public int maxHealth = 100;
     [SerializeField] float currentHealth;
@@ -14,6 +19,9 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
+        if (deathEvent != null)
+            deathEvent(false);
+
         baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
         currentHealth = maxHealth;
         UpdateHealthUI();
@@ -39,6 +47,8 @@ public class EnemyHealth : MonoBehaviour
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney += myWorth;
             baseMoneyUI.text = "$ " + GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney.ToString();
+            if (deathEvent != null)
+                deathEvent(false);
             Destroy(gameObject);
         }
     }

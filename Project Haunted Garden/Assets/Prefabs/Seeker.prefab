@@ -509,7 +509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4398e23eeff4734fb9dd02d0ee00b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  alive: 1
+  maxHealth: 600
   currentHealth: 0
   slider: {fileID: 1821159557}
   baseMoneyUI: {fileID: 0}
@@ -545,3 +546,4 @@ PolygonCollider2D:
       - {x: 0.00000004371139, y: -0.5}
       - {x: 0.43301272, y: -0.24999996}
       - {x: 0.43301272, y: 0.24999996}
+  myWorth: 50
