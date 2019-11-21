@@ -138,8 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4398e23eeff4734fb9dd02d0ee00b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  alive: 1
+  maxHealth: 600
   currentHealth: 0
   slider: {fileID: 0}
   baseMoneyUI: {fileID: 0}
-  myWorth: 300
+  myWorth: 50

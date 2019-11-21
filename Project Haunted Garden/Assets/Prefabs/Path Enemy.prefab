@@ -364,11 +364,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4398e23eeff4734fb9dd02d0ee00b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  alive: 1
+  maxHealth: 500
   currentHealth: 0
   slider: {fileID: 330237552331936922}
   baseMoneyUI: {fileID: 0}
-  myWorth: 100
+  myWorth: 10
 --- !u!114 &8701336469365222067
 MonoBehaviour:
   m_ObjectHideFlags: 0
