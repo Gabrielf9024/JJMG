@@ -55,5 +55,6 @@ public class SeekerEnemy : EnemyMovement
         {
             return;
         }
+        
     }
 }

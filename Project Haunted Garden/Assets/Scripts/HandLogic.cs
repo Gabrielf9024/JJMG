@@ -37,6 +37,7 @@ public class HandLogic : MonoBehaviour
                 holding = true; showHand = false;
                 GetComponent<CircleCollider2D>().enabled = false;
                 GetComponentInParent<GunLogic>().allowedToShoot = false;
+                GetComponentInParent<HeroMovement>().enabled = false;
             }
 
             else if (!holding && showHand) //if they want to pick up
@@ -82,13 +83,16 @@ public class HandLogic : MonoBehaviour
             closest = newTower;
             GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney -= 100;
             Store.SetActive(false);
+            GetComponentInParent<HeroMovement>().enabled = true;
         }
         else
         {
+            GetComponentInParent<HeroMovement>().enabled = false;
             holding = false; showHand = false;
             GetComponent<CircleCollider2D>().enabled = true;
             GetComponentInParent<GunLogic>().allowedToShoot = true;
             Store.SetActive(false);
+            GetComponentInParent<HeroMovement>().enabled = true;
         }
     }
 
