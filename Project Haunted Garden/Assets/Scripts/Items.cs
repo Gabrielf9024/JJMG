@@ -9,6 +9,6 @@ public class Items : StoreScript
     public override void Use()
     {
         GameObject player = StoreGameManager.instance.player;
-        player.GetComponent<HandLogic>().createObject(ItemObject);
+        player.GetComponent<HandLogic>().createObject(ItemObject, ItemName);
     }
 }

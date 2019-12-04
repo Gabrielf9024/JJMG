@@ -71,9 +71,18 @@ public class HandLogic : MonoBehaviour
         else
             gameObject.GetComponent<SpriteRenderer>().sprite = null;
     }
-    public void createObject(GameObject icon)
+    public void createObject(GameObject icon, string name)
     {
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney > 0 && icon != null)
+        int minus = 0;
+        if (name == "Aim Tower $150")
+        {
+            minus = -150;
+        }
+        else
+        {
+            minus = -100; 
+        }
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney >= 100 && icon != null && GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney > 0)
         {
             GameObject newTower = Instantiate(icon, transform.position, transform.rotation);
             newTower.GetComponent<Movable>().PickUp();
@@ -82,7 +91,7 @@ public class HandLogic : MonoBehaviour
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponentInParent<GunLogic>().allowedToShoot = false;
             closest = newTower;
-            GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney -= 100;
+            GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney += minus;
             Store.SetActive(false);
             GetComponentInParent<HeroMovement>().enabled = true;
         }

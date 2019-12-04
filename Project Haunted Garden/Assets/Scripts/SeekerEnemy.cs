@@ -16,7 +16,11 @@ public class SeekerEnemy : EnemyMovement
     private Transform myself;
     private Rigidbody2D myBody;
     private Vector2 move;
+    private Vector2 movementDirection;
 
+
+    private float latestDirectionChangeTime;
+    private readonly float directionChangeTime = 1.7f;
     void Awake()
     {
         myself = transform;
@@ -24,6 +28,7 @@ public class SeekerEnemy : EnemyMovement
 
     void Start()
     {
+        latestDirectionChangeTime = 0f;
         target = GameObject.FindWithTag("Player").transform;
         myBody = GetComponent<Rigidbody2D>();
     }
@@ -51,10 +56,20 @@ public class SeekerEnemy : EnemyMovement
             //myBody.MovePosition((Vector2)myself.position + (move * speed * Time.deltaTime));
             MoveTo(target);
         }
-        else if (distance <= stop)
+        else
         {
-            return;
+            GetComponentInParent<PathEnemy>().enabled = true;
+            GetComponentInParent<SeekerEnemy>().enabled = false;
         }
+        //else
+        //{
+        //    if (Time.time - latestDirectionChangeTime > directionChangeTime)
+        //    {
+        //        latestDirectionChangeTime = Time.time;
+        //        movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+        //    }
+        //    myBody.MovePosition((Vector2)myself.position + (movementDirection * speed * Time.deltaTime));
+        //}
         
     }
 }
