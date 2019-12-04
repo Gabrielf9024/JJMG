@@ -40,13 +40,12 @@ public class DTowerRange : MonoBehaviour
         {
             CollidedWith.Remove(collision.gameObject);
             size--;
-            Debug.Log(NumMax);
-            Debug.Log(FocusObj);
+            gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().focus = null;
         }
         //if (collision.gameObject.tag == "Enemy")
         //gameObject.transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = false;
     }
-    private void FindMaxWP()
+    public void FindMaxWP()
     {
         NumMax = -1;
         int future = 0;
@@ -60,8 +59,8 @@ public class DTowerRange : MonoBehaviour
                     {
                         NumMax = future;
                         FocusObj = x;
+                        gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().focus = FocusObj;
                     }
-
                 }
             }
         }
