@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
 
     void OnEnemyDeath( bool alive )
     {
-        //levelDone = CheckIfLevelDone();
+        levelDone = CheckIfLevelDone();
     }
 
     public bool CheckIfLevelDone()
@@ -36,6 +36,7 @@ public class LevelManager : MonoBehaviour
         if (enemies.Length == 0)
         {
             foreach (GameObject s in spawners){
+                Debug.Log(!s.GetComponent<Spawn>().doneSpawning);
                 if (!s.GetComponent<Spawn>().doneSpawning)
                     return false;
                 return true;
