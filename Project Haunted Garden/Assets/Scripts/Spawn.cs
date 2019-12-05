@@ -38,6 +38,7 @@ public class Spawn : MonoBehaviour
         {
             if( !waiting )
             {
+                GameObject.Find("GameManager").GetComponent<GameManager>().currentWave++;
                 yield return StartCoroutine(SpawnGroup(e));
             }
         }

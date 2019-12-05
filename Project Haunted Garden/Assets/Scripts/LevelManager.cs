@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
     public GameObject[] spawners;
     public GameObject[] enemies;
     public bool levelDone = false;
+    public int levelIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,13 @@ public class LevelManager : MonoBehaviour
     {
         levelDone = CheckIfLevelDone();
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            foreach( GameObject spawner in spawners )
+            {
+                spawner.GetComponent<Spawn>().enabled = true;
+            }
+        }
     }
 
     void OnEnemyDeath( bool alive )
@@ -43,6 +52,11 @@ public class LevelManager : MonoBehaviour
             }
         }
         return false;
+
+    }
+
+    public void StartNextLevel()
+    {
 
     }
 }
