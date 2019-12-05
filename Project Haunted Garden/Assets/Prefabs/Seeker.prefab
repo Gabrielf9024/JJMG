@@ -544,9 +544,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   rotateSpeed: 1
-  Minrange: 9
-  Maxrange: 9
-  stop: 0.5
+  Minrange: 5
+  Maxrange: 10
+  stop: 2
 --- !u!50 &6975099285889477244
 Rigidbody2D:
   serializedVersion: 4
@@ -581,11 +581,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  maxHealth: 600
+  maxHealth: 300
   currentHealth: 0
   slider: {fileID: 1821159557}
   baseMoneyUI: {fileID: 0}
-  myWorth: 300
+  myWorth: 30
 --- !u!60 &255973282
 PolygonCollider2D:
   m_ObjectHideFlags: 0

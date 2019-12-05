@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  maxHealth: 100
+  maxHealth: 200
   currentHealth: 0
   slider: {fileID: 330237552331936922}
   baseMoneyUI: {fileID: 0}

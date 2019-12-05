@@ -49,7 +49,7 @@ public class SeekTowerLogic : MonoBehaviour
             newBulletLogic.SetPower(bulletPower);
             newBulletLogic.SetFoggy(false);
             newBulletLogic.SetPierce(bulletsPierce);
-            newBulletLogic.SetDirection(focus.transform.position - transform.position);
+            newBulletLogic.SetDirection((focus.transform.position - transform.position ) * 3.5f);
             newBulletLogic.SetShotFromGun(false);
             newBulletLogic.SetDiameter(0.2f);
         }
