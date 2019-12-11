@@ -18,11 +18,17 @@ public class DTowerRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponentInParent<Movable>().pickedUp &&
-            GetComponentInParent<Movable>().canBeDropped)
+        if (GetComponentInParent<Movable>().pickedUp)
+        {
             GetComponent<SpriteRenderer>().enabled = true;
+            if (GetComponentInParent<Movable>().canBeDropped)
+                GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, .45f);
+            else
+                GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, .45f);
+        }
         else
             GetComponent<SpriteRenderer>().enabled = false;
+
         FindMaxWP();
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public Text baseHealthUI;
     public Text baseMoneyUI;
     public Text waveUI;
-    public Spawn spawner;
+    public LevelManager lm;
 
     public int currentWave = 0;
     public int baseMoney;
@@ -28,8 +28,7 @@ public class GameManager : MonoBehaviour
         baseHealthUI = GameObject.Find("HealthLeftUI").GetComponent<Text>();
         baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
         waveUI = GameObject.Find("WaveUI").GetComponent<Text>();
-        spawner = GameObject.Find("WaveSpawner").GetComponent<Spawn>();
-
+        lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         Store = GameObject.Find("StorePanel");
     }
 
@@ -92,8 +91,7 @@ public class GameManager : MonoBehaviour
     {
         baseMoneyUI.text = "$ " + baseMoney.ToString();
         baseHealthUI.text = "Health: "+ baseHealth.ToString();
-        if(currentWave > 0)
-            waveUI.text = "Wave: " + spawner.enemyGroupList[currentWave-1].Name;
+        waveUI.text = lm.Levels[lm.levelIndex].GetComponent<Spawn>().currentGroup.Name;
         if (baseHealth == 0)
             EndGame();
         

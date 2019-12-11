@@ -13,6 +13,7 @@ TagManager:
   - Shop
   - Spawner
   - Edgewall
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX

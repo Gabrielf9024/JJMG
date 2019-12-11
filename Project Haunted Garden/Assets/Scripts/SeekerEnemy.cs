@@ -36,7 +36,8 @@ public class SeekerEnemy : EnemyMovement
     //// Update is called once per frame
     void Update()
     {
-        GetComponent<EnemyMovement>().speed *= GetComponent<EnemyHealth>().currentHealth/GetComponent<EnemyHealth>().maxHealth;
+        // Attempt to make them move slower as they're damaged
+        //GetComponent<EnemyMovement>().speed *= GetComponent<EnemyHealth>().currentHealth/GetComponent<EnemyHealth>().maxHealth;
 
         Vector3 OurDirection = target.position - myself.position;
         float angle = Mathf.Atan2(OurDirection.y, OurDirection.x) * Mathf.Rad2Deg;
@@ -60,8 +61,8 @@ public class SeekerEnemy : EnemyMovement
         }
         else
         {
-            GetComponentInParent<PathEnemy>().enabled = true;
-            GetComponentInParent<SeekerEnemy>().enabled = false;
+            GetComponent<PathEnemy>().enabled = true;
+            GetComponent<SeekerEnemy>().enabled = false;
         }
         //else
         //{

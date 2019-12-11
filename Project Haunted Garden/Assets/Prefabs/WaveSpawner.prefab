@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25367ec52cf3fa4d84034311b3c3185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ordinal: 0
   enemyGroupList: []
+  groupIndex: 0
   doneSpawning: 0
 --- !u!212 &7080528168717577612
 SpriteRenderer:
@@ -83,7 +85,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1d348f1d634b71d4caf741c3aa5c527d, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0

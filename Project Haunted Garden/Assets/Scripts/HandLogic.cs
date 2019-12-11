@@ -107,7 +107,7 @@ public class HandLogic : MonoBehaviour
     }
     private bool isPossible(int minus)
     {
-        return GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney + minus > 0;
+        return GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney + minus >= 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
