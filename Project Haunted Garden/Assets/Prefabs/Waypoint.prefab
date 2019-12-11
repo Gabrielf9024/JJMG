@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4462272743401929599}
   - component: {fileID: -5657507151426980930}
   - component: {fileID: 2209333902250113016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Waypoint
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6406634620552278424}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PathEnemy : MonoBehaviour
 {
     public Transform nextWaypoint;
-    public int currentWPindex = 5;
+    public int currentWPindex = 0;
 
     public List<GameObject> waypoints;
     private Vector3 direction;
