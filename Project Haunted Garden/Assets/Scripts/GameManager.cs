@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool lost = false;
     private GameObject pauseMenu;
     private GameObject loserText;
+    private GameObject winnerText;
     private GameObject Store;
 
     public int baseHealth = 100;
@@ -24,12 +25,15 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         loserText = GameObject.Find("Loser");
+        winnerText = GameObject.Find("Winner");
         pauseMenu = GameObject.Find("Quit");
         baseHealthUI = GameObject.Find("HealthLeftUI").GetComponent<Text>();
         baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
         waveUI = GameObject.Find("WaveUI").GetComponent<Text>();
         lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         Store = GameObject.Find("StorePanel");
+
+        winnerText.GetComponent<Text>().enabled = false;
     }
 
     private void Start()
@@ -69,11 +73,18 @@ public class GameManager : MonoBehaviour
 
     public void Quit() { Application.Quit(); }
 
-    public void EndGame()
+    public void LostGame()
     {
         lost = true;
         Time.timeScale = 0;
         loserText.SetActive(true);
+    }
+
+    public void WonGame()
+    {
+        waveUI.GetComponent<Text>().enabled = false;
+        winnerText.GetComponent<Text>().enabled = true;
+        Time.timeScale = 0;
     }
 
     public void ClearScreen()
@@ -91,9 +102,12 @@ public class GameManager : MonoBehaviour
     {
         baseMoneyUI.text = "$ " + baseMoney.ToString();
         baseHealthUI.text = "Health: "+ baseHealth.ToString();
-        waveUI.text = lm.Levels[lm.levelIndex].GetComponent<Spawn>().currentGroup.Name;
+        if(lm.levelIndex > 0)
+            waveUI.text = "Level " + lm.levelIndex + ": " + lm.Levels[lm.levelIndex-1].GetComponent<Spawn>().currentGroup.Name;
+        if (lm.readyForNextLevel)
+            waveUI.text = "Press Space to Start Level " + (lm.levelIndex+1);
         if (baseHealth == 0)
-            EndGame();
+            LostGame();
         
     }
 

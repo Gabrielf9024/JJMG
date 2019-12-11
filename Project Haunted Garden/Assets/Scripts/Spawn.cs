@@ -45,7 +45,6 @@ public class Spawn : MonoBehaviour
     {
         foreach(EnemyEntry e in enemyGroupList)
         {
-            ++groupIndex;
             currentGroup = enemyGroupList[groupIndex];
 
             // If we're not waiting for a group to finish spawning, spawn the next group
@@ -53,6 +52,7 @@ public class Spawn : MonoBehaviour
             {
                 GameObject.Find("GameManager").GetComponent<GameManager>().currentWave = groupIndex; ;
                 yield return StartCoroutine(SpawnGroup(e));
+                ++groupIndex;
             }
         }
         doneSpawning = true;

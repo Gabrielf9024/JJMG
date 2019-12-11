@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour
 
         if(readyForNextLevel)
         {
+            if (levelIndex == Levels.Count)
+                GameObject.Find("GameManager").GetComponent<GameManager>().WonGame();
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartNextLevel();

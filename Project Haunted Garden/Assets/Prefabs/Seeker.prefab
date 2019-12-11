@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 6198874954166783106}
   - component: {fileID: 6198874954166783107}
   - component: {fileID: 6198874954166783117}
-  - component: {fileID: 1700590521}
+  - component: {fileID: 3370010402081166222}
   m_Layer: 0
   m_Name: Prange
   m_TagString: Untagged
@@ -274,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 6198874954166783105}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 6198874954454137137}
   m_RootOrder: 1
@@ -359,7 +359,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!58 &1700590521
+--- !u!58 &3370010402081166222
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -374,7 +374,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 0.1
 --- !u!1 &6198874954454137547
 GameObject:
   m_ObjectHideFlags: 0

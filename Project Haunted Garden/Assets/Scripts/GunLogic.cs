@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Vector2Extension Courtesy of:
 // https://answers.unity.com/questions/661383/whats-the-most-efficient-way-to-rotate-a-vector2-o.html
@@ -25,6 +26,10 @@ public static class Vector2Extension
 
 public class GunLogic : MonoBehaviour
 {
+    private Text shotText;
+    bool notPressing = false;
+
+
     public bool allowedToShoot = true;
     [SerializeField] GameObject bullet;
     private BulletLogic bl;
@@ -61,6 +66,9 @@ public class GunLogic : MonoBehaviour
 
     void Awake()
     {
+        shotText = GameObject.Find("ShotText").GetComponent<Text>();
+        shotText.text = "Spray";
+
         bl = bullet.GetComponent<BulletLogic>();
         rotationPoint = transform.parent.transform;
         shootControl = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().shootControl;
@@ -87,6 +95,7 @@ public class GunLogic : MonoBehaviour
                     {
                         if (spread)
                         {
+
                             bl.SetPierce(false);
                             bl.SetFoggy(true);
                             bl.useRandomSpeed = true;
@@ -125,19 +134,30 @@ public class GunLogic : MonoBehaviour
         }
 
         //if(Input.GetAxis("Mouse ScrollWheel") != 0)
-        if( Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetAxisRaw("Switch") != 0)
         {
-            if( straight )
+            if (notPressing)
             {
-                straight = false;
-                spread = automatic = true;
-            }
-            else
-            {
-                straight = true;
-                spread = automatic = false;
+                notPressing = false;
+                if (straight)
+                {
+                    shotText.text = "Spray";
+
+                    straight = false;
+                    spread = automatic = true;
+                }
+                else
+                {
+                    shotText.text = "Snipe";
+
+                    straight = true;
+                    spread = automatic = false;
+                }
             }
         }
+        else
+            notPressing = true;
+
 
     }
 
