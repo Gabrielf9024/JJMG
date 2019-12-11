@@ -12,6 +12,7 @@ TagManager:
   - Path
   - Shop
   - Spawner
+  - Edgewall
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - Friend
   - Enemy
   - Player
-  - 
-  - 
+  - Edgewall
+  - Waypoint
   - 
   - 
   - 

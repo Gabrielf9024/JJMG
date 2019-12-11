@@ -92,7 +92,8 @@ public class GameManager : MonoBehaviour
     {
         baseMoneyUI.text = "$ " + baseMoney.ToString();
         baseHealthUI.text = "Health: "+ baseHealth.ToString();
-        waveUI.text = "Wave: " + spawner.enemyGroupList[currentWave-1].Name;
+        if(currentWave > 0)
+            waveUI.text = "Wave: " + spawner.enemyGroupList[currentWave-1].Name;
         if (baseHealth == 0)
             EndGame();
         

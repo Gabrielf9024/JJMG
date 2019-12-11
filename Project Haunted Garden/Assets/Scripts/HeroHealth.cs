@@ -9,6 +9,7 @@ public class HeroHealth : MonoBehaviour
     public int currentHearts = 3;
     public float knockbackAmountWhenHit = 2.0f;
     public float stunTime = 1f;
+    public float blinkTimes = 5;
 
 
     void Awake()
@@ -33,7 +34,6 @@ public class HeroHealth : MonoBehaviour
     // i.e. making them stunned for a while
     public void ouch( Vector2 d)
     {
-        Debug.Log("ouch");
         GetComponentInChildren<GunLogic>().enabled = false;
         GetComponent<HeroMovement>().enabled = false;
 
@@ -44,7 +44,16 @@ public class HeroHealth : MonoBehaviour
     IEnumerator Hurting()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-        yield return new WaitForSecondsRealtime( stunTime );
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        for (int i = 0; i < blinkTimes; ++i)
+        {
+            sr.enabled = (sr.enabled ? false : true);
+            yield return new WaitForSecondsRealtime(stunTime / blinkTimes);
+        }
+        sr.enabled = true;
+
+
         GetComponent<HeroMovement>().enabled = true;
         GetComponentInChildren<GunLogic>().enabled = true;
 

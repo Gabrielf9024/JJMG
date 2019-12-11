@@ -346,7 +346,7 @@ RectTransform:
   m_GameObject: {fileID: 6198874954553773812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.695, y: 1.695, z: 1.695}
+  m_LocalScale: {x: 1, y: 1, z: 1.695}
   m_Children:
   - {fileID: 6198874955678947202}
   m_Father: {fileID: 6198874954454137137}

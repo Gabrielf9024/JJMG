@@ -41,7 +41,13 @@ public class HeroMovement : MonoBehaviour
         rb.velocity = new Vector2(xInput * speed, yInput * speed);
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if( collision.CompareTag("OutOfBounds") )
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
+    }
 
 
 
