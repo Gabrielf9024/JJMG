@@ -369,7 +369,7 @@ MonoBehaviour:
   currentHealth: 0
   slider: {fileID: 330237552331936922}
   baseMoneyUI: {fileID: 0}
-  myWorth: 10
+  myWorth: 2
 --- !u!114 &8701336469365222067
 MonoBehaviour:
   m_ObjectHideFlags: 0

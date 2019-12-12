@@ -12,7 +12,7 @@ public class WaypointManager : MonoBehaviour
         // Get the list of waypoints and put them in order, so the enemies have a list of waypoints to follow
         Waypoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
         Waypoints = Waypoints.OrderBy(e => e.GetComponent<WaypointLogic>().ordinal).ToList();
-        Waypoints.Reverse();
+        //Waypoints.Reverse();
     }
 
     void Update()
