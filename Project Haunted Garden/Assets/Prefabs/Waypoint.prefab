@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e62af2907e2b04a9e1a945ec529679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showWaypoints: 0
+  showWaypoints: 1
   manager: {fileID: 0}
   ordinal: -1
 --- !u!61 &2209333902250113016

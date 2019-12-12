@@ -10,7 +10,7 @@ public class SeekTowerLogic : MonoBehaviour
     public GameObject bulletPrefab;
     public bool bulletsPierce = false;
     public int bulletSpeed = 10;
-    public int bulletPower = 1;
+    public float bulletPower = .5f;
     public int cooldown = 20;
     public int bulletLife = 20;
 

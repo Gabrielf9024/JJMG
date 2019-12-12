@@ -49,7 +49,7 @@ MonoBehaviour:
     type: 3}
   bulletsPierce: 0
   bulletSpeed: 5
-  bulletPower: 2
+  bulletPower: 0.5
   cooldown: 500
   bulletLife: 10
 --- !u!58 &6577784315612034303
@@ -277,7 +277,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: cd317b0405b4aba45a3fa2017d92cb8a, type: 3}
-  m_Color: {r: 0.496351, g: 0.6978962, b: 0.735849, a: 1}
+  m_Color: {r: 0, g: 0.3785957, b: 0.4528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

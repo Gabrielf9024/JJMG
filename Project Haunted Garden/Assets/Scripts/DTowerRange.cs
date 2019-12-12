@@ -58,7 +58,7 @@ public class DTowerRange : MonoBehaviour
         if (size > 0) {
             foreach (GameObject x in CollidedWith)
             {
-                if (x.GetComponent<PathEnemy>() != null)
+                if (x.GetComponent<PathEnemy>())
                 {
                     future = x.GetComponent<PathEnemy>().currentWPindex;
                     if (future > NumMax)
