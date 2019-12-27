@@ -18,7 +18,7 @@ public class HandLogic : MonoBehaviour
     public GameObject tower;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Store = GameObject.Find("StorePanel");
     }
