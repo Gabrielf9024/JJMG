@@ -2051,15 +2051,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4462272743401929599, guid: 05f2c0e220b0d79478771aaf9cbb87bd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -5657507151426980930, guid: 05f2c0e220b0d79478771aaf9cbb87bd,
         type: 3}
       propertyPath: ordinal
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462272743401929599, guid: 05f2c0e220b0d79478771aaf9cbb87bd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f2c0e220b0d79478771aaf9cbb87bd, type: 3}
@@ -5183,11 +5183,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4462272743401929599, guid: 05f2c0e220b0d79478771aaf9cbb87bd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -5657507151426980930, guid: 05f2c0e220b0d79478771aaf9cbb87bd,
         type: 3}
       propertyPath: showWaypoints
@@ -5197,6 +5192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ordinal
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462272743401929599, guid: 05f2c0e220b0d79478771aaf9cbb87bd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f2c0e220b0d79478771aaf9cbb87bd, type: 3}
@@ -11799,7 +11799,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyGroupList.Array.data[0].enemy
       value: 
-      objectReference: {fileID: 330237551877917498, guid: 19f4f8d9f601a54428117aa53cf69c49,
+      objectReference: {fileID: 6198874954454137547, guid: 8cb21f8d8aba2d74a94c6d4c7a4d8413,
         type: 3}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
@@ -11825,7 +11825,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyGroupList.Array.data[1].enemy
       value: 
-      objectReference: {fileID: 330237551877917498, guid: 19f4f8d9f601a54428117aa53cf69c49,
+      objectReference: {fileID: 6198874954454137547, guid: 8cb21f8d8aba2d74a94c6d4c7a4d8413,
         type: 3}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
@@ -29843,13 +29843,13 @@ PrefabInstance:
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
       propertyPath: enemyGroupList.Array.data[0].Name
-      value: 16 Reds
+      value: 16 Chasers
       objectReference: {fileID: 0}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
       propertyPath: enemyGroupList.Array.data[0].enemy
       value: 
-      objectReference: {fileID: 330237551877917498, guid: 19f4f8d9f601a54428117aa53cf69c49,
+      objectReference: {fileID: 6198874954454137547, guid: 8cb21f8d8aba2d74a94c6d4c7a4d8413,
         type: 3}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
@@ -30679,7 +30679,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyGroupList.Array.data[0].enemy
       value: 
-      objectReference: {fileID: 330237551877917498, guid: 19f4f8d9f601a54428117aa53cf69c49,
+      objectReference: {fileID: 6198874954454137547, guid: 8cb21f8d8aba2d74a94c6d4c7a4d8413,
         type: 3}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
@@ -30705,7 +30705,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyGroupList.Array.data[1].enemy
       value: 
-      objectReference: {fileID: 330237551877917498, guid: 19f4f8d9f601a54428117aa53cf69c49,
+      objectReference: {fileID: 6198874954454137547, guid: 8cb21f8d8aba2d74a94c6d4c7a4d8413,
         type: 3}
     - target: {fileID: 602765880061598385, guid: 0a8193c8b105a964c9baa81e1ae58461,
         type: 3}
