@@ -40,7 +40,7 @@ public class SeekerEnemy : EnemyMovement
         //GetComponent<EnemyMovement>().speed *= GetComponent<EnemyHealth>().currentHealth/GetComponent<EnemyHealth>().maxHealth;
 
         Vector3 OurDirection = target.position - myself.position;
-        float angle = Mathf.Atan2(OurDirection.y, OurDirection.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(OurDirection.y, OurDirection.x) * Mathf.Rad2Deg -90f;
         OurDirection.Normalize();
         move = OurDirection;
 
