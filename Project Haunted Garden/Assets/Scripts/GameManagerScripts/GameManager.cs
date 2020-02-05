@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -14,9 +15,8 @@ public class GameManager : MonoBehaviour
     private GameObject Store;
 
     public int baseHealth = 100;
-    public Text baseHealthUI;
-    public Text baseMoneyUI;
-    public Text waveUI;
+    public TextMeshProUGUI baseHealthUI;
+    public TextMeshProUGUI waveUI;
     public LevelManager lm;
 
     public int currentWave = 0;
@@ -24,21 +24,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        loserText = GameObject.Find("Loser");
-        winnerText = GameObject.Find("Winner");
-        pauseMenu = GameObject.Find("Quit");
-        baseHealthUI = GameObject.Find("HealthLeftUI").GetComponent<Text>();
-        baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
-        waveUI = GameObject.Find("WaveUI").GetComponent<Text>();
-        lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-        Store = GameObject.Find("StorePanel");
-
-        winnerText.GetComponent<Text>().enabled = false;
+        //loserText = GameObject.Find("Loser");
+        //winnerText = GameObject.Find("Winner");
+        //pauseMenu = GameObject.Find("Quit");
+        //baseHealthUI.text = GameObject.Find("Health").GetComponent<Text>().text;
+        //waveUI.text = GameObject.Find("Wave").GetComponent<Text>().text;
+        //lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        //Store = GameObject.Find("StorePanel");
     }
 
     private void Start()
     {
-        Store.SetActive(false);
+        //Store.SetActive(false);
         UpdateUI();
     }
 
@@ -51,22 +48,22 @@ public class GameManager : MonoBehaviour
         if( paused )
         {
             Time.timeScale = 0;
-            pauseMenu.SetActive(true);
+            //pauseMenu.SetActive(true);
         }
         else
         {
             if( !lost )
                 Time.timeScale = 1;
-            pauseMenu.SetActive(false);
+            //pauseMenu.SetActive(false);
         }
 
         if (lost)
         {
-            loserText.SetActive(true);
+            //loserText.SetActive(true);
         }
         else
         {
-            loserText.SetActive(false);
+            //loserText.SetActive(false);
         }
         UpdateUI();
     }
@@ -100,12 +97,11 @@ public class GameManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        baseMoneyUI.text = "$ " + baseMoney.ToString();
         baseHealthUI.text = "Health: "+ baseHealth.ToString();
-        if(lm.levelIndex > 0)
-            waveUI.text = "Level " + lm.levelIndex + ": " + lm.Levels[lm.levelIndex-1].GetComponent<Spawn>().currentGroup.Name;
+        if (lm.levelIndex > 0)
+            waveUI.text = "Level " + lm.levelIndex; // + ": " + lm.Levels[lm.levelIndex-1].GetComponent<Spawn>().currentGroup.Name;
         if (lm.readyForNextLevel)
-            waveUI.text = "Press Space to Start Level " + (lm.levelIndex+1);
+            waveUI.text = "Space to Start" + (lm.levelIndex+1);
         if (baseHealth == 0)
             LostGame();
         

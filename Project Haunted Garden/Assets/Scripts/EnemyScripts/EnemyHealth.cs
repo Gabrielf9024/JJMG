@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
         if (deathEvent != null)
             deathEvent(false);
 
-        baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
+        //baseMoneyUI = GameObject.Find("MoneyMidUI").GetComponent<Text>();
         currentHealth = maxHealth;
         slider.maxValue = maxHealth;
         UpdateHealthUI();
@@ -45,8 +45,8 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth == 0)
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney += myWorth;
-            baseMoneyUI.text = "$ " + GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney.ToString();
+            //GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney += myWorth;
+            //baseMoneyUI.text = "$ " + GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney.ToString();
             if (deathEvent != null)
                 deathEvent(false);
             Destroy(gameObject);

@@ -37,7 +37,7 @@ public class HeroHealth : MonoBehaviour
         GetComponentInChildren<GunLogic>().enabled = false;
         GetComponent<HeroMovement>().enabled = false;
 
-        this.transform.Translate(-d * knockbackAmountWhenHit);
+        this.transform.Translate(Vector2.ClampMagnitude(-d * knockbackAmountWhenHit, 3));
         StartCoroutine( Hurting() );
     }
 

@@ -16,20 +16,13 @@ public class PathEnemy : MonoBehaviour
     void Awake()
     {
         waypoints = GameObject.Find("WaypointManager").GetComponent<WaypointManager>().Waypoints;
-    }
-    private void Start()
-    {
         myBody = GetComponent<Rigidbody2D>();
-
         nextWaypoint = waypoints[currentWPindex].transform;
     }
-
+    
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 OurDirection = nextWaypoint.position - transform.position;
-        float angle = Mathf.Atan2(OurDirection.y, OurDirection.x) * Mathf.Rad2Deg - 90f;
-        myBody.rotation = angle;
 
 /*
 
@@ -48,6 +41,21 @@ public class PathEnemy : MonoBehaviour
         {
             ++currentWPindex;
             nextWaypoint = waypoints[currentWPindex].transform;
+
+            FaceWaypoint();
         }
+    }
+    void OnEnable()
+    {
+        nextWaypoint = waypoints[currentWPindex].transform;
+
+        FaceWaypoint();
+    }
+
+    private void FaceWaypoint()
+    {
+        Vector3 OurDirection = nextWaypoint.position - transform.position;
+        float angle = Mathf.Atan2(OurDirection.y, OurDirection.x) * Mathf.Rad2Deg - 90f;
+        myBody.rotation = angle;
     }
 }

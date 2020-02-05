@@ -26,8 +26,8 @@ public static class Vector2Extension
 
 public class GunLogic : MonoBehaviour
 {
-    private Text shotText;
     bool notPressing = false;
+
 
 
     public bool allowedToShoot = true;
@@ -66,9 +66,6 @@ public class GunLogic : MonoBehaviour
 
     void Awake()
     {
-        shotText = GameObject.Find("ShotText").GetComponent<Text>();
-        shotText.text = "Spray";
-
         bl = bullet.GetComponent<BulletLogic>();
         rotationPoint = transform.parent.transform;
         shootControl = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().shootControl;
@@ -134,22 +131,18 @@ public class GunLogic : MonoBehaviour
         }
 
         //if(Input.GetAxis("Mouse ScrollWheel") != 0)
-        if (Input.GetAxisRaw("Switch") != 0)
+        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
         {
             if (notPressing)
             {
                 notPressing = false;
                 if (straight)
                 {
-                    shotText.text = "Spray";
-
                     straight = false;
                     spread = automatic = true;
                 }
                 else
                 {
-                    shotText.text = "Snipe";
-
                     straight = true;
                     spread = automatic = false;
                 }
