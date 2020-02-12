@@ -23,11 +23,25 @@ public class TowerBugEater : MonoBehaviour
         if (!held)
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
-            if (colliders.Length > 0 && !Eating)
+            Collider2D food = null;
+
+            for( int i = 0; i < colliders.Length; ++i )
+            {
+                if(colliders[i].CompareTag("Enemy"))
+                {
+                    food = colliders[i];
+                    break;
+                }
+            }
+            if (food == null)
+                colliders = null;
+            //The above needs to check if colliders are enemies, otherwise it eats any object with colliders
+
+            if (colliders != null && !Eating)
             {
                 Eating = true;
                 //Eats the first object it sees or one furthest away from it within the radius when done eating 
-                Destroy(colliders[0].gameObject);
+                Destroy(food.gameObject);
             }
             if (Eating)
             {
