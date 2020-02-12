@@ -101,7 +101,7 @@ MonoBehaviour:
   straight: 0
   spread: 1
   semiAutoDamage: 75
-  semiAutoBulletSpeed: 15
+  semiAutoBulletSpeed: 30
   cooldownInSec: 0.2
   semiAutoBulletDiameter: 0.2
   secBetweenShots: 0.1

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8b345d73c2d8b8c41b906e1396cd9739, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.19215687, g: 0.7176471, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
   slowDeathSpeed: 50
   randomVariator: 50
   lifeSpan: 100
-  startingFog: {r: 1, g: 1, b: 1, a: 0}
-  endingFog: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+  startingFog: {r: 0.74480724, g: 1, b: 0.3726415, a: 0}
+  endingFog: {r: 0.19238994, g: 0.7169812, b: 0, a: 1}
 --- !u!50 &649486156
 Rigidbody2D:
   serializedVersion: 4

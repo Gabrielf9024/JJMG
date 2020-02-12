@@ -16,6 +16,7 @@ public class TowerShoot : MonoBehaviour
     public int bulletPower = 1;
     public int cooldown = 20;
     public int bulletLife = 20;
+    public Color bulletColor;
 
     [Header("RingShooter")]
     public int numBullets_ring = 12;
@@ -60,7 +61,8 @@ public class TowerShoot : MonoBehaviour
             newBulletLogic.SetFoggy(false);
             newBulletLogic.SetDirection(pos - center);
             newBulletLogic.SetShotFromGun(false);
-            newBulletLogic.SetDiameter(0.2f);
+            newBulletLogic.SetDiameter(0.1f);
+            newBullet.GetComponent<SpriteRenderer>().color = bulletColor;
         }
     }
 
