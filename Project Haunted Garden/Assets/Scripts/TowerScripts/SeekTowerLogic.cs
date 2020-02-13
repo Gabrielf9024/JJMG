@@ -13,6 +13,7 @@ public class SeekTowerLogic : MonoBehaviour
     public float bulletPower = .5f;
     public int cooldown = 20;
     public int bulletLife = 20;
+    public bool seesTarget = false;
 
     private Vector2 move;
 
@@ -25,10 +26,10 @@ public class SeekTowerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (focus != null)
-            {
-                ShootBall();
-            }
+        if (focus != null && seesTarget == true)
+        {
+            ShootBall();
+        }
     }
     public void ShootBall()
     {

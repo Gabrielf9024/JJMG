@@ -10,6 +10,8 @@ public class TowerBugEater : MonoBehaviour
 
     public bool Eating;
     public bool held;
+
+
     // Start is called before the first frame update
     void Start()
     {
