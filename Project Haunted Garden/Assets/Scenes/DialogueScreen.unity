@@ -634,11 +634,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textD: {fileID: 1065737839}
-  speed: 0.02
-  levelNumber: 2
-  isPlayer: 0
   continueButton: {fileID: 218625971}
   TextBox: {fileID: 1193751652}
+  index: 0
+  level: 0
+  Textspeed: 0.1
+  DialogueList:
+  - isplayer: 1
+    dialogue:
+    - TESTING DIA
+    - 'IT WORKS '
 --- !u!4 &1127675984
 Transform:
   m_ObjectHideFlags: 0
