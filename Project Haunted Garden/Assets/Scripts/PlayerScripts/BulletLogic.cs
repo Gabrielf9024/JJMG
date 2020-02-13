@@ -47,7 +47,7 @@ public class BulletLogic : MonoBehaviour
 
             transform.localScale = new Vector3(Mathf.Lerp(0.1f, 0.5f, t), Mathf.Lerp(0.1f, 0.5f, t), 0);
             GetComponent<SpriteRenderer>().color = Color.Lerp(startingFog, endingFog, t);
-            t += 0.5f * Time.deltaTime;
+            t += 0.25f * Time.deltaTime;
 
         }
 

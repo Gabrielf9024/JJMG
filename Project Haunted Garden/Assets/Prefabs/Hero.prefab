@@ -103,14 +103,14 @@ MonoBehaviour:
   semiAutoDamage: 75
   semiAutoBulletSpeed: 15
   cooldownInSec: 0.2
-  semiAutoBulletDiameter: 0.75
+  semiAutoBulletDiameter: 0.2
   secBetweenShots: 0.1
-  fogDamage: 3
+  fogDamage: 2
   fogDamageMitigationBeforeStopped: 0.3
   bulletsPerArc: 6
   arcWidth: 17
   fogBulletSpeed: 7
-  fogBulletDiameter: 0.1
+  fogBulletDiameter: 0.01
 --- !u!1 &2487668140445348006
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class PathEnemy : MonoBehaviour
     public List<GameObject> waypoints;
     private Vector3 direction;
     private Quaternion lookRotation;
+    private Rigidbody2D myBody;
+
 
     void Awake()
     {
@@ -17,18 +19,25 @@ public class PathEnemy : MonoBehaviour
     }
     private void Start()
     {
-        currentWPindex = 0;
+        myBody = GetComponent<Rigidbody2D>();
+
         nextWaypoint = waypoints[currentWPindex].transform;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector3 OurDirection = nextWaypoint.position - transform.position;
+        float angle = Mathf.Atan2(OurDirection.y, OurDirection.x) * Mathf.Rad2Deg - 90f;
+        myBody.rotation = angle;
+
+/*
+
         // Find the direction Vector3 between the next wp and you
         direction = (nextWaypoint.position - transform.position).normalized;
         // Face that waypoint
-        lookRotation = Quaternion.LookRotation(direction);
-
+        transform.Rotate(direction);
+*/
         GetComponent<EnemyMovement>().MoveTo(nextWaypoint);
 
     }
