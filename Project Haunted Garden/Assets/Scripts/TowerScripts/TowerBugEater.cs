@@ -11,12 +11,14 @@ public class TowerBugEater : MonoBehaviour
     public bool Eating;
     public bool held;
 
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         EatTimer = 0f;
         Eating = false;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,10 +39,10 @@ public class TowerBugEater : MonoBehaviour
             }
             if (food == null)
                 colliders = null;
-            //The above needs to check if colliders are enemies, otherwise it eats any object with colliders
 
             if (colliders != null && !Eating)
             {
+                anim.SetTrigger("MakeClosed");
                 Eating = true;
                 //Eats the first object it sees or one furthest away from it within the radius when done eating 
                 Destroy(food.gameObject);
@@ -54,6 +56,8 @@ public class TowerBugEater : MonoBehaviour
                     GetComponent<TowerHealth>().THealth = Mathf.Round(GetComponent<TowerHealth>().THealth);
                     Eating = false;
                     EatTimer = 0f;
+                    anim.SetTrigger("MakeIdle");
+
                 }
             }
         }
