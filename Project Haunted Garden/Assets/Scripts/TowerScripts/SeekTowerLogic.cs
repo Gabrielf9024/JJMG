@@ -17,18 +17,28 @@ public class SeekTowerLogic : MonoBehaviour
 
     private Vector2 move;
 
-
+    Animator anim;
     void Start()
     {
+        anim = transform.parent.GetComponent<Animator>();
         Range = GetComponent<DTowerRange>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (focus != null && seesTarget == true)
+        if (focus != null && seesTarget)
         {
             ShootBall();
+        }
+
+        if(focus != null)
+        {
+            anim.SetTrigger("MakeShoot");
+        }
+        else
+        {
+            anim.SetTrigger("MakeIdle");
         }
     }
     public void ShootBall()
