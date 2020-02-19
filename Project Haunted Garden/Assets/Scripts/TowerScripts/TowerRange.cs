@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerRange : MonoBehaviour
 {
+    public int enemyCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +25,21 @@ public class TowerRange : MonoBehaviour
         }
         else
             GetComponent<SpriteRenderer>().enabled = false;
+
+        if (enemyCount == 0)
+            transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = false;
+        else
+            transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-            gameObject.transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = true;
+            ++enemyCount;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-            gameObject.transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = false;
+            --enemyCount;
     }
 }

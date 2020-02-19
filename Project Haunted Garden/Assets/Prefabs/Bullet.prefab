@@ -108,6 +108,8 @@ MonoBehaviour:
   lifeSpan: 100
   startingFog: {r: 0.74480724, g: 1, b: 0.3726415, a: 0}
   endingFog: {r: 0.19238994, g: 0.7169812, b: 0, a: 1}
+  startingSize: 0.1
+  endingSize: 0.5
 --- !u!50 &649486156
 Rigidbody2D:
   serializedVersion: 4

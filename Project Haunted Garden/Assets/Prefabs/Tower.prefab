@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76056e5f003065448955ac881eeb66df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCount: 0
 --- !u!50 &706872578
 Rigidbody2D:
   serializedVersion: 4
@@ -197,9 +198,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47, y: -1}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.3
+  m_Radius: 2.5
 --- !u!50 &1563829546
 Rigidbody2D:
   serializedVersion: 4
@@ -277,8 +278,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 39e0b29d9e9134d4782a548df2e00df9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -286,7 +287,7 @@ SpriteRenderer:
   m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6944944583507451218
@@ -396,13 +397,25 @@ MonoBehaviour:
     Selecting multiple types will turn on all selected types.'
   TurnOnRing: 1
   bulletsPierce: 1
-  bulletSpeed: 50
-  bulletPower: 10
-  cooldown: 15
-  bulletLife: 16
+  bulletsAreFoggy: 1
+  bulletSpeed: 25
+  bulletPower: 1
+  cooldown: 50
+  bulletLife: 60
   bulletColor: {r: 0.6862745, g: 0.6, b: 1, a: 1}
-  numBullets_ring: 20
+  fogSlowdown: 0.5
+  startingSize: 0.5
+  endingSize: 1
+  start: {r: 0.6862745, g: 0.6, b: 1, a: 0.39215687}
+  end: {r: 0.6862745, g: 0.6, b: 1, a: 0}
+  Ring: 1
+  Spiral: 0
+  numBullets_ring: 8
   circleSpawnRadius: 0.2
+  numBullets_spiral: 20
+  skipEvery: 1
+  counterClockwise: 0
+  spiralPositionCounter: 0
 --- !u!58 &2516467691040488874
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -416,6 +429,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47, y: -1}
+  m_Offset: {x: -0.42, y: -1.35}
   serializedVersion: 2
-  m_Radius: 1.3
+  m_Radius: 1

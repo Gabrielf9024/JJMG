@@ -37,7 +37,7 @@ public class DTowerRange : MonoBehaviour
         {
             size++;
             CollidedWith.Add(collision.gameObject);
-            gameObject.transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = true;
+            gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().seesTarget = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

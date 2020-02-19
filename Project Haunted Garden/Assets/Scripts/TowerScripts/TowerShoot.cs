@@ -12,31 +12,63 @@ public class TowerShoot : MonoBehaviour
 
     public bool TurnOnRing = false;
     public bool bulletsPierce = false;
+    public bool bulletsAreFoggy = false;
     public int bulletSpeed = 10;
     public int bulletPower = 1;
     public int cooldown = 20;
     public int bulletLife = 20;
     public Color bulletColor;
 
+    public float fogSlowdown = .1f;
+    public float startingSize = 0.1f;
+    public float endingSize = 0.5f;
+    public Color start;
+    public Color end;
+
+
+    public bool Ring = false;
+    public bool Spiral = true;
+
     [Header("RingShooter")]
     public int numBullets_ring = 12;
     public float circleSpawnRadius = 3f;
+
+    [Header("BulletSpiral")]
+    [SerializeField] int numBullets_spiral = 20;
+    [SerializeField] int skipEvery = 1;
+    [SerializeField] bool counterClockwise = false;
+    [SerializeField] int spiralPositionCounter = 0;
+
+    Animator anim;
 
     private int count = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponentInParent<Animator>();
+        spiralPositionCounter = 0;
+
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        if (seesTarget)
+            anim.SetTrigger("MakeShoot");
+        else
+        {
+            anim.SetTrigger("MakeIdle");
+            StopCoroutine(SpawnSpiral());
+        }
+
         ++count;
         if (count % cooldown == 0 && seesTarget ) {
             if( TurnOnRing && allowedToShoot ) {
-                SpawnBulletRing();
+                if(Ring)
+                    SpawnBulletRing();
+                if (Spiral)
+                    StartCoroutine(SpawnSpiral());
             }
         }
 
@@ -45,6 +77,7 @@ public class TowerShoot : MonoBehaviour
         if (count > 500)
             count = 0;
     }
+
 
     public void SpawnBulletRing()
     {
@@ -58,11 +91,45 @@ public class TowerShoot : MonoBehaviour
             newBulletLogic.SetSpeed(bulletSpeed);
             newBulletLogic.SetPower(bulletPower);
             newBulletLogic.SetPierce(bulletsPierce);
-            newBulletLogic.SetFoggy(false);
+            newBulletLogic.SetFoggy(bulletsAreFoggy);
             newBulletLogic.SetDirection(pos - center);
             newBulletLogic.SetShotFromGun(false);
-            newBulletLogic.SetDiameter(0.1f);
+            newBulletLogic.SetDiameter(0.3f);
             newBullet.GetComponent<SpriteRenderer>().color = bulletColor;
+            newBulletLogic.startingFog = start;
+            newBulletLogic.endingFog = end;
+            newBulletLogic.startingSize = startingSize;
+            newBulletLogic.endingSize = endingSize;
+            newBulletLogic.fogSlowdown = fogSlowdown;
+
+            newBullet.GetComponent<SpriteRenderer>().color = bulletColor;
+        }
+    }
+    IEnumerator SpawnSpiral()
+    {
+        while (true)
+        {
+            if (counterClockwise)
+                spiralPositionCounter -= skipEvery;
+            else
+                spiralPositionCounter += skipEvery;
+
+            Vector3 center = gameObject.transform.position;
+            Vector3 pos = Circle(center, spiralPositionCounter, circleSpawnRadius, numBullets_spiral);
+
+            GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
+            BulletLogic newBulletLogic = newBullet.gameObject.GetComponent<BulletLogic>();
+            newBulletLogic.SetLife(bulletLife);
+            newBulletLogic.SetSpeed(bulletSpeed);
+            newBulletLogic.SetPower(bulletPower);
+            newBulletLogic.SetPierce(bulletsPierce);
+            newBulletLogic.SetFoggy(bulletsAreFoggy);
+            newBulletLogic.SetDirection(pos - center);
+            newBulletLogic.SetShotFromGun(false);
+            newBullet.GetComponent<SpriteRenderer>().color = bulletColor;
+            newBulletLogic.startingFog = start;
+            newBulletLogic.endingFog = end;
+            yield return new WaitForSecondsRealtime(cooldown);
         }
     }
 

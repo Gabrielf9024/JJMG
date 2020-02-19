@@ -25,6 +25,8 @@ public class BulletLogic : MonoBehaviour
 
     public Color startingFog;
     public Color endingFog;
+    public float startingSize = 0.1f;
+    public float endingSize = 0.5f;
 
     private float t = 0.0f;
 
@@ -45,7 +47,7 @@ public class BulletLogic : MonoBehaviour
             StartCoroutine(SlowBullets());
             SetPierce(true);
 
-            transform.localScale = new Vector3(Mathf.Lerp(0.1f, 0.5f, t), Mathf.Lerp(0.1f, 0.5f, t), 0);
+            transform.localScale = new Vector3(Mathf.Lerp(startingSize , endingSize, t), Mathf.Lerp(startingSize, endingSize, t), 0);
             GetComponent<SpriteRenderer>().color = Color.Lerp(startingFog, endingFog, t);
             t += 0.25f * Time.deltaTime;
 
