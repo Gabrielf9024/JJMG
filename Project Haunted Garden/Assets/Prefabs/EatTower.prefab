@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EatTimer: 0
-  StopEating: 1
+  StopEating: 3
   radius: 3
   Eating: 0
   held: 0

@@ -247,7 +247,7 @@ MonoBehaviour:
   maxHearts: 3
   currentHearts: 3
   knockbackAmountWhenHit: 6
-  stunTime: 0.5
+  stunTime: 0.2
   blinkTimes: 8
 --- !u!58 &1370804327
 CircleCollider2D:
