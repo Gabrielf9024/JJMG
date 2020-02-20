@@ -53,6 +53,7 @@ public class BulletLogic : MonoBehaviour
 
         }
 
+        
         rb.velocity = direction * speed;
         if (shotFromGun)
         {
@@ -106,6 +107,7 @@ public class BulletLogic : MonoBehaviour
         }
         else
         {
+            Debug.Log(collision.name);
             Destroy(gameObject);
         }
     }

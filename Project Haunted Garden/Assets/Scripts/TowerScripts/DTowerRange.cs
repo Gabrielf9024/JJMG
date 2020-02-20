@@ -29,6 +29,13 @@ public class DTowerRange : MonoBehaviour
         else
             GetComponent<SpriteRenderer>().enabled = false;
 
+        if( CollidedWith.Count == 0 )
+            gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().seesTarget = false;
+
+        else
+            gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().seesTarget = true;
+
+
         FindMaxWP();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,7 +44,6 @@ public class DTowerRange : MonoBehaviour
         {
             size++;
             CollidedWith.Add(collision.gameObject);
-            gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().seesTarget = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -46,16 +52,15 @@ public class DTowerRange : MonoBehaviour
         {
             CollidedWith.Remove(collision.gameObject);
             size--;
-            gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().focus = null;
-            gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().seesTarget = false;
-
+            FindMaxWP();
         }
     }
     public void FindMaxWP() //Targets the enemy that is farthest down the path
     {
         NumMax = -1;
         int future = 0;
-        if (size > 0) {
+        if (size > 0)
+        {
             foreach (GameObject x in CollidedWith)
             {
                 if (x.GetComponent<PathEnemy>())
@@ -70,5 +75,7 @@ public class DTowerRange : MonoBehaviour
                 }
             }
         }
+        else
+            gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().focus = null;
     }
 }

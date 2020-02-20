@@ -47,12 +47,15 @@ MonoBehaviour:
   focus: {fileID: 0}
   bulletPrefab: {fileID: 6283175096195431746, guid: e168eb5d96a619641a4d34920262fa02,
     type: 3}
-  bulletsPierce: 0
-  bulletSpeed: 5
+  bulletsPierce: 1
+  bulletSpeed: 10
   bulletPower: 0.5
   cooldown: 500
-  bulletLife: 10
+  bulletLife: 100
+  bulletDiameter: 5
   seesTarget: 0
+  bulletSprite: {fileID: 21300000, guid: 9117eeaac98771a4aa6ca0738ae8a93d, type: 3}
+  bulletColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!58 &6577784315612034303
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 6577784316266418314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.36, y: -0.74, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 6577784316810195017}
   m_RootOrder: 1

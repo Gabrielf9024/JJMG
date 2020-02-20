@@ -62,6 +62,11 @@ public class GunLogic : MonoBehaviour
     public float arcWidth = 5f;
     public float fogBulletSpeed = 1f;
     public float fogBulletDiameter = .1f;
+    public Color startingFog;
+    public Color endingFog;
+    public float startingSize = 0.1f;
+    public float endingSize = 0.5f;
+
 
 
     void Awake()
@@ -98,7 +103,10 @@ public class GunLogic : MonoBehaviour
                             bl.useRandomSpeed = true;
                             bl.SetSpeed(fogBulletSpeed);
                             bl.SetDiameter(fogBulletDiameter);
-
+                            bl.startingFog = startingFog;
+                            bl.endingFog = endingFog;
+                            bl.startingSize = startingSize;
+                            bl.endingSize = endingSize;
                             bl.SetPower(fogDamage * fogDamageMitigationBeforeStopped);
                             currentlyShooting = true;
                             ShootSpread(centerToMouseDir);

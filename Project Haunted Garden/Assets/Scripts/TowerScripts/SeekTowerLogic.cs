@@ -11,10 +11,13 @@ public class SeekTowerLogic : MonoBehaviour
     public bool bulletsPierce = false;
     public int bulletSpeed = 10;
     public float bulletPower = .5f;
-    public int cooldown = 20;
+    public float cooldownInSeconds = 1f;
     public int bulletLife = 20;
+    public float bulletDiameter = 1f;
     public bool seesTarget = false;
-
+    public bool allowedToShoot = true;
+    public Sprite bulletSprite;
+    public Color bulletColor;
     private Vector2 move;
 
     Animator anim;
@@ -27,9 +30,10 @@ public class SeekTowerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (focus != null && seesTarget)
+        if (focus != null && seesTarget && allowedToShoot)
         {
             ShootBall();
+            StartCoroutine(Wait(cooldownInSeconds));
         }
 
         if(focus != null)
@@ -40,6 +44,14 @@ public class SeekTowerLogic : MonoBehaviour
         {
             anim.SetTrigger("MakeIdle");
         }
+    }
+
+    IEnumerator Wait(float cd)
+    {
+        allowedToShoot = false;
+        yield return new WaitForSecondsRealtime(cd);
+        allowedToShoot = true;
+
     }
     public void ShootBall()
     {
@@ -52,14 +64,19 @@ public class SeekTowerLogic : MonoBehaviour
             //GetComponent<Rigidbody2D>().rotation = angle;
             GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             BulletLogic newBulletLogic = newBullet.gameObject.GetComponent<BulletLogic>();
+            newBullet.transform.up = focus.transform.position - newBullet.transform.position;
+            newBullet.GetComponent<CircleCollider2D>().radius = .15f;
             newBulletLogic.SetLife(bulletLife);
             newBulletLogic.SetSpeed(bulletSpeed);
             newBulletLogic.SetPower(bulletPower);
             newBulletLogic.SetFoggy(false);
             newBulletLogic.SetPierce(bulletsPierce);
-            newBulletLogic.SetDirection((focus.transform.position - transform.position ) * 3.5f);
+            Vector2 heading = transform.position - focus.transform.position;
+            newBulletLogic.SetDirection( -heading / heading.magnitude );
             newBulletLogic.SetShotFromGun(false);
-            newBulletLogic.SetDiameter(0.2f);
+            newBulletLogic.SetDiameter(bulletDiameter);
+            newBullet.GetComponentInParent<SpriteRenderer>().sprite = bulletSprite;
+            newBullet.GetComponentInParent<SpriteRenderer>().color = bulletColor;
         }
     }
 }

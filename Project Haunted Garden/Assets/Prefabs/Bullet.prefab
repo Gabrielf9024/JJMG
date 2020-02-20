@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6283175096195431746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.452, y: 0.078, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 8b345d73c2d8b8c41b906e1396cd9739, type: 3}
   m_Color: {r: 0.19215687, g: 0.7176471, b: 0, a: 1}
   m_FlipX: 0
@@ -95,21 +95,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631105590dad5a1489953c4885c0977c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  bulletPower: 75
+  speed: 7
+  bulletPower: 2.5
   piercing: 0
-  foggy: 0
+  foggy: 1
   dieAfterTime: 1
   shotFromGun: 1
-  useRandomSpeed: 0
+  useRandomSpeed: 1
   fogSlowdown: 0.2
   slowDeathSpeed: 50
   randomVariator: 50
   lifeSpan: 100
-  startingFog: {r: 0.74480724, g: 1, b: 0.3726415, a: 0}
-  endingFog: {r: 0.19238994, g: 0.7169812, b: 0, a: 1}
+  startingFog: {r: 1, g: 1, b: 1, a: 0.4509804}
+  endingFog: {r: 0.14455383, g: 0.4528302, b: 0.1260235, a: 0.039215688}
   startingSize: 0.1
-  endingSize: 0.5
+  endingSize: 3
 --- !u!50 &649486156
 Rigidbody2D:
   serializedVersion: 4
