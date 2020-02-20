@@ -132,6 +132,7 @@ MonoBehaviour:
   canBeDropped: 1
   pickedUp: 0
   nearbyParent: {fileID: 0}
+  canBeOnPath: 1
 --- !u!95 &4314352999935964319
 Animator:
   serializedVersion: 3

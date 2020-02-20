@@ -47,13 +47,14 @@ MonoBehaviour:
   focus: {fileID: 0}
   bulletPrefab: {fileID: 6283175096195431746, guid: e168eb5d96a619641a4d34920262fa02,
     type: 3}
-  bulletsPierce: 1
-  bulletSpeed: 10
-  bulletPower: 0.5
-  cooldown: 500
-  bulletLife: 100
-  bulletDiameter: 5
+  bulletsPierce: 0
+  bulletSpeed: 20
+  bulletPower: 10
+  cooldownInSeconds: 0.1
+  bulletLife: 20
+  bulletDiameter: 3
   seesTarget: 0
+  allowedToShoot: 1
   bulletSprite: {fileID: 21300000, guid: 9117eeaac98771a4aa6ca0738ae8a93d, type: 3}
   bulletColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!58 &6577784315612034303

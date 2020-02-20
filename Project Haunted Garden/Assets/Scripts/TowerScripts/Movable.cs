@@ -7,6 +7,7 @@ public class Movable : MonoBehaviour
     public bool canBeDropped = true;
     public bool pickedUp = false;
     public GameObject nearbyParent = null;
+    public bool canBeOnPath = false;
     
 
     // Start is called before the first frame update
@@ -40,7 +41,8 @@ public class Movable : MonoBehaviour
         if (collision.gameObject.tag == "Hand")
             nearbyParent = collision.gameObject;
         if (collision.CompareTag("Path"))
-            canBeDropped = false;
+            if(!canBeOnPath)
+                canBeDropped = false;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
