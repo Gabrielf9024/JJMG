@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerTimer : MonoBehaviour
 {
     public float timerLife;
+    public float healthTimer;
     public float IncLife;
 
     public bool Watered;
@@ -33,14 +34,28 @@ public class TowerTimer : MonoBehaviour
         if (timerLife <= 0)
         {
             //GetComponent<TowerShoot>().enabled = false;
-            GetComponent<TowerHealth>().THealth -= Time.deltaTime * 1.5f;
+            if (GetComponent<TowerHealth>().THealth >= 0) {
+                GetComponent<TowerHealth>().THealth -= Time.deltaTime * 1.5f;
+            }
         }
     }
     public void WasIWatered()
     {
        if (Watered)
         {
-            timerLife += IncLife;
+            if ((timerLife + IncLife) > healthTimer)
+            {
+                Debug.Log("check");
+                float increaseby = (timerLife + IncLife);
+                increaseby -= healthTimer;
+                Debug.Log(increaseby);
+                timerLife += increaseby;
+            }
+            else
+            {
+                timerLife += IncLife;
+            }
+            
             if (GetComponent<TowerHealth>().THealth <= 50)
             {
                 if (GetComponent<TowerHealth>().THealth + 10f > 50)
@@ -66,6 +81,16 @@ public class TowerTimer : MonoBehaviour
         if (PickedUp)
         {
             timerLife -= timerLife * .50f;
+        }
+    }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (Input.GetKeyDown("e"))
+            {
+                Watered = true;
+            }
         }
     }
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HandLogic : MonoBehaviour
 {
-
+    private Inventory inventory;
+    private Slot slot;
     public GameObject closest = null;
     public bool holding = false;
     public bool showHand = false;
@@ -12,21 +13,25 @@ public class HandLogic : MonoBehaviour
     public string pickupControl = "Fire2";
     public bool pickupBeingUsed = false;
     private GameObject Store;
+    public Sprite seed = null;
+    public bool showSeed;
 
     // tissue test
     public bool shopping = false;
-    public GameObject tower;
+    //public GameObject tower;
 
     // Start is called before the first frame update
     void Awake()
     {
+        inventory = GetComponentInParent<Inventory>();
         Store = GameObject.Find("StorePanel");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw(pickupControl) != 0 && !pickupBeingUsed)
+        UseItem();
+        if (Input.GetAxisRaw(pickupControl) != 0 && !pickupBeingUsed)
         {
             pickupBeingUsed = true;
 
@@ -68,7 +73,7 @@ public class HandLogic : MonoBehaviour
 
         if (showHand)
             gameObject.GetComponent<SpriteRenderer>().sprite = handSprite;
-        else
+        if(showHand == false && showSeed == false)
             gameObject.GetComponent<SpriteRenderer>().sprite = null;
     }
     public void createObject(GameObject icon, string name)
@@ -144,4 +149,42 @@ public class HandLogic : MonoBehaviour
     {
         c.GetComponent<Movable>().PutDown();
     }
+    
+    public void UseItem()
+    {
+        if (Input.GetKeyDown("1")){
+            if (inventory.slots[0].transform.GetChild(0).transform != null)
+            {
+                showSeed = true;
+                gameObject.GetComponent<SpriteRenderer>().sprite = seed;
+                GameObject.Destroy(inventory.slots[0].transform.GetChild(0).gameObject);
+            }
+            
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            if (inventory.slots[1].transform.GetChild(0).transform != null)
+            {
+                Instantiate(inventory.slots[1].transform.GetChild(0).transform, transform, false);
+                GameObject.Destroy(inventory.slots[1].transform.GetChild(0).gameObject);
+            }
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            if (inventory.slots[2].transform.GetChild(0).transform != null)
+            {
+                Instantiate(inventory.slots[2].transform.GetChild(0).transform, transform, false);
+                GameObject.Destroy(inventory.slots[2].transform.GetChild(0).gameObject);
+            }
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            if (inventory.slots[3].transform.GetChild(0).transform != null)
+            {
+                Instantiate(inventory.slots[3].transform.GetChild(0).transform, transform, false);
+                GameObject.Destroy(inventory.slots[3].transform.GetChild(0).gameObject);
+            }
+        }
+    }
+
 }
