@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerShoot : MonoBehaviour
 {
+    private Water waterScript;
+
     public GameObject bulletPrefab;
     public bool seesTarget = false;
     public bool allowedToShoot = true;
@@ -46,6 +48,7 @@ public class TowerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        waterScript = GetComponentInParent<Water>();
         anim = GetComponentInParent<Animator>();
         spiralPositionCounter = 0;
 
@@ -63,7 +66,7 @@ public class TowerShoot : MonoBehaviour
         }
 
         ++count;
-        if (count % cooldown == 0 && seesTarget ) {
+        if (count % cooldown == 0 && seesTarget && !waterScript.dry) {
             if( TurnOnRing && allowedToShoot ) {
                 if(Ring)
                     SpawnBulletRing();

@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
 
     public GameObject[] enemies;
+    public GameObject[] towers;
     public bool readyForNextLevel = true; // For debugging
     public int levelIndex = 0;
 
@@ -23,6 +24,7 @@ public class LevelManager : MonoBehaviour
     {
         EnemyHealth.deathEvent += OnEnemyDeath;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        towers = GameObject.FindGameObjectsWithTag("Tower");
     }
 
     // Update is called once per frame
@@ -38,6 +40,11 @@ public class LevelManager : MonoBehaviour
             {
                 StartNextLevel();
             }
+            foreach( GameObject tower in towers)
+            {
+                tower.GetComponent<Water>().betweenWaves = true;
+            }
+
         }
     }
 
@@ -55,6 +62,8 @@ public class LevelManager : MonoBehaviour
 
         enemies = null;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        towers = GameObject.FindGameObjectsWithTag("Tower");
+
 
         if (enemies.Length == 0)
         {

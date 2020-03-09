@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SeekTowerLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Water waterScript;
     private DTowerRange Range;
     public GameObject focus;
     public GameObject bulletPrefab;
@@ -23,6 +23,7 @@ public class SeekTowerLogic : MonoBehaviour
     Animator anim;
     void Start()
     {
+        waterScript = GetComponentInParent<Water>();
         anim = transform.parent.GetComponent<Animator>();
         Range = GetComponent<DTowerRange>();
     }
@@ -30,7 +31,7 @@ public class SeekTowerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (focus != null && seesTarget && allowedToShoot)
+        if (focus != null && seesTarget && allowedToShoot && !waterScript.dry)
         {
             ShootBall();
             StartCoroutine(Wait(cooldownInSeconds));

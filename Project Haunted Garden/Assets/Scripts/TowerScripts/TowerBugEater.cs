@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerBugEater : MonoBehaviour
 {
+    private Water waterScript;
+
     public float EatTimer;
     public float StopEating;
     public float radius;
@@ -16,6 +18,7 @@ public class TowerBugEater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        waterScript = GetComponent<Water>();
         EatTimer = 0f;
         Eating = false;
         anim = GetComponent<Animator>();
@@ -24,7 +27,7 @@ public class TowerBugEater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!held)
+        if (!held && !waterScript.dry)
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
             Collider2D food = null;

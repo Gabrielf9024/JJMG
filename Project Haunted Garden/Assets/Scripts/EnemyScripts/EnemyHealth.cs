@@ -28,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
         slider.maxValue = maxHealth;
         UpdateHealthUI();
 
+
     }
 
     void Update()
