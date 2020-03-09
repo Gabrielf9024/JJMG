@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public delegate void ChangeEvent(bool alive);
     public static event ChangeEvent deathEvent;
     public bool alive = true;
+    public Splatter splat;
 
 
     [Header("HealthUI")]
@@ -49,6 +50,9 @@ public class EnemyHealth : MonoBehaviour
             //baseMoneyUI.text = "$ " + GameObject.Find("GameManager").GetComponent<GameManager>().baseMoney.ToString();
             if (deathEvent != null)
                 deathEvent(false);
+            Splatter mySplatter = Instantiate(splat);
+            mySplatter.MoveToCorpse(transform);
+
             Destroy(gameObject);
         }
     }

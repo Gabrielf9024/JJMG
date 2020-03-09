@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
+  splat: {fileID: 7627234301094798061, guid: d7440c8d0989f2f4fa2e2af0fca8063c, type: 3}
   maxHealth: 300
   currentHealth: 0
   slider: {fileID: 3199292751828317777}
