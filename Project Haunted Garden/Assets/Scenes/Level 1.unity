@@ -416,7 +416,7 @@ PrefabInstance:
     - target: {fileID: 2794780201532780290, guid: 94c109c09c4136f4894c0215365c0251,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.48235294
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2794780201532780291, guid: 94c109c09c4136f4894c0215365c0251,
         type: 3}
@@ -438,6 +438,11 @@ PrefabInstance:
       propertyPath: maxWater
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7064453183762014341, guid: 94c109c09c4136f4894c0215365c0251,
+        type: 3}
+      propertyPath: waterLossPerSecond
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c109c09c4136f4894c0215365c0251, type: 3}
 --- !u!1001 &827979499
@@ -451,6 +456,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxWater
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811559159054995281, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
+        type: 3}
+      propertyPath: waterLossPerSecond
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6122497250376447517, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
         type: 3}
@@ -1069,6 +1079,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: endingFogWater.r
+      value: 0.4198113
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: endingFogWater.g
+      value: 0.8120188
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: endingFogWater.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: automatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: fogBulletDiWater
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: secBetweenShotsWater
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: lifeSpanWater
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: bulletsPerArc
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2487668140445348004, guid: cfa848a325a440d4ea1f3a340d40a1f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1128,6 +1178,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668140445348026, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487668140445348026, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: waterControl
+      value: Fire2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa848a325a440d4ea1f3a340d40a1f6, type: 3}
@@ -27913,7 +27973,7 @@ PrefabInstance:
     - target: {fileID: 1401849864042160443, guid: 4e4c1b88646ee764183abd239c2d4022,
         type: 3}
       propertyPath: waterLossPerSecond
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1401849864042160443, guid: 4e4c1b88646ee764183abd239c2d4022,
         type: 3}

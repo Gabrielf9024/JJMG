@@ -97,6 +97,7 @@ MonoBehaviour:
   allowedToShoot: 1
   bullet: {fileID: 6283175096195431746, guid: e168eb5d96a619641a4d34920262fa02, type: 3}
   armLength: 1
+  water: 0
   automatic: 1
   straight: 0
   spread: 1
@@ -105,14 +106,20 @@ MonoBehaviour:
   cooldownInSec: 0.2
   semiAutoBulletDiameter: 0.2
   secBetweenShots: 0.5
+  secBetweenShotsWater: 0.1
   fogDamage: 5
   fogDamageMitigationBeforeStopped: 0.5
   bulletsPerArc: 5
+  bulletsPerArcWater: 10
   arcWidth: 17
   fogBulletSpeed: 7
   fogBulletDiameter: 0.01
+  fogBulletDiWater: 0.05
   startingFog: {r: 1, g: 1, b: 1, a: 0.4509804}
   endingFog: {r: 0.14455383, g: 0.4528302, b: 0.1260235, a: 0.039215688}
+  startingFogWater: {r: 0, g: 0, b: 1, a: 0.4509804}
+  endingFogWater: {r: 0, g: 0, b: 1, a: 0.039215688}
+  lifeSpanWater: 20
   startingSize: 0.1
   endingSize: 3
 --- !u!1 &2487668140445348006
@@ -235,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   shootControl: Fire1
+  waterControl: Fire2
   rawInputOn: 1
 --- !u!114 &2487668140445348027
 MonoBehaviour:

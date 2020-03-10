@@ -38,12 +38,14 @@ public class GunLogic : MonoBehaviour
     public float armLength = 1f;
     private Transform rotationPoint;
     private string shootControl;
+    private string waterControl;
     private bool currentlyShooting = false;
     private float nextFire = 0f;
-    
+
 
 
     [Header("Gun Mode")]
+    public bool water = false;
     public bool automatic = false;
     public bool straight = true;
     public bool spread = false;
@@ -56,14 +58,20 @@ public class GunLogic : MonoBehaviour
 
     [Header("Spread")]
     [SerializeField] float secBetweenShots = 1f;
+    public float secBetweenShotsWater = .2f;
     public float fogDamage = 1;
     public float fogDamageMitigationBeforeStopped = 0.5f;
     public int bulletsPerArc = 5;
+    public int bulletsPerArcWater = 10;
     public float arcWidth = 5f;
     public float fogBulletSpeed = 1f;
     public float fogBulletDiameter = .1f;
+    public float fogBulletDiWater = .4f;
     public Color startingFog;
     public Color endingFog;
+    public Color startingFogWater;
+    public Color endingFogWater;
+    public float lifeSpanWater;
     public float startingSize = 0.1f;
     public float endingSize = 0.5f;
 
@@ -74,6 +82,7 @@ public class GunLogic : MonoBehaviour
         bl = bullet.GetComponent<BulletLogic>();
         rotationPoint = transform.parent.transform;
         shootControl = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().shootControl;
+        waterControl = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().waterControl;
     }
 
     void FixedUpdate()
@@ -88,7 +97,14 @@ public class GunLogic : MonoBehaviour
         Vector3 gunDistanceFromSelf = armLength * centerToMouseDir.normalized;
         transform.position = rotationPoint.position + gunDistanceFromSelf;
 
-        if (Input.GetAxisRaw(shootControl) != 0) {
+        if (Input.GetAxisRaw(shootControl) != 0 || Input.GetAxisRaw(waterControl) != 0) {
+            if (Input.GetAxisRaw(waterControl) != 0)
+                water = true;
+            else
+                water = false;
+
+
+
             if (allowedToShoot)
             {
                 if( automatic )
@@ -97,14 +113,29 @@ public class GunLogic : MonoBehaviour
                     {
                         if (spread)
                         {
-
+                            bl.water = water;
                             bl.SetPierce(false);
-                            bl.SetFoggy(true);
                             bl.useRandomSpeed = true;
                             bl.SetSpeed(fogBulletSpeed);
                             bl.SetDiameter(fogBulletDiameter);
-                            bl.startingFog = startingFog;
-                            bl.endingFog = endingFog;
+
+                            if(water)
+                            {
+                                bl.SetPierce(true);
+                                bl.startingFog = startingFogWater;
+                                bl.endingFog = endingFogWater;
+                                bl.SetFoggy(false);
+                                bl.SetDiameter(fogBulletDiWater);
+                                bl.lifeSpan = lifeSpanWater;
+                            }
+                            else
+                            {
+                                bl.startingFog = startingFog;
+                                bl.endingFog = endingFog;
+                                bl.SetFoggy(true);
+                                bl.lifeSpan = 150;
+                            }
+
                             bl.startingSize = startingSize;
                             bl.endingSize = endingSize;
                             bl.SetPower(fogDamage * fogDamageMitigationBeforeStopped);
@@ -117,6 +148,7 @@ public class GunLogic : MonoBehaviour
                 {
                     if (!currentlyShooting)
                     {
+                        bl.water = water;
                         bl.SetPierce(false);
                         bl.SetFoggy(false);
                         bl.useRandomSpeed = false;
@@ -138,7 +170,9 @@ public class GunLogic : MonoBehaviour
             currentlyShooting = false;
         }
 
-        //if(Input.GetAxis("Mouse ScrollWheel") != 0)
+
+
+        // For changing shot type
         if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
         {
             if (notPressing)
@@ -160,7 +194,7 @@ public class GunLogic : MonoBehaviour
             notPressing = true;
 
 
-    }
+    } //End FixedUpdate
 
     public void ShootStraight( Vector2 direction )
     {
@@ -180,9 +214,19 @@ public class GunLogic : MonoBehaviour
     public void ShootSpread( Vector2 direction )
     {
         Vector2 original = direction;
-        nextFire = Time.time + secBetweenShots;
+
+        if (water)
+            nextFire = Time.time + secBetweenShotsWater;
+        else
+            nextFire = Time.time + secBetweenShots;
+
         GameObject newBullet = null;
-        for ( int i = 0; i < bulletsPerArc; ++i )
+
+        int bp = bulletsPerArc;
+        if (water)
+            bp = bulletsPerArcWater;
+
+        for ( int i = 0; i < bp; ++i )
         {
             newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             float offset = Random.Range(-arcWidth, arcWidth);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8910060995856525683}
   - component: {fileID: 1533629066462145510}
   - component: {fileID: 7489757834679047789}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 3899910614723024183}
   - component: {fileID: 3502441872960389626}
   - component: {fileID: 7543879485681770656}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7679359779996221193}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 1981863905}
   - component: {fileID: 1981863903}
   - component: {fileID: 7064453183762014341}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: EatTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -386,11 +386,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterSlider: {fileID: 1709516337822492723}
-  lm: {fileID: 7828343727963854610, guid: ea9f729a5b17eab4a9c4ccade9b95921, type: 3}
   maxWater: 100
   waterAmount: 0
   waterLossPerSecond: 1
   betweenWaves: 1
+  dry: 0
 --- !u!1 &3424423427670977330
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 9198765984493147246}
   - component: {fileID: 1774283291036280921}
   - component: {fileID: 7935075128477699808}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4029845884021130840}
   - component: {fileID: 1709516337822492723}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 1076037365121260298}
   - component: {fileID: 2393186480375823771}
   - component: {fileID: 7265934352222637712}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

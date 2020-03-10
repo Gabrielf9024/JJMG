@@ -8,11 +8,12 @@ public class Water : MonoBehaviour
     public Slider waterSlider;
     private LevelManager lm;
 
-    public int maxWater;
-    public int waterAmount;
-    public int waterLossPerSecond;
+    public float maxWater;
+    public float waterAmount;
+    public float waterLossPerSecond;
     public bool betweenWaves = true;
     public bool dry = false;
+    public bool coroRunning = false;
 
     private void Awake()
     {
@@ -23,39 +24,46 @@ public class Water : MonoBehaviour
     {
         waterAmount = maxWater;
         waterSlider.maxValue = maxWater;
-        StartCoroutine(LoseWater());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (betweenWaves != lm.readyForNextLevel)
+            ReadyForLoss();
+        if (!coroRunning && !betweenWaves)
+            ReadyForLoss();
     }
 
     IEnumerator LoseWater()
     {
         while(true)
         {
-            if (waterAmount < 0)
-                waterAmount = 0;
+            betweenWaves = lm.readyForNextLevel;
 
-            if ( waterAmount > 0)
+            if (waterAmount > maxWater)
+                waterAmount = maxWater;
+
+            if( waterAmount > 0 )
             {
-                while (betweenWaves)
-                {
-                    yield return null;
-                    betweenWaves = lm.readyForNextLevel;
-                }
-
-                yield return new WaitForSecondsRealtime(1);
                 waterAmount -= waterLossPerSecond;
-                UpdateSlider();           
+                UpdateSlider();
+                yield return new WaitForSecondsRealtime(1);
             }
-            else
+
+            if (waterAmount <= 0)
             {
+                waterAmount = 0;
                 OutOfWater();
                 break;
             }
         }
+    }
+
+    private void ReadyForLoss()
+    {
+        coroRunning = true;
+        StartCoroutine(LoseWater());
     }
 
     private void UpdateSlider()
@@ -66,5 +74,16 @@ public class Water : MonoBehaviour
     private void OutOfWater()
     {        
         dry = true;
+        coroRunning = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("WaterProjectile"))
+        {
+            waterAmount += collision.gameObject.GetComponent<BulletLogic>().waterValue;
+            UpdateSlider();
+            dry = false;
+        }
     }
 }

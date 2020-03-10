@@ -27,8 +27,13 @@ public class TowerBugEater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( waterScript.dry)
+        if (waterScript.dry)
             anim.SetTrigger("MakeDead");
+        else if (!waterScript.dry && !Eating)
+        {
+            anim.SetTrigger("MakeIdle");
+        }
+
 
         if (!held && !waterScript.dry)
         {

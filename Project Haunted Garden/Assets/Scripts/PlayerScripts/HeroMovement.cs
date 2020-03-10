@@ -14,6 +14,7 @@ public class HeroMovement : MonoBehaviour
     string verticalControl;
 
     public string shootControl;
+    public string waterControl;
     public bool rawInputOn = true;
 
     private float xInput = 0;

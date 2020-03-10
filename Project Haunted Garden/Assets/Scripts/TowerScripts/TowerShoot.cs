@@ -48,6 +48,7 @@ public class TowerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bulletPrefab.GetComponent<BulletLogic>().water = false;
         waterScript = GetComponentInParent<Water>();
         anim = GetComponentInParent<Animator>();
         spiralPositionCounter = 0;
@@ -57,7 +58,9 @@ public class TowerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(waterScript.dry)
+        bulletPrefab.GetComponent<BulletLogic>().water = false;
+
+        if (waterScript.dry)
             anim.SetTrigger("MakeDead");
         else
         {

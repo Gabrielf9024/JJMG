@@ -31,6 +31,8 @@ public class SeekTowerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bulletPrefab.GetComponent<BulletLogic>().water = false;
+
         if (focus != null && seesTarget && allowedToShoot && !waterScript.dry)
         {
             ShootBall();

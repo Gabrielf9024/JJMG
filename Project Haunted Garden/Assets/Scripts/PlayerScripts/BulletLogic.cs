@@ -9,6 +9,7 @@ public class BulletLogic : MonoBehaviour
     public float bulletPower = 5;
 
     [Header("Toggles")]
+    public bool water = false;
     public bool piercing = false;
     public bool foggy = false;
     public bool dieAfterTime = true;
@@ -22,6 +23,9 @@ public class BulletLogic : MonoBehaviour
     public float lifeSpan = 100;
     private float randomSpeed;
     private SpriteRenderer r;
+
+    public Color waterColor;
+    public float waterValue = 1f;
 
     public Color startingFog;
     public Color endingFog;
@@ -37,7 +41,18 @@ public class BulletLogic : MonoBehaviour
         r = GetComponent<SpriteRenderer>();
         randomSpeed = Random.Range(0.5f, 1.5f);
         rb = GetComponent<Rigidbody2D>();
-        lifeSpan += Random.Range(-randomVariator, randomVariator);
+
+        if(!water)
+        {
+            lifeSpan += Random.Range(-randomVariator, randomVariator);
+            gameObject.layer = 8; //Projectile
+        }
+        else
+        {
+            tag = "WaterProjectile";
+            GetComponent<SpriteRenderer>().color = waterColor;
+            gameObject.layer = 14; //Water
+        }
     }
 
     void FixedUpdate()

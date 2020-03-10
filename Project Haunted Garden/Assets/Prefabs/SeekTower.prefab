@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1720568878194781593}
   - component: {fileID: 8729851179031671402}
   - component: {fileID: 1640955288002652103}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022275528254808453}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3505070855293130451}
   - component: {fileID: 8307103585560158154}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 4670570505509008766}
   - component: {fileID: 191767576399836073}
   - component: {fileID: 8628482800987300072}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 6577784315612034296}
   - component: {fileID: 6076644361799584669}
   - component: {fileID: 6577784315612034303}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 6577784316266418318}
   - component: {fileID: 6577784316266418319}
   - component: {fileID: 6577784316266418312}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 6577784316810195016}
   - component: {fileID: 1480658132}
   - component: {fileID: 3811559159054995281}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: SeekTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -676,11 +676,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterSlider: {fileID: 8307103585560158154}
-  lm: {fileID: 7828343727963854610, guid: ea9f729a5b17eab4a9c4ccade9b95921, type: 3}
   maxWater: 100
   waterAmount: 0
   waterLossPerSecond: 1
   betweenWaves: 1
+  dry: 0
 --- !u!1 &7355418381114278862
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 6122497250376447517}
   - component: {fileID: 7567795170075145985}
   - component: {fileID: 1364831943792728502}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

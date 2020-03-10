@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1051848417}
   - component: {fileID: 1051848419}
   - component: {fileID: 706872578}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7788502954212205728}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 2441100774907239484}
   - component: {fileID: 2082624320}
   - component: {fileID: 1401849864042160443}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Tower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -342,11 +342,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterSlider: {fileID: 4366757163540465236}
-  lm: {fileID: 7828343727963854610, guid: ea9f729a5b17eab4a9c4ccade9b95921, type: 3}
   maxWater: 100
   waterAmount: 0
   waterLossPerSecond: 1
   betweenWaves: 1
+  dry: 0
 --- !u!1 &2550738276121081358
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 7885687186257012520}
   - component: {fileID: 2958947516089686076}
   - component: {fileID: 2650150765617811971}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 7694981561860991297}
   - component: {fileID: 1982190949001598326}
   - component: {fileID: 4236744019065502597}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 1372458005501843117}
   - component: {fileID: 4421647306524118235}
   - component: {fileID: 3437339762036127848}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 4943942771291368077}
   - component: {fileID: 5069859060467820504}
   - component: {fileID: 2516467691040488874}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8879192615463850642}
   - component: {fileID: 4366757163540465236}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
