@@ -149,7 +149,15 @@ public class GunLogic : MonoBehaviour
                     if (!currentlyShooting)
                     {
                         bl.water = water;
-                        bl.SetPierce(false);
+                        if (water)
+                        {
+                            bl.SetPierce(true);
+                            bl.waterValue = 10;
+                        }
+                        else
+                        {
+                            bl.SetPierce(false);
+                        }
                         bl.SetFoggy(false);
                         bl.useRandomSpeed = false;
                         bl.SetSpeed(semiAutoBulletSpeed);

@@ -33,6 +33,8 @@ public class TowerBugEater : MonoBehaviour
         {
             anim.SetTrigger("MakeIdle");
         }
+        else if (Eating)
+            anim.SetTrigger("MakeClosed");
 
 
         if (!held && !waterScript.dry)
@@ -53,7 +55,7 @@ public class TowerBugEater : MonoBehaviour
 
             if (colliders != null && !Eating)
             {
-                anim.SetTrigger("MakeClosed");
+                //anim.SetTrigger("MakeClosed");
                 Eating = true;
                 //Eats the first object it sees or one furthest away from it within the radius when done eating 
                 Destroy(food.gameObject);
@@ -67,7 +69,7 @@ public class TowerBugEater : MonoBehaviour
                     GetComponent<TowerHealth>().THealth = Mathf.Round(GetComponent<TowerHealth>().THealth);
                     Eating = false;
                     EatTimer = 0f;
-                    anim.SetTrigger("MakeIdle");
+                    //anim.SetTrigger("MakeIdle");
 
                 }
             }
