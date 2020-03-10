@@ -6,21 +6,37 @@ public class TowerTimer : MonoBehaviour
 {
     public float timerLife;
     public float IncLife;
+    public float HarvestTimeSeeds;
+    public float timeElapsed;
+    private bool ready;
 
     public bool Watered;
     public bool PickedUp;
+    private bool CanHarvest;
+    private bool play;
+    private bool harvested;
+    private int check = 0;
+
+    private Inventory inventory;
+    public GameObject seedImage;
+    public GameObject light;
+    private GameObject lightPart;
 
     // Start is called before the first frame update
     void Start()
     {
         Watered = false;
         PickedUp = false;
+        play = false;
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeElapsed += Time.deltaTime;
         WasIWatered();
+        CheckHarvestTime();
         if (timerLife > 0 && !PickedUp)
         {
             timerLife -= Time.deltaTime;
@@ -30,11 +46,11 @@ public class TowerTimer : MonoBehaviour
             timerLife -= 1.0f;
             GetComponent<TowerHealth>().THealth -= .5f;
         }
-        if (timerLife <= 0)
+        /*if (timerLife <= 0)
         {
             //GetComponent<TowerShoot>().enabled = false;
             GetComponent<TowerHealth>().THealth -= Time.deltaTime * 1.5f;
-        }
+        }*/
     }
     public void WasIWatered()
     {
@@ -59,6 +75,53 @@ public class TowerTimer : MonoBehaviour
             {
                 GetComponent<TowerShoot>().enabled = true;
             }*/
+        }
+    }
+    public void CheckHarvestTime()
+    {
+        if (timeElapsed >= HarvestTimeSeeds)
+        {
+            if (!play)
+            {
+                lightPart = Instantiate(light, transform, false);
+                play = true;
+            }
+            CanHarvest = true;
+        }
+        else
+        {
+            CanHarvest = false;
+        }
+    }
+    public void AmountToGive()
+    {
+        if (CanHarvest)
+        {
+            for (int i = 0; i < inventory.slots.Length; i++)
+            {
+                if (inventory.isFull[i] == false)
+                {
+                    inventory.isFull[i] = true;
+                    Instantiate(seedImage, inventory.slots[i].transform, false);
+                    check++;
+                    break;
+                }
+            }
+            timeElapsed = 0;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (check < 4)
+            {
+                AmountToGive();
+                Destroy(lightPart, .5f);
+                play = false;
+                harvested = true;
+                CanHarvest = false;
+            }
         }
     }
     public void wasIPickedUp()
