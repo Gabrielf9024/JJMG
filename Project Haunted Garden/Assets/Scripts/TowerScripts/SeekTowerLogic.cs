@@ -37,14 +37,20 @@ public class SeekTowerLogic : MonoBehaviour
             StartCoroutine(Wait(cooldownInSeconds));
         }
 
-        if(focus != null)
-        {
-            anim.SetTrigger("MakeShoot");
-        }
+        if(waterScript.dry)
+            anim.SetTrigger("MakeDead");
         else
         {
-            anim.SetTrigger("MakeIdle");
+            if (focus != null)
+            {
+                anim.SetTrigger("MakeShoot");
+            }
+            else
+            {
+                anim.SetTrigger("MakeIdle");
+            }
         }
+
     }
 
     IEnumerator Wait(float cd)

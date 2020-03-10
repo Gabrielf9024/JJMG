@@ -27,6 +27,9 @@ public class TowerBugEater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if( waterScript.dry)
+            anim.SetTrigger("MakeDead");
+
         if (!held && !waterScript.dry)
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);

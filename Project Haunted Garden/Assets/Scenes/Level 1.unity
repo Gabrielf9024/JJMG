@@ -416,7 +416,7 @@ PrefabInstance:
     - target: {fileID: 2794780201532780290, guid: 94c109c09c4136f4894c0215365c0251,
         type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.48235294
       objectReference: {fileID: 0}
     - target: {fileID: 2794780201532780291, guid: 94c109c09c4136f4894c0215365c0251,
         type: 3}
@@ -433,6 +433,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7064453183762014341, guid: 94c109c09c4136f4894c0215365c0251,
+        type: 3}
+      propertyPath: maxWater
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c109c09c4136f4894c0215365c0251, type: 3}
 --- !u!1001 &827979499
@@ -442,6 +447,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3811559159054995281, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
+        type: 3}
+      propertyPath: maxWater
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6122497250376447517, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -506,6 +516,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577784316810195018, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577784316810195018, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577784316810195018, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6577784316810195061, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
         type: 3}
@@ -27863,6 +27888,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2082624320, guid: 4e4c1b88646ee764183abd239c2d4022, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082624320, guid: 4e4c1b88646ee764183abd239c2d4022, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082624320, guid: 4e4c1b88646ee764183abd239c2d4022, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1372458005501843117, guid: 4e4c1b88646ee764183abd239c2d4022,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -27877,6 +27914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: waterLossPerSecond
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401849864042160443, guid: 4e4c1b88646ee764183abd239c2d4022,
+        type: 3}
+      propertyPath: maxWater
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2531769536847327795, guid: 4e4c1b88646ee764183abd239c2d4022,
         type: 3}

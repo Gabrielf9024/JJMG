@@ -57,13 +57,19 @@ public class TowerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (seesTarget)
-            anim.SetTrigger("MakeShoot");
+        if(waterScript.dry)
+            anim.SetTrigger("MakeDead");
         else
         {
-            anim.SetTrigger("MakeIdle");
-            StopCoroutine(SpawnSpiral());
+            if (seesTarget)
+                anim.SetTrigger("MakeShoot");
+            else
+            {
+                anim.SetTrigger("MakeIdle");
+                StopCoroutine(SpawnSpiral());
+            }
         }
+
 
         ++count;
         if (count % cooldown == 0 && seesTarget && !waterScript.dry) {

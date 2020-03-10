@@ -65,7 +65,6 @@ public class Water : MonoBehaviour
 
     private void OutOfWater()
     {        
-        GetComponent<Animator>().enabled = false;
         dry = true;
     }
 }
