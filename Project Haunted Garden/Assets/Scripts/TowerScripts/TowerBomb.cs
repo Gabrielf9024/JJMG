@@ -11,6 +11,9 @@ public class TowerBomb : MonoBehaviour
 
     public bool Explode;
     public bool held;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +58,9 @@ public class TowerBomb : MonoBehaviour
                     //stun
                 }
             }
+            --GetComponentInParent<BombSpawn>().bombCount;
             Destroy(gameObject);
+            
         }
     }
 }

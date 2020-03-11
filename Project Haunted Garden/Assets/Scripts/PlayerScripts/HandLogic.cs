@@ -30,7 +30,6 @@ public class HandLogic : MonoBehaviour
         {
             holding = false;
             GetComponentInParent<GunLogic>().allowedToShoot = true;
-
         }
 
         if(Input.GetAxisRaw(pickupControl) != 0 && !pickupBeingUsed)

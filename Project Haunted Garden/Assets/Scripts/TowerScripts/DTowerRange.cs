@@ -8,10 +8,14 @@ public class DTowerRange : MonoBehaviour
     private int size;
     public GameObject FocusObj;
     private int NumMax;
+    SpriteRenderer rangeIndicator;
 
     // Start is called before the first frame update
     void Start()
     {
+        rangeIndicator = GetComponent<SpriteRenderer>();
+        rangeIndicator.enabled = false;
+
         size = 0;
     }
 
@@ -20,14 +24,13 @@ public class DTowerRange : MonoBehaviour
     {
         if (GetComponentInParent<Movable>().pickedUp)
         {
-            GetComponent<SpriteRenderer>().enabled = true;
+            rangeIndicator.enabled = true;
+
             if (GetComponentInParent<Movable>().canBeDropped)
-                GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, .45f);
+                rangeIndicator.color = new Color(255, 255, 255, .45f);
             else
-                GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, .45f);
+                rangeIndicator.color = new Color(255, 0, 0, .45f);
         }
-        else
-            GetComponent<SpriteRenderer>().enabled = false;
 
         if( CollidedWith.Count == 0 )
             gameObject.transform.parent.GetComponentInChildren<SeekTowerLogic>().seesTarget = false;
@@ -45,6 +48,9 @@ public class DTowerRange : MonoBehaviour
             size++;
             CollidedWith.Add(collision.gameObject);
         }
+        if (collision.CompareTag("Hand"))
+            rangeIndicator.enabled = true;
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -54,6 +60,8 @@ public class DTowerRange : MonoBehaviour
             size--;
             FindMaxWP();
         }
+        if (collision.CompareTag("Hand"))
+            rangeIndicator.enabled = false;
     }
     public void FindMaxWP() //Targets the enemy that is farthest down the path
     {

@@ -39,7 +39,7 @@ public class GunLogic : MonoBehaviour
     private Transform rotationPoint;
     private string shootControl;
     private string waterControl;
-    private bool currentlyShooting = false;
+    public bool currentlyShooting = false;
     private float nextFire = 0f;
 
 
@@ -121,6 +121,8 @@ public class GunLogic : MonoBehaviour
 
                             if(water)
                             {
+                                bl.waterValue = .1f;
+
                                 bl.SetPierce(true);
                                 bl.startingFog = startingFogWater;
                                 bl.endingFog = endingFogWater;
@@ -173,7 +175,7 @@ public class GunLogic : MonoBehaviour
                 }
             }
         }
-        if (Input.GetAxisRaw(shootControl) == 0)
+        if (Input.GetAxisRaw(shootControl) == 0 && Input.GetAxisRaw(waterControl) == 0)
         {
             currentlyShooting = false;
         }
@@ -206,7 +208,6 @@ public class GunLogic : MonoBehaviour
 
     public void ShootStraight( Vector2 direction )
     {
-        nextFire = Time.time + secBetweenShots;
         GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity );
         newBullet.GetComponent<BulletLogic>().SetDirection( direction.normalized );
         StartCoroutine(Wait(cooldownInSec));

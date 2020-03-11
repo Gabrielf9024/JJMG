@@ -6,10 +6,12 @@ public class TowerRange : MonoBehaviour
 {
     public int enemyCount = 0;
 
+    SpriteRenderer rangeIndicator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rangeIndicator = GetComponent<SpriteRenderer>();
+        rangeIndicator.enabled = false;
     }
 
     // Update is called once per frame
@@ -17,14 +19,13 @@ public class TowerRange : MonoBehaviour
     {
         if (GetComponentInParent<Movable>().pickedUp)
         {
-            GetComponent<SpriteRenderer>().enabled = true;
+            rangeIndicator.enabled = true;
+
             if (GetComponentInParent<Movable>().canBeDropped)
                 GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, .45f);
             else
                 GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, .45f);
         }
-        else
-            GetComponent<SpriteRenderer>().enabled = false;
 
         if (enemyCount == 0)
             transform.parent.GetComponentInChildren<TowerShoot>().seesTarget = false;
@@ -36,10 +37,16 @@ public class TowerRange : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
             ++enemyCount;
+        if(collision.CompareTag("Hand"))
+            rangeIndicator.enabled = true;
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
             --enemyCount;
+        if(collision.CompareTag("Hand"))
+            rangeIndicator.enabled = false;
+
     }
 }

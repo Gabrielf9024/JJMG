@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class EatRange : MonoBehaviour
 {
+
+    SpriteRenderer rangeIndicator;
+
     // Start is called before the first frame update
     void Start()
     {
+        rangeIndicator = GetComponent<SpriteRenderer>();
+        rangeIndicator.enabled = false;
 
     }
 
@@ -15,13 +20,25 @@ public class EatRange : MonoBehaviour
     {
         if (GetComponentInParent<Movable>().pickedUp)
         {
-            GetComponent<SpriteRenderer>().enabled = true;
+            rangeIndicator.enabled = true;
+
             if (GetComponentInParent<Movable>().canBeDropped)
-                GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, .45f);
+                rangeIndicator.color = new Color(255, 255, 255, .45f);
             else
-                GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, .45f);
+                rangeIndicator.color = new Color(255, 0, 0, .45f);
         }
-        else
-            GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Hand"))
+            rangeIndicator.enabled = true;
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Hand"))
+            rangeIndicator.enabled = false;
+
     }
 }

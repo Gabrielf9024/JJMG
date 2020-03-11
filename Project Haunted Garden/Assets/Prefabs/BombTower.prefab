@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3487596359641383621}
   m_Layer: 9
   m_Name: Base
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,8 @@ MonoBehaviour:
   countDown: 0
   Explode: 0
   held: 0
+  bombSpawner: {fileID: 3811599569768625092, guid: e7ca2eeb9a38fbc40b133b6cd4d2d884,
+    type: 3}
 --- !u!95 &3487596359929298585
 Animator:
   serializedVersion: 3
@@ -239,7 +241,7 @@ GameObject:
   - component: {fileID: 3972318430525718285}
   m_Layer: 15
   m_Name: Range
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
