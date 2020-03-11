@@ -7,6 +7,7 @@ public class TowerBomb : MonoBehaviour
     public float TExplode;
     public float dmg;
     public float radius;
+    public bool countDown = false;
 
     public bool Explode;
     public bool held;
@@ -20,13 +21,16 @@ public class TowerBomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TExplode >= 0 && !Explode && !held)
+        if( countDown )
         {
-            TExplode -= Time.deltaTime;
-        }
-        if (TExplode >= 0 && !Explode && held)
-        {
-            TExplode -= Time.deltaTime * .5f;
+            if (TExplode >= 0 && !Explode && !held)
+            {
+                TExplode -= Time.deltaTime;
+            }
+            if (TExplode >= 0 && !Explode && held)
+            {
+                TExplode -= Time.deltaTime * .5f;
+            }
         }
         TimeToExplode();
     }

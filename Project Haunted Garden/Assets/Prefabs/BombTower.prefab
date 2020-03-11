@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3487596359641383675}
   - component: {fileID: 3487596359641383621}
-  - component: {fileID: 3487596359641383674}
   m_Layer: 9
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,23 +47,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.21}
   serializedVersion: 2
   m_Radius: 1.93
---- !u!114 &3487596359641383674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3487596359641383672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecd5cc37f0f0e8498edb0c0caa732d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TExplode: 10
-  dmg: 0
-  radius: 0
-  Explode: 0
-  held: 0
 --- !u!1 &3487596359929298590
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,9 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ecd5cc37f0f0e8498edb0c0caa732d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TExplode: 10
-  dmg: 0
-  radius: 0
+  TExplode: 2
+  dmg: 100
+  radius: 3
+  countDown: 0
   Explode: 0
   held: 0
 --- !u!95 &3487596359929298585
@@ -253,9 +236,10 @@ GameObject:
   - component: {fileID: 3487596360626016536}
   - component: {fileID: 3487596360626016537}
   - component: {fileID: 3487596360626016542}
-  m_Layer: 9
+  - component: {fileID: 3972318430525718285}
+  m_Layer: 15
   m_Name: Range
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,3 +344,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3972318430525718285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487596360626016540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e509db7de71094b479064274f0abac4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

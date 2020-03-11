@@ -42,7 +42,8 @@ public class LevelManager : MonoBehaviour
             }
             foreach( GameObject tower in towers)
             {
-                tower.GetComponent<Water>().betweenWaves = true;
+                if( tower.GetComponent<Water>() != null)
+                    tower.GetComponent<Water>().betweenWaves = true;
             }
 
         }

@@ -26,6 +26,13 @@ public class HandLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (closest == null)
+        {
+            holding = false;
+            GetComponentInParent<GunLogic>().allowedToShoot = true;
+
+        }
+
         if(Input.GetAxisRaw(pickupControl) != 0 && !pickupBeingUsed)
         {
             pickupBeingUsed = true;
