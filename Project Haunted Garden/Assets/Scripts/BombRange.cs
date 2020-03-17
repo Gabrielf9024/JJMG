@@ -22,8 +22,12 @@ public class BombRange : MonoBehaviour
     {
         if( collision.CompareTag("Enemy"))
         {
-            GetComponentInParent<TowerBomb>().countDown = true;
-            anim.SetFloat("Speed", 5f);
+            if( !GetComponentInParent<Movable>().pickedUp )
+            {
+                GetComponentInParent<TowerBomb>().countDown = true;
+                anim.SetFloat("Speed", 5f);
+                GetComponentInParent<Movable>().enabled = false;
+            }
         }
     }
 }

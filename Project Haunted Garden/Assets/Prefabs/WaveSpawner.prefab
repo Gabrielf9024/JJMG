@@ -47,6 +47,14 @@ MonoBehaviour:
   ordinal: 0
   enemyGroupList: []
   groupIndex: 0
+  currentGroup:
+    Name: Enemy
+    enemy: {fileID: 0}
+    groupSize: 0
+    speed: 0
+    health: 0
+    delayWithinGroup: 0.2
+    delayAfterPrevGroup: 1
   doneSpawning: 0
 --- !u!212 &7080528168717577612
 SpriteRenderer:
@@ -87,7 +95,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1d348f1d634b71d4caf741c3aa5c527d, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
