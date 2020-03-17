@@ -34,9 +34,11 @@ public class TowerTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeElapsed += Time.deltaTime;
         WasIWatered();
-        CheckHarvestTime();
+        if (timerLife > 0) {
+            timeElapsed += Time.deltaTime;
+            CheckHarvestTime();
+        }
         if (timerLife > 0 && !PickedUp)
         {
             timerLife -= Time.deltaTime;
@@ -46,11 +48,11 @@ public class TowerTimer : MonoBehaviour
             timerLife -= 1.0f;
             GetComponent<TowerHealth>().THealth -= .5f;
         }
-        /*if (timerLife <= 0)
+        if (timerLife <= 0)
         {
             //GetComponent<TowerShoot>().enabled = false;
-            GetComponent<TowerHealth>().THealth -= Time.deltaTime * 1.5f;
-        }*/
+            GetComponent<Animator>().enabled = false;
+        }
     }
     public void WasIWatered()
     {
@@ -71,10 +73,10 @@ public class TowerTimer : MonoBehaviour
                 }
             }
             Watered = !Watered;
-            /*if (timerLife <=0)
+            if (timerLife <=0)
             {
-                GetComponent<TowerShoot>().enabled = true;
-            }*/
+                GetComponent<Animator>().enabled = false;
+            }
         }
     }
     public void CheckHarvestTime()
@@ -86,7 +88,8 @@ public class TowerTimer : MonoBehaviour
                 lightPart = Instantiate(light, transform, false);
                 play = true;
             }
-            CanHarvest = true;
+            if (timerLife >=1)
+                CanHarvest = true;
         }
         else
         {

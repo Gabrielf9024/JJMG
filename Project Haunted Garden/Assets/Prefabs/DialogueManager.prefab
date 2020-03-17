@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5009489192893909159
 Transform:
   m_ObjectHideFlags: 0
@@ -47,12 +47,13 @@ MonoBehaviour:
   continueButton: {fileID: 0}
   TextBox: {fileID: 0}
   index: 0
-  level: 0
+  level: 11
   x: 0
   Textspeed: 0
   Notes: 'Character list params: ALOE, IVY, LILY, NARRATOR'
   DialogueList:
-  - dialogue:
+  - Scene: EXT. SIDEWALK OUTSIDE - DAY
+    dialogue:
     - 'Narrator: In a completely normal street in a completely normal city, a girl
       named Aloe walks her cute but annoying dog Ivy. Aloe looks at her phone with
       an anxious look on her face.'
@@ -99,7 +100,8 @@ MonoBehaviour:
     - 'Narrator: Aloe makes it in time to see where Ivy is going, so she follows
       her puppy into the great unknown, and starts an adventure that they never expected
       or wanted for that matter. '
-  - dialogue:
+  - Scene: EXT. ON MANSION PROPERTY - DAY
+    dialogue:
     - 'Narrator: Aloe goes through the hedge to find Ivy playing among some dead
       plants on what seems to be an old long overgrown garden'
     - "Aloe: Ok Ivy you've had your fun, you made me get all dirty, now let\u2019s
@@ -128,7 +130,8 @@ MonoBehaviour:
       too bad now'
     - 'Narrator: Aloe turns and runs as fast as she can following closely behind
       her "loyal" companion '
-  - dialogue:
+  - Scene: INT.INSIDE MANSION - DAY
+    dialogue:
     - 'Narrator: Aloe and Ivy make it to the mansion and open the door hoping that
       it still works because from the look of it, it hasn''t been used for years.
       Luckily enough for them it does open'
@@ -177,56 +180,8 @@ MonoBehaviour:
       Ivy '
     - 'Aloe: I look forward to do some monster hunting with you'
     - 'Lily: Likewise!'
-  - dialogue:
-    - 'Narrator: Aloe and Ivy make it to the mansion and open the door hoping that
-      it still works because from the look of it, it hasn''t been used for years.
-      Luckily enough for them it does open'
-    - 'Aloe: We made it inside thank god, I thought it was all over Ivy'
-    - 'Ivy: Bark (I know right that thing was huge, I mean I''m a dog I knew I could
-      run away fast, I was worried about you)'
-    - 'Narrator: While the two trespassers celebrate their continued existence, something
-      comes up to Aloe in an attempt to get her attention'
-    - 'Lily: Well excuse me who might you be?'
-    - 'Aloe: Oh my god!!, I''m so sorry I thought this house was empty and there
-      was a big bug outside and and...'
-    - 'Lily: How did you even get in here, logically that shouldn''t be possible'
-    - 'Aloe: Well the door was unlocked...'
-    - 'Narrator: Then out of the corner of her eye, LILY sees Ivy for the first time
-      and instantly falls madly in love'
-    - 'Lily: Oh and who might you be little one, aren''t you adorable'
-    - 'Lily: Come with me little one I might have some treats for you'
-    - "Ivy: Bark (I\u2019m not adorable, I'm vicious just for your information. However
-      if we are getting treats I will follow you)"
-    - 'Aloe: I don''t mean to be rude, mainly because I did just break into your
-      home, but would you know how we could leave'
-    - 'Lily: The hedges were made to keep those things in here at all cost, the fact
-      that you were able to come in here is honestly very strange'
-    - 'Lily: Well you could try killing all the bugs, but that would be a selfish
-      thing for me to ask you to do, MY APOLOGIES THIS IS ALL MY FAULT!'
-    - 'Aloe: Uhhh, your fine I''m the one that broke into your house'
-    - "Aloe: well if I can\u2019t leave I'm gonna die in here"
-    - 'Lily: I know you want to leave, but you have to realize how dangerous it is
-      to combat those things, I should know they already got to me'
-    - 'Aloe: What do you mean they "got you?"'
-    - 'Lily: Oh I''m sorry I thought it was obvious, I''m dead'
-    - 'Aloe: Oh I''m dreaming right none of this is real, that would make so much
-      sense'
-    - 'Lily: No this is very real, and if you want to go out there with those thing
-      you might end up in my shoes'
-    - 'Lily: But if you want to try, I could provide you with some tools'
-    - 'Ivy: Bark (So...you''re gonna use the inventions of a ghost girl to kill giant
-      killer insects you might already be dead Aloe)'
-    - 'Aloe: Well this does explain why you look like you''re glowing, it might make
-      sense, I guess'
-    - 'Aloe: I am going to need an explanation but I guess that can wait for now'
-    - 'Aloe: By the way I don''t think I ever caught your name'
-    - 'Lily: Oh of course, my name is Lillian Stargazer, but you may call me Lily
-      for short '
-    - 'Aloe: Well nice to meet you Lily, I''m Aloe, and this little guy is my dog
-      Ivy '
-    - 'Aloe: I look forward to do some monster hunting with you'
-    - 'Lily: Likewise!'
-  - dialogue:
+  - Scene: EXT. OUTSIDE MANSION - DAY
+    dialogue:
     - 'Narrator: The next morning the girls go outside to train in the art of giant
       insect extermination'
     - 'Aloe: Ok so I''m going to need some explanations on some things'
@@ -258,7 +213,8 @@ MonoBehaviour:
     - 'Lily: REALLY, well you can count on me Aloe '
     - 'Lily: Come along Ivy let me get you some snacks as we await your master''s
       return'
-  - dialogue:
+  - Scene: INT.INSIDE MANSION - NIGHT
+    dialogue:
     - 'Narrator: After a day full of killing bugs, Aloe made her way back to the
       mansion with her close covered in dirt and bug guts.She finds Ivy lazing around
       per usual, while Lily seems to be waiting for her next to the window at the
@@ -292,7 +248,8 @@ MonoBehaviour:
       good time to rest'
     - 'Aloe: Well it has been a long day, good night Lily'
     - 'Lily: Good night don''t let the giant mutant bugs bite!'
-  - dialogue:
+  - Scene: ' EXT. OUTSIDE MANSION - DAY '
+    dialogue:
     - 'Lily: Alright Aloe the next place you should clear are the fountains'
     - 'Lily: Just so you know the fountains could get in your way'
     - 'Lily: You should maybe place plants in areas that may be hard to reach for
@@ -305,7 +262,8 @@ MonoBehaviour:
       that to myself)"
     - "Aloe: Thanks for the support Ivy, I\u2019ll see you tonight no need to worry
       about me!"
-  - dialogue:
+  - Scene: INT.INSIDE MANSION - NIGHT
+    dialogue:
     - 'Narrator: After a day of admiring Victorian architecture, and tripping over
       the cobblestone paths that have long been neglected, Lily arrives back at the
       mansion. Lily greets her with a smile and a fresh plate of cookies, while Ivy
@@ -344,7 +302,8 @@ MonoBehaviour:
     - 'Lily: OH MY, OH MY we have to help the poor little fellow'
     - 'Narrator: The two help the poor little pup, and decided to go to bed shortly
       after '
-  - dialogue:
+  - Scene: EXT. OUTSIDE MANSION - DAY
+    dialogue:
     - 'Narrator: Our two plant lovers turned heroes continue their campaign to get
       back to the outside world the next day'
     - 'Lily: Aloe, our next problem area is going to be the lake'
@@ -354,7 +313,8 @@ MonoBehaviour:
     - "Ivy: Bark (So I can\u2019t go take a dip in the lake that's disappointing,
       I was looking forward to that)"
     - "Aloe: Alright Ivy I\u2019ll be off, don\u2019t miss me too much"
-  - dialogue:
+  - Scene: INT.INSIDE MANSION - NIGHT
+    dialogue:
     - 'Narrator: Aloe returns to the mansion sopping wet from falling in the lake
       a few times while fighting through wave and wave of monsters'
     - 'Lily: Oh Aloe you''re soaked here take a towel, thank goodness that I have
@@ -412,7 +372,8 @@ MonoBehaviour:
     - 'Lily: Well it seems we both have our struggles, but it seems that what matters
       isn''t the bad things that happens but how you deal with it'
     - 'Lily: Maybe you are rubbing off on me Aloe '
-  - dialogue:
+  - Scene: EXT. OUTSIDE MANSION - DAY
+    dialogue:
     - "Narrator: The final battle was about to start, there was a dark aura in the
       air, the skies became clouded and thunder could be heard in the distance, it\u2019s
       as if the whole world knew what was about to happen"
@@ -428,7 +389,8 @@ MonoBehaviour:
       you!)'
     - 'Aloe: Don''t worry Ivy, everything is going to be alright don''t worry I''m
       gonna take you home.'
-  - dialogue:
+  - Scene: EXT. ON PORCH - TWILIGHT
+    dialogue:
     - 'Narrator: The battle is won, but it doesn''t feel like the end it all just
       seems to quiet. Aloe returns to The house to see Lily and Ivy in anxiously
       waiting for her return. Ivy runs to aloes side running around her, clearly
@@ -468,7 +430,8 @@ MonoBehaviour:
     - 'Narrator: The sunlight starts to drown the room, and lily soon finds herself
       engulfed with no reference for what surrounds her then everything comes back
       into focus'
-  - dialogue:
+  - Scene: INT.NARRATION
+    dialogue:
     - 'Aloe: When the light died down I was in a flower field, someone I didn''t
       know was shining a flashlight in my face'
     - 'Aloe: I don''t remember much after that until I woke up in the hospital '

@@ -215,11 +215,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerLife: 100
   IncLife: 5
-  HarvestTimeSeeds: 1
+  HarvestTimeSeeds: 20
   timeElapsed: 0
   Watered: 0
   PickedUp: 0
-  seedImage: {fileID: 206541760064479070, guid: 899003b7003c4a94db4c74f2f3558eae,
+  seedImage: {fileID: 6645575207194336830, guid: 3f09b49c6090cb949853875fdcc1ae3b,
     type: 3}
   light: {fileID: 6316019830634543675, guid: 6afa4d5330f1f3e43841e40f7b42d024, type: 3}
 --- !u!1 &57655602
@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 57655605}
   - component: {fileID: 57655604}
   - component: {fileID: 57655603}
+  - component: {fileID: 57655606}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -258,7 +259,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 0, b: 0.8354292, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -305,6 +306,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &57655606
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57655602}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b22ac53e586c101499aeb744041d8b07, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &157672174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5245567699738582320, guid: d928e7fa1eb8e9a42a531302b49465b8,
@@ -574,12 +671,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf244d6728edab48a3e5c9e8e7c9304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &493345644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2499033455120013003, guid: d928e7fa1eb8e9a42a531302b49465b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1505160395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &569825055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5245567698901985749, guid: d928e7fa1eb8e9a42a531302b49465b8,
     type: 3}
   m_PrefabInstance: {fileID: 1505160395}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &692165352
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2507662320715176554, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176555, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_Name
+      value: GunSounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5761757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6334781
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7010.9844
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507662320715176565, guid: 160451811a88f9e4898219e11cf80785,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 160451811a88f9e4898219e11cf80785, type: 3}
 --- !u!1001 &764752084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -587,46 +764,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.size
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.size
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].dialogue.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.size
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[7].dialogue.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.size
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.size
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].dialogue.Array.size
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
       propertyPath: textD
       value: 
@@ -639,762 +776,6 @@ PrefabInstance:
       propertyPath: TextBox
       value: 
       objectReference: {fileID: 1879199930}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[0].Scene
-      value: EXT. SIDEWALK OUTSIDE - DAY
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[1].Scene
-      value: EXT. ON MANSION PROPERTY - DAY
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[2].Scene
-      value: INT.INSIDE MANSION - DAY
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].Scene
-      value: EXT. OUTSIDE MANSION - DAY
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].Scene
-      value: INT.INSIDE MANSION - NIGHT
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[0]
-      value: 'Narrator: The next morning the girls go outside to train in the art
-        of giant insect extermination'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[1]
-      value: 'Aloe: Ok so I''m going to need some explanations on some things'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[2]
-      value: 'Aloe: First, why are you not leaving your porch?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[3]
-      value: 'Lily: Well you see Aloe, the second I try to leave my home my body
-        starts to disappear, I would rather not do that'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[4]
-      value: 'Aloe: Fair enough, next question. What is this contraption that looks
-        like a fire extinguisher? '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[5]
-      value: "Lily: Well that's my Bug Spray-O-matic, it should turn those bugs back
-        to normal or kill them I can\u2019t really be sure"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[6]
-      value: 'Lily: Just make sure not to breathe in the spray'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[7]
-      value: 'Aloe: Wonderful!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[8]
-      value: 'Lily: You should take these too Lily hands aloe a small pouch full
-        of seeds '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[9]
-      value: 'Aloe: How are seeds supposed to help keep me from being eaten alive?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[10]
-      value: 'Lily: Well maybe you should try planting them to see'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[11]
-      value: 'Narrator: Aloe proceeds to plant one of the seeds, and as if by magic
-        a large plant sprouts from the ground and starts spraying wildly eventually
-        hitting a bug that was slowly making its way to the pair of exterminators'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[12]
-      value: 'Aloe: Well Lily I must say you are full of surprises'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[13]
-      value: 'Lily: Why thank you, and just for your information make sure to keep
-        those plants watered, or else they could die relatively quickly'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[14]
-      value: 'Lily: Alright, well you should start with the garden it should be the
-        easiest part of the house to take care of '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[15]
-      value: 'Aloe: Alright well wish me luck, well Ivy are you going to join me'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[16]
-      value: 'Narrator: Ivy walks toward lily and starts to trot around her'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[17]
-      value: 'Ivy: Bark (well you see Aloe, lily here has snacks and honestly I would
-        rather not be running around next to a real life piranha plants)'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[18]
-      value: "Aloe: I guess you can say with Lily as long as she\u2019s ok with it"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[19]
-      value: 'Lily: REALLY, well you can count on me Aloe '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[3].dialogue.Array.data[20]
-      value: 'Lily: Come along Ivy let me get you some snacks as we await your master''s
-        return'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[0]
-      value: 'Narrator: After a day full of killing bugs, Aloe made her way back
-        to the mansion with her close covered in dirt and bug guts.She finds Ivy
-        lazing around per usual, while Lily seems to be waiting for her next to the
-        window at the front of the house'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[1]
-      value: 'Lily: YOU HAVE RETURNED, I had my doubts but it seems like they were
-        misplaced'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[2]
-      value: "Aloe: Well I am glad I\u2019m not dead too, but I do have a question"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[3]
-      value: 'Aloe: I found it strange that all the bugs seemed to be attracted to
-        your house, is there a reason why?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[4]
-      value: 'Lily: Well that''s a long story, but I could tell you if you would
-        like'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[5]
-      value: 'Aloe: I''m all ears'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[6]
-      value: 'Lily: Well you see I am the only, or was rather, the only daughter
-        of the stargazer family'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[7]
-      value: 'Lily: This meant I had a lot of expectations placed on me, mainly I
-        was to be the head of my father''s company after his passing, as he did not
-        trust outsiders'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[8]
-      value: 'Lily: You see my father was a manufacturing plant in the city, but
-        I never had any interest in that path, I always found comfort in the garden
-        that surrounded our home'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[9]
-      value: 'Lily: I would help plant vegetables and trees, my father would scold
-        me but that would never stop me from escaping into the garden as if it was
-        another world just for me'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[10]
-      value: 'Lily: I remember telling him that I wanted to go to school for botany,
-        he was furious'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[11]
-      value: 'Aloe: Wait you were in school for botany, that such a coincidence I''m
-        in school for plant biology'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[12]
-      value: 'Lily: Well no wonder you were such a wiz in the garden, I should have
-        known you were a fellow green thumb!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[13]
-      value: 'Ivy: Bark(Well if you too are going to keep telling campfire stories
-        could you at least do it a little more quiet, some of us had a rough day) '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[14]
-      value: 'Lily: Well it looks like little Ivy is getting tired maybe this would
-        be a good time to rest'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[15]
-      value: 'Aloe: Well it has been a long day, good night Lily'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[4].dialogue.Array.data[16]
-      value: 'Lily: Good night don''t let the giant mutant bugs bite!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].dialogue.Array.data[0]
-      value: 'Lily: Alright Aloe the next place you should clear are the fountains'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].dialogue.Array.data[1]
-      value: 'Lily: Just so you know the fountains could get in your way'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].dialogue.Array.data[2]
-      value: 'Lily: You should maybe place plants in areas that may be hard to reach
-        for you, so that you don''t get overwhelmed!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].dialogue.Array.data[3]
-      value: 'Aloe: Thanks Lily without your help, I would definitely be a goner'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].dialogue.Array.data[4]
-      value: "Lily: Oh don't thank me, it\u2019s my fault that we are in this situation
-        in the first place"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].dialogue.Array.data[5]
-      value: "Ivy: Bark! Bark! (Well technically it\u2019s my fault Aloe is in this
-        mess, but I don't think they understand what I\u2019m saying so I guess I
-        can keep that to myself)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].dialogue.Array.data[6]
-      value: "Aloe: Thanks for the support Ivy, I\u2019ll see you tonight no need
-        to worry about me!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[0]
-      value: 'Narrator: After a day of admiring Victorian architecture, and tripping
-        over the cobblestone paths that have long been neglected, Lily arrives back
-        at the mansion. Lily greets her with a smile and a fresh plate of cookies,
-        while Ivy runs around the room with flower on her fur.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[1]
-      value: 'Lily: Aloe, I made cookies isn''t that great!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[2]
-      value: 'Aloe: That sounds great, but where did you get the ingredients, and
-        how are you making food, when you know, you''re a ghost'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[3]
-      value: "Ivy: Bark (at least you're not a dog, so you can\u2019t even eat the
-        cookies if I wanted to)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[4]
-      value: 'Lily: I tend not to think about the little details'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[5]
-      value: "Aloe: Well at least they taste really good, so I guess I won\u2019t
-        question it "
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[6]
-      value: 'Aloe: You know what goes good with cookies, story time!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[7]
-      value: 'Lily: Well if you insist, I think I can continue the story'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[8]
-      value: 'Lily: Although just so you know it isn''t all that happy of a story'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[9]
-      value: 'Lily: Not long after I told my parents that I would rather not go into
-        the family business, they passed away in an unfortunate accident'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[10]
-      value: "Aloe: Oh Lily I\u2019m sorry for making you bring that up, we don't
-        have to talk about it if you don't want to"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[11]
-      value: "Lily: Oh it\u2019s fine, I\u2019ve had a lot of time to come to terms
-        with it"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[12]
-      value: 'Lily: Well anyways after their passing, I started to come out of the
-        garden less and less'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[13]
-      value: 'Lily: I got buried in my books, and taught myself everything I could
-        about botany, and started experiments in my garden'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[14]
-      value: 'Lily: Soon I had developed some variations on my favorite flowers,
-        but one of these variations was different'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[15]
-      value: 'Lily: It seemed liked it never aged, it grew in seconds, and it almost
-        glowed, I called it the stargazer flower'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[16]
-      value: 'Lily: But it was only when I mixed them into fertilizer for my other
-        plants I realized the full potential of my discovery'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[17]
-      value: 'Lily: All of the plants that I grew with this fertilizer grew unbelievably
-        large, and started to mutate in strange ways'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[18]
-      value: 'Ivy: BORK WOOOF (Ok bad idea, cookie bad idea ahhh)'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[19]
-      value: 'Aloe: LILY LILY IVY IS CHOKING! WHY ARE YOU TRYING TO EAT COOKIES STUPID
-        DOG '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[20]
-      value: 'Lily: OH MY, OH MY we have to help the poor little fellow'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].dialogue.Array.data[21]
-      value: 'Narrator: The two help the poor little pup, and decided to go to bed
-        shortly after '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[7].dialogue.Array.data[0]
-      value: 'Narrator: Our two plant lovers turned heroes continue their campaign
-        to get back to the outside world the next day'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[7].dialogue.Array.data[1]
-      value: 'Lily: Aloe, our next problem area is going to be the lake'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[7].dialogue.Array.data[2]
-      value: 'Lily: It is infested with bugs that will follow you if you are not
-        careful. if they catch you, you could become incapacitated for a short time'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[7].dialogue.Array.data[3]
-      value: "Aloe: Alright thanks for letting me know I\u2019ll keep that in mind"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[7].dialogue.Array.data[4]
-      value: "Ivy: Bark (So I can\u2019t go take a dip in the lake that's disappointing,
-        I was looking forward to that)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[7].dialogue.Array.data[5]
-      value: "Aloe: Alright Ivy I\u2019ll be off, don\u2019t miss me too much"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[0]
-      value: 'Narrator: Aloe returns to the mansion sopping wet from falling in the
-        lake a few times while fighting through wave and wave of monsters'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[1]
-      value: 'Lily: Oh Aloe you''re soaked here take a towel, thank goodness that
-        I have the fire burning already'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[2]
-      value: 'Aloe: Oh thank you, this really hits the spot'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[3]
-      value: 'Ivy: Bark (you''re definitely right about that, maybe I wouldn''t mind
-        staying here for a little while longer)'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[4]
-      value: 'Lily: I actually had a question, what is that little piece of glass
-        you keep tapping on every once in a while'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[5]
-      value: 'Aloe: Oh that''s right you wouldn''t know, this is what phones look
-        like now'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[6]
-      value: 'Lily: WHAT a telephone, but I don''t even have a telephone in my home
-        yet, and your saying little glass shard can call other people, but where
-        are the wires, how does it work'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[7]
-      value: 'Aloe: I tend not to question the small details'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[8]
-      value: 'Narrator: Lily goes to the kitchen and comes back with a tray of hot
-        cocoa'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[9]
-      value: 'Aloe: I would love to tell you about everything in the future, but
-        we still haven''t finished our story'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[10]
-      value: 'Lily: Well this is the part of the story I like to tell the least,
-        but it might be better to get it off my chest '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[11]
-      value: 'Lily: I started to grow more of my mutated plants, and started to develop
-        plants with different and useful properties'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[12]
-      value: 'Lily: It was amazing, but I was making a big mistake'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[13]
-      value: 'Lily: I didn''t realize that the bugs that were eating the plants and
-        the bugs trying to pollinate them were starting to change as well'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[14]
-      value: "Lily: It\u2019s obvious in hindsight, but the time I was only fueled
-        by my blind ambition"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[15]
-      value: 'Lily: When I realized the mistake I had made, I tried to kill all of
-        the stargazer flowers, but the deed was already done'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[16]
-      value: 'Lily: The insects were getting larger and larger by the day'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[17]
-      value: 'Lily: I knew I had to come up with a solution, so I used the last of
-        the stargazer infused fertilizer to grow the hedges that surround my house,
-        all the roots lead here'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[18]
-      value: 'Aloe: Is that why all the bugs try to come inside the house'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[19]
-      value: 'Lily: Exactly, it seems like they know they need to destroy the roots
-        in order to destroy the hedges, I don''t really know how. All I know is that
-        along with the bugs, I am also stuck behind these hedges, I did try to get
-        back however '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[20]
-      value: 'Aloe: You spend all that time making the spray and the special plants'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[21]
-      value: 'Lily: Yes that took most of my time, I also read books, and you know
-        gardening isn''t my only hobby'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[22]
-      value: 'Aloe: So did you die of old age before you could finish clearing up
-        the bugs?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[23]
-      value: 'Lily: No that came a lot sooner, I almost eliminated the bugs as a
-        matter of fact, but as I tried to clear the maze I was cornered'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[24]
-      value: 'Lily: There was just too many of them, and before I could realize it
-        everything started to go dark and when I awoke I was in my home, but I couldn''t
-        go outside'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[25]
-      value: 'Lily: If only I was a little more careful all of this could have been
-        avoided'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[26]
-      value: "Aloe: You can\u2019t blame yourself forever, you know you made a mistake,
-        but you tried your best to fix it"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[27]
-      value: 'Aloe: You should still be proud of your accomplishments'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[28]
-      value: 'Narrator: Ivy slowly trots up to Aloe and lays his head on Aloe''s
-        lap'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[29]
-      value: 'Ivy: Bark (I think you should probably take your own advice)'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[30]
-      value: 'Aloe: I get it buddy, I know that I need to take my own advice'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[31]
-      value: 'Lily: what do you mean?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[32]
-      value: 'Aloe: Well school has been really hard for me, and I have a hard time
-        getting the grades I want'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[33]
-      value: 'Lily: Well it seems we both have our struggles, but it seems that what
-        matters isn''t the bad things that happens but how you deal with it'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].dialogue.Array.data[34]
-      value: 'Lily: Maybe you are rubbing off on me Aloe '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.data[0]
-      value: "Narrator: The final battle was about to start, there was a dark aura
-        in the air, the skies became clouded and thunder could be heard in the distance,
-        it\u2019s as if the whole world knew what was about to happen"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.data[1]
-      value: 'Lily: Aright, the time has come'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.data[2]
-      value: 'Lily: This is where my journey came to an end but it doesn''t have
-        to be the same for you.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.data[3]
-      value: 'Lily: You have my full support, make sure to stay on your toes and
-        remember what part of the maze you''re in'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.data[4]
-      value: "Aloe: I know everything is going to be, but I\u2019m still scared"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.data[5]
-      value: "Lily: You've already come so far, it\u2019s only one final sprint to
-        the goal, and you have to come back to tell me all about the future"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.data[6]
-      value: 'Ivy: WOOF (Yea you have to come back, I don''t know what I would do
-        without you!)'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].dialogue.Array.data[7]
-      value: 'Aloe: Don''t worry Ivy, everything is going to be alright don''t worry
-        I''m gonna take you home.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[0]
-      value: 'Narrator: The battle is won, but it doesn''t feel like the end it all
-        just seems to quiet. Aloe returns to The house to see Lily and Ivy in anxiously
-        waiting for her return. Ivy runs to aloes side running around her, clearly
-        excited They all head back inside the house '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[1]
-      value: 'Lily: OH IT CANT BE TRUE. Is it really all over'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[2]
-      value: 'Aloe: I told you, you could count on me!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[3]
-      value: 'Ivy: Bark (THAT''S RIGHT YOU DID TELL HER, YOU DID YOU DID) '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[4]
-      value: 'Aloe: Awe Ivy where you worried about me too?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[5]
-      value: 'Aloe: Well Lily what do we do now'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[6]
-      value: 'Lily: To be honest I didn''t really think this far ahead, hahahah'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[7]
-      value: 'Aloe: HAHAHHAH'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[8]
-      value: 'Narrator: As our two heroes embraced in a job well done the ground
-        starts to shake, and the house starts to creek in a violent manner. The floor
-        boards bulges like a dam caving to a powerful river, the wind reaches a fever
-        pitch then in an instant all is calm'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[9]
-      value: 'Aloe: Is everyone alright'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[10]
-      value: 'Ivy: Bark (OH NEVER BETTER)'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[11]
-      value: 'Lily: I believe so '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[12]
-      value: "Narrator: Aloe looks through the window to see the sun shining, brighter
-        than normal, the morning light floods into the room, first like drops of
-        water, then like a stream. Aloe can\u2019t understand but it seems like everything
-        around her is starting to lose form Lily collapses to ground, shocking her
-        friends"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[13]
-      value: 'Aloe: Lily are you alright'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[14]
-      value: "Lily: Oh I\u2019m alright, it\u2019s just nature taking its course"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[15]
-      value: 'Aloe: No don''t say things like, I still have so much to tell you'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[16]
-      value: "Lily: As long as you remember me, I won\u2019t be too far"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[17]
-      value: 'Lily: Say do you think if I see my parents again, will they be proud
-        of me? '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[18]
-      value: 'Aloe: You discovered things that no one else since your time has come
-        close to has even come close to'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[19]
-      value: "Aloe: I can\u2019t think of any parent that wouldn't be proud"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[20]
-      value: 'Lily: Thank you for teaching me how to forgive myself'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[21]
-      value: 'Aloe: No, thank you for showing me true perseverance '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[22]
-      value: 'Narrator: Ivy places his head on lily''s pale hand'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[23]
-      value: "Lily: I\u2019ll miss you sweet one, be good for Aloe won\u2019t you "
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[24]
-      value: "Ivy: Bark (I\u2019ll try)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[25]
-      value: 'Narrator: The sunlight starts to drown the room, and lily soon finds
-        herself engulfed with no reference for what surrounds her then everything
-        comes back into focus'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].dialogue.Array.data[0]
-      value: 'Aloe: When the light died down I was in a flower field, someone I didn''t
-        know was shining a flashlight in my face'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].dialogue.Array.data[1]
-      value: 'Aloe: I don''t remember much after that until I woke up in the hospital '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].dialogue.Array.data[2]
-      value: 'Aloe: Someone was trying to ask me where I had been for the last week '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].dialogue.Array.data[3]
-      value: 'Aloe: I didn''t know what to tell them, I didn''t know if they would
-        believe me'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].dialogue.Array.data[4]
-      value: 'Aloe: Sometimes I think that Lily''s mansion was never real'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].dialogue.Array.data[5]
-      value: 'Aloe: When I walk Ivy where those flower fields where the hedges once
-        stood, and see those flowers, those stargazer lilies'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].dialogue.Array.data[6]
-      value: 'Aloe: Ivy and I look at each other, and without words we both know
-        the truth'
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[5].Scene
-      value: ' EXT. OUTSIDE MANSION - DAY '
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[6].Scene
-      value: INT.INSIDE MANSION - NIGHT
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[7].Scene
-      value: EXT. OUTSIDE MANSION - DAY
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[8].Scene
-      value: INT.INSIDE MANSION - NIGHT
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[9].Scene
-      value: EXT. OUTSIDE MANSION - DAY
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[10].Scene
-      value: EXT. ON PORCH - TWILIGHT
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: DialogueList.Array.data[11].Scene
-      value: INT.NARRATION
-      objectReference: {fileID: 0}
-    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: level
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 5009489192893909159, guid: dfcc39462df01c74c855a899b773cff0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1455,11 +836,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5009489192893909177, guid: dfcc39462df01c74c855a899b773cff0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
 --- !u!1 &773457353 stripped
@@ -1486,6 +862,12 @@ MonoBehaviour:
   - {fileID: 1457449983}
   - {fileID: 569825055}
   - {fileID: 157672174}
+--- !u!1 &816415154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6645575207194336830, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 889084748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &819227449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,12 +998,12 @@ PrefabInstance:
     - target: {fileID: 6577784316810195017, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.64
+      value: 5.98
       objectReference: {fileID: 0}
     - target: {fileID: 6577784316810195017, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.13
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 6577784316810195017, guid: f8a8f309c4b9bde4a9a69636c3cf5de0,
         type: 3}
@@ -1680,6 +1062,140 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8a8f309c4b9bde4a9a69636c3cf5de0, type: 3}
+--- !u!1001 &889084748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -1254934028015180426, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: nearbyParent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -1254934028015180426, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: pickedUp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051148537845712861, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645575207194336830, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645575207194336830, guid: 3f09b49c6090cb949853875fdcc1ae3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f09b49c6090cb949853875fdcc1ae3b, type: 3}
 --- !u!1001 &892347362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1747,6 +1263,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 6625389293675353357, guid: cd70ec2a30f449744bd6ed9c2d596efa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd70ec2a30f449744bd6ed9c2d596efa, type: 3}
 --- !u!1 &938637434 stripped
@@ -1768,11 +1289,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1254907903, guid: 44cab4bc5c027ae4ba916f0ba028c5d6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342970498557371426, guid: 44cab4bc5c027ae4ba916f0ba028c5d6,
         type: 3}
       propertyPath: boxBorder
       value: 
       objectReference: {fileID: 960717029}
+    - target: {fileID: 3342970498557371426, guid: 44cab4bc5c027ae4ba916f0ba028c5d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3342970498557371427, guid: 44cab4bc5c027ae4ba916f0ba028c5d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2050,6 +1580,17 @@ PrefabInstance:
       propertyPath: enemyGroupList.Array.data[0].delayWithinGroup
       value: 0.13
       objectReference: {fileID: 0}
+    - target: {fileID: 2608958307131795083, guid: 67986192428ec8e42ac009f32bb78dea,
+        type: 3}
+      propertyPath: enemyGroupList.Array.data[0].enemy
+      value: 
+      objectReference: {fileID: 330237551877917498, guid: 19f4f8d9f601a54428117aa53cf69c49,
+        type: 3}
+    - target: {fileID: 2608958307131795083, guid: 67986192428ec8e42ac009f32bb78dea,
+        type: 3}
+      propertyPath: groupIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3200253516076455073, guid: 67986192428ec8e42ac009f32bb78dea,
         type: 3}
       propertyPath: m_Name
@@ -2301,6 +1842,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79431014488588445b26ec610ad14ca2, type: 3}
+--- !u!1 &1254907898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3342970498557371438, guid: 44cab4bc5c027ae4ba916f0ba028c5d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 986442657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1254907904
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254907898}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.4999998
 --- !u!114 &1402320986 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 707004068517634665, guid: 79431014488588445b26ec610ad14ca2,
@@ -2479,6 +2042,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5245567699840422553, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5245567699840422565, guid: d928e7fa1eb8e9a42a531302b49465b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2615,10 +2183,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 41.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5497417769413278320, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94052212a4877784dad77d8dd6cc46d5,
+        type: 3}
     - target: {fileID: 6559385102228784762, guid: d928e7fa1eb8e9a42a531302b49465b8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 341.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559385102228784762, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -174.8
       objectReference: {fileID: 0}
     - target: {fileID: 7577026696439673940, guid: d928e7fa1eb8e9a42a531302b49465b8,
         type: 3}
@@ -2668,6 +2247,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: GunUI
+      value: 
+      objectReference: {fileID: 493345644}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: GreenOne
+      value: 
+      objectReference: {fileID: 21300000, guid: 94052212a4877784dad77d8dd6cc46d5,
+        type: 3}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: PurpleOne
+      value: 
+      objectReference: {fileID: 21300000, guid: 92fdbaa4ed651384e8356deee9beead4,
+        type: 3}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: PurpleTwo
+      value: 
+      objectReference: {fileID: 21300000, guid: 0cbd6c512e601db42bd8b4325459103c,
+        type: 3}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: GreenTwo
+      value: 
+      objectReference: {fileID: 21300000, guid: a63e37672dc9b644d912a32305ff164e,
+        type: 3}
+    - target: {fileID: 2487668139321629388, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: GunSound
+      value: 
+      objectReference: {fileID: 1970124576}
     - target: {fileID: 2487668140445348004, guid: cfa848a325a440d4ea1f3a340d40a1f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2733,6 +2346,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3393796769209102955, guid: cfa848a325a440d4ea1f3a340d40a1f6,
+        type: 3}
+      propertyPath: seed
+      value: 
+      objectReference: {fileID: 21300000, guid: f01972280e59dda4cba6c5752a66371f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa848a325a440d4ea1f3a340d40a1f6, type: 3}
 --- !u!224 &1643362840 stripped
@@ -42537,6 +42156,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeaf3531b629eb4cbc205cbd5078349, type: 3}
+--- !u!1 &1854428552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6614745445179411548, guid: c5c80b1dddf7ead49a65b52923c56a90,
+    type: 3}
+  m_PrefabInstance: {fileID: 6614745444718950193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1854428558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854428552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976530be3d43d17419ccfca63d6dd865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerLife: 200
+  IncLife: 5
+  HarvestTimeSeeds: 90
+  timeElapsed: 0
+  Watered: 0
+  PickedUp: 0
+  seedImage: {fileID: 816415154}
+  light: {fileID: 6316019830634543675, guid: 6afa4d5330f1f3e43841e40f7b42d024, type: 3}
 --- !u!1001 &1875694057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42622,6 +42267,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5245567698219767581, guid: d928e7fa1eb8e9a42a531302b49465b8,
     type: 3}
   m_PrefabInstance: {fileID: 1505160395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1970124576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2507662320715176555, guid: 160451811a88f9e4898219e11cf80785,
+    type: 3}
+  m_PrefabInstance: {fileID: 692165352}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2036469130
 PrefabInstance:
@@ -42875,6 +42526,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: border
       objectReference: {fileID: 0}
+    - target: {fileID: 8314955423595972719, guid: 311095275c611ea4fb8f3dee4ab45fec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 311095275c611ea4fb8f3dee4ab45fec, type: 3}
 --- !u!1 &2072361181
@@ -42942,6 +42598,80 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.21}
   serializedVersion: 2
   m_Radius: 1.93
+--- !u!1001 &6017612866969369720
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6017612867984251297, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueBug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251297, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017612867984251301, guid: ad0c1a4d3803a6a4bad40951f0178ea0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad0c1a4d3803a6a4bad40951f0178ea0, type: 3}
 --- !u!1001 &6614745444718950193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43007,7 +42737,12 @@ PrefabInstance:
     - target: {fileID: 6614745445179411548, guid: c5c80b1dddf7ead49a65b52923c56a90,
         type: 3}
       propertyPath: m_Name
-      value: wall
+      value: Bamboo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614745445179411548, guid: c5c80b1dddf7ead49a65b52923c56a90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c80b1dddf7ead49a65b52923c56a90, type: 3}
