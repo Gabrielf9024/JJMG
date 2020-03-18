@@ -75,7 +75,6 @@ public class TowerShoot : MonoBehaviour
             else
             {
                 falseTheAnim();
-                anim.SetBool("idle", true);
                 StopCoroutine(SpawnSpiral());
             }
         }
