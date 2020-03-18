@@ -23,7 +23,6 @@ public static class Vector2Extension
 }
 /// End Courtesy///
 
-
 public class GunLogic : MonoBehaviour
 {
     bool notPressing = false;
@@ -76,6 +75,16 @@ public class GunLogic : MonoBehaviour
     public float endingSize = 0.5f;
 
 
+    [Header("Images for Guns")]
+    public GameObject GunUI;
+    public Sprite GreenOne;
+    public Sprite PurpleOne;
+    public Sprite GreenTwo;
+    public Sprite PurpleTwo;
+    private bool IsPurple;
+
+    [Header("Images for Guns")]
+    public GameObject GunSound;
 
     void Awake()
     {
@@ -143,9 +152,11 @@ public class GunLogic : MonoBehaviour
                             bl.SetPower(fogDamage * fogDamageMitigationBeforeStopped);
                             currentlyShooting = true;
                             ShootSpread(centerToMouseDir);
+                            GunUI.GetComponent<Image>().sprite = GreenTwo;
+                            GunSound.GetComponent<AudioSource>().Play();
                         }
                     }
-                 }
+                }
                 else
                 {
                     if (!currentlyShooting)
@@ -166,12 +177,15 @@ public class GunLogic : MonoBehaviour
                         bl.SetDiameter(semiAutoBulletDiameter);
 
                         bl.SetPower(semiAutoDamage);
-
+                        
                         currentlyShooting = true;
                         if (straight)
+                        {
                             ShootStraight(centerToMouseDir);
+                            GunUI.GetComponent<Image>().sprite = PurpleTwo;
+                            GunSound.GetComponent<AudioSource>().Play();
+                        }
                     }
-
                 }
             }
         }
@@ -179,11 +193,10 @@ public class GunLogic : MonoBehaviour
         {
             currentlyShooting = false;
         }
-
-
-
-        // For changing shot type
-        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown("q"))
         {
             if (notPressing)
             {
@@ -192,19 +205,31 @@ public class GunLogic : MonoBehaviour
                 {
                     straight = false;
                     spread = automatic = true;
+                    IsPurple = false;
+                    GunUI.GetComponent<Image>().sprite = GreenOne;
                 }
                 else
                 {
                     straight = true;
                     spread = automatic = false;
+                    IsPurple = true;
+                    GunUI.GetComponent<Image>().sprite = PurpleOne;
                 }
             }
         }
         else
+        {
             notPressing = true;
-
-
-    } //End FixedUpdate
+        }
+        if (currentlyShooting == false && IsPurple == true)
+        {
+            GunUI.GetComponent<Image>().sprite = PurpleOne;
+        }
+        if (currentlyShooting == false && IsPurple == false)
+        {
+            GunUI.GetComponent<Image>().sprite = GreenOne;
+        }
+    }
 
     public void ShootStraight( Vector2 direction )
     {

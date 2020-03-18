@@ -71,7 +71,7 @@ public class SeekerEnemy : EnemyMovement
         //        latestDirectionChangeTime = Time.time;
         //        movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
         //    }
-        //    myBody.MovePosition((Vector2)myself.position + (movementDirection * speed * Time.deltaTime));
+            myBody.MovePosition((Vector2)myself.position + (movementDirection * speed * Time.deltaTime));
         //}
         
     }
