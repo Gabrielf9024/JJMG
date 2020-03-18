@@ -142,9 +142,9 @@ GameObject:
   - component: {fileID: 2487668140445348025}
   - component: {fileID: 2487668140445348026}
   - component: {fileID: 2487668140445348027}
-  - component: {fileID: 773457361}
   - component: {fileID: 773457360}
   - component: {fileID: 7787118533171169697}
+  - component: {fileID: 9134653656148422735}
   m_Layer: 11
   m_Name: Hero
   m_TagString: Player
@@ -270,25 +270,6 @@ MonoBehaviour:
   knockbackAmountWhenHit: 0
   stunTime: 0.5
   blinkTimes: 8
---- !u!95 &773457361
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2487668140445348006}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58fa8b9e98e8d4548ab34a8399803fcc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &773457360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +304,25 @@ CapsuleCollider2D:
   m_Offset: {x: -0.02, y: -0.51}
   m_Size: {x: 1.55, y: 3.65}
   m_Direction: 0
+--- !u!95 &9134653656148422735
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2487668140445348006}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58fa8b9e98e8d4548ab34a8399803fcc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7289240711324374407
 GameObject:
   m_ObjectHideFlags: 0
