@@ -20,8 +20,10 @@ public class HeroMovement : MonoBehaviour
     private float xInput = 0;
     private float yInput = 0;
 
+    Animator anim;
     void Start()
     {
+        anim = GetComponent<Animator>();
         horizontalControl = "Horizontal";
         verticalControl = "Vertical";
 
@@ -40,8 +42,48 @@ public class HeroMovement : MonoBehaviour
         }
 
         rb.velocity = new Vector2(xInput * speed, yInput * speed);
+        
+        if( xInput == 0 )
+        {
+            if (yInput == 1)
+            {
+                falseTheAnim();
+                anim.SetBool("walkingUp", true);
+            }
+            else if( yInput == -1 )
+            {
+                falseTheAnim();
+                anim.SetBool("walkingDown", true);
+            }
+            else
+            {
+                falseTheAnim();
+                anim.SetBool("standing", true);
+            }
+        }
+        else
+        {
+            if( xInput == 1 )
+            {
+                falseTheAnim();
+                anim.SetBool("walkingRight", true);
+            }
+            else
+            {
+                falseTheAnim();
+                anim.SetBool("walkingLeft", true);
+            }
+        }
     }
 
+    private void falseTheAnim()
+    {
+        foreach (AnimatorControllerParameter parameter in anim.parameters)
+        {
+            anim.SetBool(parameter.name, false);
+        }
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if( collision.CompareTag("OutOfBounds") )

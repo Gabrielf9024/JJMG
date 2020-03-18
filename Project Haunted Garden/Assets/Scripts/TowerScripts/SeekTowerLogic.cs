@@ -39,20 +39,33 @@ public class SeekTowerLogic : MonoBehaviour
             StartCoroutine(Wait(cooldownInSeconds));
         }
 
-        if(waterScript.dry)
-            anim.SetTrigger("MakeDead");
+        if (waterScript.dry)
+        {
+            falseTheAnim();
+            anim.SetBool("dead", true);
+        }
         else
         {
             if (focus != null)
             {
-                anim.SetTrigger("MakeShoot");
+                falseTheAnim();
+                anim.SetBool("shooting", true);
             }
             else
             {
-                anim.SetTrigger("MakeIdle");
+                falseTheAnim();
+                anim.SetBool("idle", true);
             }
         }
 
+    }
+
+    private void falseTheAnim()
+    {
+        foreach (AnimatorControllerParameter parameter in anim.parameters)
+        {
+            anim.SetBool(parameter.name, false);
+        }
     }
 
     IEnumerator Wait(float cd)

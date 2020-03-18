@@ -61,14 +61,21 @@ public class TowerShoot : MonoBehaviour
         bulletPrefab.GetComponent<BulletLogic>().water = false;
 
         if (waterScript.dry)
-            anim.SetTrigger("MakeDead");
+        {
+            falseTheAnim();
+            anim.SetBool("dead", true);
+        }
         else
         {
             if (seesTarget)
-                anim.SetTrigger("MakeShoot");
+            {
+                falseTheAnim();
+                anim.SetBool("shooting", true);
+            }
             else
             {
-                anim.SetTrigger("MakeIdle");
+                falseTheAnim();
+                anim.SetBool("idle", true);
                 StopCoroutine(SpawnSpiral());
             }
         }
@@ -90,8 +97,14 @@ public class TowerShoot : MonoBehaviour
             count = 0;
     }
 
-
-    public void SpawnBulletRing()
+    private void falseTheAnim()
+    {
+        foreach (AnimatorControllerParameter parameter in anim.parameters)
+        {
+            anim.SetBool(parameter.name, false);
+        }
+    }
+        public void SpawnBulletRing()
     {
         Vector3 center = gameObject.transform.position;
         for (int i = 1; i <= numBullets_ring; ++i)

@@ -25,16 +25,25 @@ public class TowerBugEater : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (waterScript.dry)
-            anim.SetTrigger("MakeDead");
+        {
+            falseTheAnim();
+            anim.SetBool("dead", true);
+
+        }
         else if (!waterScript.dry && !Eating)
         {
-            anim.SetTrigger("MakeIdle");
+            falseTheAnim();
+            anim.SetTrigger("idle");
         }
         else if (Eating)
-            anim.SetTrigger("MakeClosed");
+        {
+            anim.SetTrigger("idle");
+            falseTheAnim();
+            anim.SetTrigger("eat");
+        }
 
 
         if (!held && !waterScript.dry)
@@ -75,4 +84,12 @@ public class TowerBugEater : MonoBehaviour
             }
         }
     }
+    private void falseTheAnim()
+    {
+        foreach (AnimatorControllerParameter parameter in anim.parameters)
+        {
+            anim.SetBool(parameter.name, false);
+        }
+    }
+
 }
