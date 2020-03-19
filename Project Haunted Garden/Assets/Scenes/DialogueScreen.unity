@@ -934,6 +934,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueSaved
       objectReference: {fileID: 0}
+    - target: {fileID: 77964213485048260, guid: 54c4fae56b975344a8f9795684ec85ee,
+        type: 3}
+      propertyPath: LevelIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 77964213485048261, guid: 54c4fae56b975344a8f9795684ec85ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1303,8 +1308,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1373673229}
     - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
-      propertyPath: level
-      value: 4
+      propertyPath: DialogueList.Array.data[10].dialogue.Array.data[25]
+      value: 'Narrator: The sunlight starts to drown the room, and lily soon finds
+        herself engulfed with no reference for what surrounds her then everything
+        comes back into focus'
+      objectReference: {fileID: 0}
+    - target: {fileID: 445631181, guid: dfcc39462df01c74c855a899b773cff0, type: 3}
+      propertyPath: DialogueList.Array.data[0].dialogue.Array.data[5]
+      value: 'Ivy: Bark Bark!(ok, so that means we''re gonna sit on this bench for
+        at least another 30 minutes nice thanks for letting me know)'
       objectReference: {fileID: 0}
     - target: {fileID: 5009489192893909159, guid: dfcc39462df01c74c855a899b773cff0,
         type: 3}

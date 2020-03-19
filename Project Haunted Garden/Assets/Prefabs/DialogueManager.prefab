@@ -48,7 +48,7 @@ MonoBehaviour:
   TextBox: {fileID: 0}
   Background: {fileID: 0}
   index: 0
-  level: 2
+  level: 4
   x: 0
   Textspeed: 0
   leftPersonImage: {fileID: 0}
@@ -272,7 +272,8 @@ MonoBehaviour:
     - 'Lily: Just make sure not to breathe in the spray'
     - 'Aloe: Wonderful!'
     - 'Lily: You should take these too Lily hands aloe a small pouch full of seeds '
-    - 'Aloe: How are seeds supposed to help keep me from being eaten alive?'
+    - 'Narrator: Lily hands aloe a small pouch full of seeds'
+    - 'Aloe: How are seeds supposed to help keep me from being eaten alive'
     - 'Lily: Well maybe you should try planting them to see'
     - 'Narrator: Aloe proceeds to plant one of the seeds, and as if by magic a large
       plant sprouts from the ground and starts spraying wildly eventually hitting
@@ -281,13 +282,13 @@ MonoBehaviour:
     - 'Lily: Why thank you, and just for your information make sure to keep those
       plants watered, or else they could die relatively quickly'
     - 'Lily: Alright, well you should start with the garden it should be the easiest
-      part of the house to take care of '
+      part of the house to take care of'
     - 'Aloe: Alright well wish me luck, well Ivy are you going to join me'
     - 'Narrator: Ivy walks toward lily and starts to trot around her'
-    - 'Ivy: Bark (well you see Aloe, lily here has snacks and honestly I would rather
+    - 'Ivy: Bark(well you see Aloe, lily here has snacks and honestly I would rather
       not be running around next to a real life piranha plants)'
-    - "Aloe: I guess you can say with Lily as long as she\u2019s ok with it"
-    - 'Lily: REALLY, well you can count on me Aloe '
+    - 'Aloe: I guess you can say with Lily as long as shes ok with it'
+    - 'Lily: REALLY, well you can count on me Aloe'
     - 'Lily: Come along Ivy let me get you some snacks as we await your master''s
       return'
     emotions:
@@ -311,6 +312,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 21300000, guid: d0e07bf25aa4b7c49a8753394aa3b34a, type: 3}
     - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
     - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
   - Scene: INT.INSIDE MANSION - NIGHT
     Background: {fileID: 21300000, guid: 1b021a415990db341adaf1eb2ca2954d, type: 3}
