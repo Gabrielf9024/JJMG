@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -48,144 +49,131 @@ public class DialogueManager : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
+        level = saveDialogue.Instance.LevelIndex;
         StartCoroutine(Type());
     }
 
     IEnumerator Type()
     {
+        Debug.Log(DialogueList[level].dialogue.Length +"   "+ x);
         if (x < DialogueList[level].dialogue.Length)
         {
-            if (index < DialogueList[level].dialogue[x].Length)
+            foreach (char letter in DialogueList[level].dialogue[x].ToCharArray())
             {
-                foreach (char letter in DialogueList[level].dialogue[x].ToCharArray())
-                {
-                    textD.text += letter;
-                    yield return new WaitForSeconds(Textspeed);
-                }
+                textD.text += letter;
+                yield return new WaitForSeconds(Textspeed);
+            }
+        }
+        else if (x == DialogueList[level].dialogue.Length)
+        {
+            level++;
+            SaveLevels();
+            if (level == 4)
+            {
+                LoadLevelOne();
+            }
+            else if (level == 6)
+            {
+                LoadLevelTwo();
+            }
+            else if (level == 8)
+            {
+                LoadLevelThree();
+            }
+            else if (level == 10)
+            {
+                LoadLevelFour();
+            }
+            else if (level == 12)
+            {
+                LoadLevelEnding();
+            }
+            else
+            {
+                LoadDialogue();
             }
         }
     }
 
     void Update()
     {
-        if (SetBack == false)
-        {
-            Background.GetComponent<Image>().sprite = DialogueList[level].Background;
-        }
         char NARRATOR = 'N'; char ALOE = 'A';char IVY = 'I';char LILY = 'L';
-        if (x < DialogueList[level].dialogue.Length)
+        if (level != 12)
         {
-            continueButton.SetActive(false);
-            if (DialogueList[level].dialogue[x].ToCharArray()[0] == NARRATOR)
+            if (x < DialogueList[level].dialogue.Length)
             {
-                TextBox.GetComponent<Image>().color = new Color32(214, 210, 191, 255);
-                AssignImages(true);
-            }
-            if (DialogueList[level].dialogue[x].ToCharArray()[0] == ALOE)
-            {
-                TextBox.GetComponent<Image>().color = new Color32(233, 252, 167, 217);
-                if (assigned == false && leftPerson != "ALOE")
+                if (SetBack == false)
                 {
-                    assigned = true;
-                    leftPerson = "ALOE";
+                    Background.GetComponent<Image>().sprite = DialogueList[level].Background;
                 }
-                if (leftPerson != "ALOE")
-                {
-                    RightPerson = "ALOE";
-                }
-                AssignImages(false);
-            }
-            if (DialogueList[level].dialogue[x].ToCharArray()[0] == IVY)
-            {
-                TextBox.GetComponent<Image>().color = new Color32(13, 67, 231, 231);
-                if (assigned == false && leftPerson != "IVY")
-                {
-                    assigned = true;
-                    leftPerson = "IVY";
-                }
-                if (leftPerson != "IVY")
-                {
-                    RightPerson = "IVY";
-                }
-                AssignImages(false);
-            }
-            if (DialogueList[level].dialogue[x].ToCharArray()[0] == LILY)
-            {
-                TextBox.GetComponent<Image>().color = new Color32(13, 67, 231, 231);
-                if (assigned == false && leftPerson != "LILY")
-                {
-                    assigned = true;
-                    leftPerson = "LILY";
-                }
-                if (leftPerson != "LILY")
-                {
-                    RightPerson = "LILY";
-                }
-                AssignImages(false);
-            }
-            if (textD.text == DialogueList[level].dialogue[x])
-            {
-                continueButton.SetActive(true);
-            }
-        }
-    }
-
-    public void AssignImages(bool narrator)
-    {
-        if (narrator == false)
-        {
-            if (leftPerson != null)
-            {
-                leftPersonImage.SetActive(true);
-                if (leftPerson == "LILY")
-                {
-                    leftPersonImage.GetComponent<Image>().sprite = Lily;
-                }
-                if (leftPerson == "IVY")
-                {
-                    leftPersonImage.GetComponent<Image>().sprite = Ivy;
-                }
-                if (leftPerson == "ALOE")
-                {
-                    leftPersonImage.GetComponent<Image>().sprite = Aloe;
-                }
-            }
-            else
-            {
-                leftPersonImage.SetActive(false);
-            }
-            
-            if (RightPerson != null) {
-                RightPersonImage.SetActive(true);
-                if (RightPerson == "LILY")
-                {
-                    RightPersonImage.GetComponent<Image>().sprite = Lily;
-                }
-                if (RightPerson == "IVY")
-                {
-                    RightPersonImage.GetComponent<Image>().sprite = Ivy;
-                }
-                if (RightPerson == "ALOE")
-                {
-                    RightPersonImage.GetComponent<Image>().sprite = Aloe;
-                }
-            }
-            else
-            {
                 RightPersonImage.SetActive(false);
+                leftPersonImage.SetActive(false);
+                continueButton.SetActive(false);
+
+                if (DialogueList[level].dialogue[x].ToCharArray()[0] == NARRATOR)
+                {
+                    TextBox.GetComponent<Image>().color = new Color32(214, 210, 191, 255);
+                    RightPersonImage.SetActive(false);
+                    leftPersonImage.SetActive(false);
+                }
+                if (DialogueList[level].dialogue[x].ToCharArray()[0] == ALOE)
+                {
+                    leftPersonImage.SetActive(true);
+                    TextBox.GetComponent<Image>().color = new Color32(219, 170, 167, 255);
+                    leftPersonImage.GetComponent<Image>().sprite = DialogueList[level].emotions[x];
+                }
+                if (DialogueList[level].dialogue[x].ToCharArray()[0] == IVY)
+                {
+                    RightPersonImage.SetActive(true);
+                    TextBox.GetComponent<Image>().color = new Color32(167, 151, 134, 255);
+                    RightPersonImage.GetComponent<Image>().sprite = DialogueList[level].emotions[x];
+                }
+                if (DialogueList[level].dialogue[x].ToCharArray()[0] == LILY)
+                {
+                    RightPersonImage.SetActive(true);
+                    TextBox.GetComponent<Image>().color = new Color32(0, 255, 255, 255);
+                    RightPersonImage.GetComponent<Image>().sprite = DialogueList[level].emotions[x];
+                }
+                if (textD.text == DialogueList[level].dialogue[x])
+                {
+                    continueButton.SetActive(true);
+                }
             }
         }
-        else
-        {
-            RightPersonImage.SetActive(false);
-            leftPersonImage.SetActive(false);
-        }
+    }
+    public void SaveLevels()
+    {
+        saveDialogue.Instance.LevelIndex = level;
+    }
+    public void LoadDialogue()
+    {
+        SceneManager.LoadScene(5);
+    }
+    public void LoadLevelOne()
+    {
+        SceneManager.LoadScene(1);
     }
 
+    public void LoadLevelTwo()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void LoadLevelThree()
+    {
+        SceneManager.LoadScene(3);
+    }
+    public void LoadLevelFour()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void LoadLevelEnding()
+    {
+        SceneManager.LoadScene(6);
+    }
     public void nextLine()
    {
        continueButton.SetActive(false);
-       if (index < DialogueList[level].dialogue[x].Length - 1)
+       if (x < DialogueList[level].dialogue.Length)
        {
            index++;
            textD.text = "";

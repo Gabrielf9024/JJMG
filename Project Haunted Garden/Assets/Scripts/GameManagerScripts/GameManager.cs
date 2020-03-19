@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         //Store.SetActive(false);
         UpdateUI();
+        SaveLevel.Instance.LevelIndex++;
     }
 
     private void Update()
@@ -74,15 +75,15 @@ public class GameManager : MonoBehaviour
     public void LostGame()
     {
         lost = true;
-        Time.timeScale = 0;
-        loserText.SetActive(true);
+        //Time.timeScale = 0;
+        SceneManager.LoadScene(7);
     }
 
     public void WonGame()
     {
-        waveUI.GetComponent<Text>().enabled = false;
-        winnerText.GetComponent<Text>().enabled = true;
-        Time.timeScale = 0;
+        //waveUI.GetComponent<Text>().enabled = false;
+        //winnerText.GetComponent<Text>().enabled = true;
+        SceneManager.LoadScene(5);
     }
 
     public void ClearScreen()

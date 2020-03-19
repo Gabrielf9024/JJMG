@@ -5,21 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(5);
     }
     public void MainMenu()
     {
@@ -44,6 +33,12 @@ public class MenuManager : MonoBehaviour
     {
 
         SceneManager.LoadScene(4);
+    }
+    public void restart()
+    {
+        int saved = SaveLevel.Instance.LevelIndex;
+        SaveLevel.Instance.LevelIndex-=1;
+        SceneManager.LoadScene(saved);
     }
 
     public void Quit() { Application.Quit(); }

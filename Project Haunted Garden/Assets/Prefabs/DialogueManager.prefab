@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5009489192893909159
 Transform:
   m_ObjectHideFlags: 0
@@ -46,29 +46,36 @@ MonoBehaviour:
   textD: {fileID: 0}
   continueButton: {fileID: 0}
   TextBox: {fileID: 0}
+  Background: {fileID: 0}
   index: 0
-  level: 11
+  level: 4
   x: 0
   Textspeed: 0
+  leftPersonImage: {fileID: 0}
+  RightPersonImage: {fileID: 0}
+  Ivy: {fileID: 21300000, guid: de449d3a0670e134990654f270cdcb5e, type: 3}
+  Aloe: {fileID: 21300000, guid: 09b0982d1c9a3724e8d886b0cd9b23a4, type: 3}
+  Lily: {fileID: 21300000, guid: d422db5bb69a90b45a48ddd425a6f7d2, type: 3}
   Notes: 'Character list params: ALOE, IVY, LILY, NARRATOR'
   DialogueList:
   - Scene: EXT. SIDEWALK OUTSIDE - DAY
+    Background: {fileID: 21300000, guid: bac8cefd4c5bc12408795ca286c161aa, type: 3}
     dialogue:
     - 'Narrator: In a completely normal street in a completely normal city, a girl
       named Aloe walks her cute but annoying dog Ivy. Aloe looks at her phone with
       an anxious look on her face.'
     - 'Aloe: Ahhh...'
-    - 'Aloe: Why hasn''t she put the grades online yet she said they would be up
-      by Saturday, its Sunday, does she want me to have an anxiety attack!'
+    - 'Aloe: Why hasn''t she put the grades online yet she said they would be up by
+      Saturday, its Sunday, does she want me to have an anxiety attack!'
     - 'Ivy: Bark Bark! (You know you''ve been sitting on the same bench for the last
       20 minutes, did you forget I''m a dog, I like playing you know)'
-    - 'Aloe: Oh sorry Ivy you probably want to run around don''t you, I''m sorry
-      honey we''ll go in a second when professor decides to finally releases my gradean
+    - 'Aloe: Oh sorry Ivy you probably want to run around don''t you, I''m sorry honey
+      we''ll go in a second when professor decides to finally releases my gradean
       anxiety attack!'
     - 'Ivy: Bark Bark!(ok, so that means we''re gonna sit on this bench for at least
       another 30 minutes nice thanks for letting me know)Bark Bark!(ok, so that means
-      we''re gonna sit on this bench for at least another 30 minutes nice thanks
-      for letting me know)'
+      we''re gonna sit on this bench for at least another 30 minutes nice thanks for
+      letting me know)'
     - 'Aloe: Oh my god! Oh my god! She realized the grades finally!!!Oh my god! Oh
       my god! She realized the grades finally!!!'
     - 'Ivy: Bark (Thank the lord, Hallelujah my prayers have been answered)Bark (Thank
@@ -78,8 +85,8 @@ MonoBehaviour:
       dying'
     - 'Ivy: ...bark (well now we''re never leaving, why do I ever get my hopes up)...bark
       (well now we''re never leaving, why do I ever get my hopes up)'
-    - "Narrator: Ivy looks around and smells something interesting coming from a
-      hole in a hedge next to the sidewalk that goes so high you can\u2019t see anything
+    - "Narrator: Ivy looks around and smells something interesting coming from a hole
+      in a hedge next to the sidewalk that goes so high you can\u2019t see anything
       on the other side."
     - "Ivy: bark (hmmmm well look at what we have here, a hole , well it\u2019s probably
       more interesting than staying with miss mopes a lot)bark (hmmmm well look at
@@ -89,26 +96,45 @@ MonoBehaviour:
       the hedge.Ivy slips away from Aloe''s side and makes her way to the hole in
       the hedge.'
     - "Aloe: ....you think she\u2019s gonna curve it, or maybe the whole class is
-      gonna be curve, yea it\u2019s gonna be fine, I'm going it be fine ha ha ah
-      ah aaaaaa"
-    - 'Aloe: Ivy make me feel better please, wait where are you IVY IVY!Ivy make
-      me feel better please, wait where are you IVY IVY!'
+      gonna be curve, yea it\u2019s gonna be fine, I'm going it be fine ha ha ah ah
+      aaaaaa"
+    - 'Aloe: Ivy make me feel better please, wait where are you IVY IVY!Ivy make me
+      feel better please, wait where are you IVY IVY!'
     - "Aloe: IVY! Why are you going in there you\u2019re gonna get me arrested for
-      trespassing, I'm already dead, this isn't making it any betterIVY! Why are
-      you going in there you\u2019re gonna get me arrested for trespassing, I'm already
+      trespassing, I'm already dead, this isn't making it any betterIVY! Why are you
+      going in there you\u2019re gonna get me arrested for trespassing, I'm already
       dead, this isn't making it any better"
-    - 'Narrator: Aloe makes it in time to see where Ivy is going, so she follows
-      her puppy into the great unknown, and starts an adventure that they never expected
+    - 'Narrator: Aloe makes it in time to see where Ivy is going, so she follows her
+      puppy into the great unknown, and starts an adventure that they never expected
       or wanted for that matter. '
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: d0e07bf25aa4b7c49a8753394aa3b34a, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: d0e07bf25aa4b7c49a8753394aa3b34a, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 21300000, guid: edddd0a5fb7c6fc419ce604fd128b928, type: 3}
+    - {fileID: 0}
   - Scene: EXT. ON MANSION PROPERTY - DAY
+    Background: {fileID: 21300000, guid: 2bd514d17a2b26648ba7a5001e143df7, type: 3}
     dialogue:
-    - 'Narrator: Aloe goes through the hedge to find Ivy playing among some dead
-      plants on what seems to be an old long overgrown garden'
+    - 'Narrator: Aloe goes through the hedge to find Ivy playing among some dead plants
+      on what seems to be an old long overgrown garden'
     - "Aloe: Ok Ivy you've had your fun, you made me get all dirty, now let\u2019s
       go home"
     - 'Aloe: This is the worst day ever'
-    - 'Ivy: Bark!(well now your making me feel bad, fine we can go home lets go,
-      this place is kinda spooky anyways)'
+    - 'Ivy: Bark!(well now your making me feel bad, fine we can go home lets go, this
+      place is kinda spooky anyways)'
     - 'Narrator: Aloe and Ivy turn to leave when they realize the opening that they
       came through has disappeared '
     - "Aloe: Ok where\u2019s the opening, it was here a second ago"
@@ -120,17 +146,35 @@ MonoBehaviour:
       like it\u2019s abandoned so we don't have to worry about people coming"
     - 'Narrator: Ivy turns to see a giant mutant that at one point might have been
       a beetle at one point in time'
-    - 'Ivy: WOOF(ok that is a really big bug, you know what I think I might have
-      to go)'
+    - 'Ivy: WOOF(ok that is a really big bug, you know what I think I might have to
+      go)'
     - 'Narrator: Ivy makes his escape and runs towards a large mansion in the distance'
-    - "Aloe: Where are you going Ivy, you can\u2019t run away again, and why are
-      you running toward the big scary horror movie house"
+    - "Aloe: Where are you going Ivy, you can\u2019t run away again, and why are you
+      running toward the big scary horror movie house"
     - 'Narrator: Aloe then has the same revelation as her furry friend'
-    - 'Aloe: Ok I see why now, you know what scary haunted mansion doesn''t seem
-      too bad now'
-    - 'Narrator: Aloe turns and runs as fast as she can following closely behind
-      her "loyal" companion '
+    - 'Aloe: Ok I see why now, you know what scary haunted mansion doesn''t seem too
+      bad now'
+    - 'Narrator: Aloe turns and runs as fast as she can following closely behind her
+      "loyal" companion '
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: edddd0a5fb7c6fc419ce604fd128b928, type: 3}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: df0c40a2fcd236949b65665a567f6776, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: df0c40a2fcd236949b65665a567f6776, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 0}
   - Scene: INT.INSIDE MANSION - DAY
+    Background: {fileID: 21300000, guid: 1b021a415990db341adaf1eb2ca2954d, type: 3}
     dialogue:
     - 'Narrator: Aloe and Ivy make it to the mansion and open the door hoping that
       it still works because from the look of it, it hasn''t been used for years.
@@ -141,8 +185,8 @@ MonoBehaviour:
     - 'Narrator: While the two trespassers celebrate their continued existence, something
       comes up to Aloe in an attempt to get her attention'
     - 'Lily: Well excuse me who might you be?'
-    - 'Aloe: Oh my god!!, I''m so sorry I thought this house was empty and there
-      was a big bug outside and and...'
+    - 'Aloe: Oh my god!!, I''m so sorry I thought this house was empty and there was
+      a big bug outside and and...'
     - 'Lily: How did you even get in here, logically that shouldn''t be possible'
     - 'Aloe: Well the door was unlocked...'
     - 'Narrator: Then out of the corner of her eye, LILY sees Ivy for the first time
@@ -151,8 +195,8 @@ MonoBehaviour:
     - 'Lily: Come with me little one I might have some treats for you'
     - "Ivy: Bark (I\u2019m not adorable, I'm vicious just for your information. However
       if we are getting treats I will follow you)"
-    - 'Aloe: I don''t mean to be rude, mainly because I did just break into your
-      home, but would you know how we could leave'
+    - 'Aloe: I don''t mean to be rude, mainly because I did just break into your home,
+      but would you know how we could leave'
     - 'Lily: The hedges were made to keep those things in here at all cost, the fact
       that you were able to come in here is honestly very strange'
     - 'Lily: Well you could try killing all the bugs, but that would be a selfish
@@ -180,22 +224,56 @@ MonoBehaviour:
       Ivy '
     - 'Aloe: I look forward to do some monster hunting with you'
     - 'Lily: Likewise!'
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: d0e07bf25aa4b7c49a8753394aa3b34a, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 1a1a62337ca2d204aa30d76ce97fe804, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
   - Scene: EXT. OUTSIDE MANSION - DAY
+    Background: {fileID: 21300000, guid: 2bd514d17a2b26648ba7a5001e143df7, type: 3}
     dialogue:
     - 'Narrator: The next morning the girls go outside to train in the art of giant
       insect extermination'
     - 'Aloe: Ok so I''m going to need some explanations on some things'
     - 'Aloe: First, why are you not leaving your porch?'
-    - 'Lily: Well you see Aloe, the second I try to leave my home my body starts
-      to disappear, I would rather not do that'
+    - 'Lily: Well you see Aloe, the second I try to leave my home my body starts to
+      disappear, I would rather not do that'
     - 'Aloe: Fair enough, next question. What is this contraption that looks like
       a fire extinguisher? '
-    - "Lily: Well that's my Bug Spray-O-matic, it should turn those bugs back to
-      normal or kill them I can\u2019t really be sure"
+    - "Lily: Well that's my Bug Spray-O-matic, it should turn those bugs back to normal
+      or kill them I can\u2019t really be sure"
     - 'Lily: Just make sure not to breathe in the spray'
     - 'Aloe: Wonderful!'
     - 'Lily: You should take these too Lily hands aloe a small pouch full of seeds '
-    - 'Aloe: How are seeds supposed to help keep me from being eaten alive?'
+    - 'Narrator: Lily hands aloe a small pouch full of seeds'
+    - 'Aloe: How are seeds supposed to help keep me from being eaten alive'
     - 'Lily: Well maybe you should try planting them to see'
     - 'Narrator: Aloe proceeds to plant one of the seeds, and as if by magic a large
       plant sprouts from the ground and starts spraying wildly eventually hitting
@@ -204,42 +282,65 @@ MonoBehaviour:
     - 'Lily: Why thank you, and just for your information make sure to keep those
       plants watered, or else they could die relatively quickly'
     - 'Lily: Alright, well you should start with the garden it should be the easiest
-      part of the house to take care of '
+      part of the house to take care of'
     - 'Aloe: Alright well wish me luck, well Ivy are you going to join me'
     - 'Narrator: Ivy walks toward lily and starts to trot around her'
-    - 'Ivy: Bark (well you see Aloe, lily here has snacks and honestly I would rather
+    - 'Ivy: Bark(well you see Aloe, lily here has snacks and honestly I would rather
       not be running around next to a real life piranha plants)'
-    - "Aloe: I guess you can say with Lily as long as she\u2019s ok with it"
-    - 'Lily: REALLY, well you can count on me Aloe '
+    - 'Aloe: I guess you can say with Lily as long as shes ok with it'
+    - 'Lily: REALLY, well you can count on me Aloe'
     - 'Lily: Come along Ivy let me get you some snacks as we await your master''s
       return'
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 78b47ef101ed895499670532bde2c1f6, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: d0e07bf25aa4b7c49a8753394aa3b34a, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
   - Scene: INT.INSIDE MANSION - NIGHT
+    Background: {fileID: 21300000, guid: 1b021a415990db341adaf1eb2ca2954d, type: 3}
     dialogue:
-    - 'Narrator: After a day full of killing bugs, Aloe made her way back to the
-      mansion with her close covered in dirt and bug guts.She finds Ivy lazing around
-      per usual, while Lily seems to be waiting for her next to the window at the
-      front of the house'
+    - 'Narrator: After a day full of killing bugs, Aloe made her way back to the mansion
+      with her close covered in dirt and bug guts.She finds Ivy lazing around per
+      usual, while Lily seems to be waiting for her next to the window at the front
+      of the house'
     - 'Lily: YOU HAVE RETURNED, I had my doubts but it seems like they were misplaced'
     - "Aloe: Well I am glad I\u2019m not dead too, but I do have a question"
-    - 'Aloe: I found it strange that all the bugs seemed to be attracted to your
-      house, is there a reason why?'
+    - 'Aloe: I found it strange that all the bugs seemed to be attracted to your house,
+      is there a reason why?'
     - 'Lily: Well that''s a long story, but I could tell you if you would like'
     - 'Aloe: I''m all ears'
-    - 'Lily: Well you see I am the only, or was rather, the only daughter of the
-      stargazer family'
+    - 'Lily: Well you see I am the only, or was rather, the only daughter of the stargazer
+      family'
     - 'Lily: This meant I had a lot of expectations placed on me, mainly I was to
-      be the head of my father''s company after his passing, as he did not trust
-      outsiders'
+      be the head of my father''s company after his passing, as he did not trust outsiders'
     - 'Lily: You see my father was a manufacturing plant in the city, but I never
       had any interest in that path, I always found comfort in the garden that surrounded
       our home'
     - 'Lily: I would help plant vegetables and trees, my father would scold me but
       that would never stop me from escaping into the garden as if it was another
       world just for me'
-    - 'Lily: I remember telling him that I wanted to go to school for botany, he
-      was furious'
-    - 'Aloe: Wait you were in school for botany, that such a coincidence I''m in
-      school for plant biology'
+    - 'Lily: I remember telling him that I wanted to go to school for botany, he was
+      furious'
+    - 'Aloe: Wait you were in school for botany, that such a coincidence I''m in school
+      for plant biology'
     - 'Lily: Well no wonder you were such a wiz in the garden, I should have known
       you were a fellow green thumb!'
     - 'Ivy: Bark(Well if you too are going to keep telling campfire stories could
@@ -248,21 +349,49 @@ MonoBehaviour:
       good time to rest'
     - 'Aloe: Well it has been a long day, good night Lily'
     - 'Lily: Good night don''t let the giant mutant bugs bite!'
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
   - Scene: ' EXT. OUTSIDE MANSION - DAY '
+    Background: {fileID: 21300000, guid: 2bd514d17a2b26648ba7a5001e143df7, type: 3}
     dialogue:
     - 'Lily: Alright Aloe the next place you should clear are the fountains'
     - 'Lily: Just so you know the fountains could get in your way'
     - 'Lily: You should maybe place plants in areas that may be hard to reach for
       you, so that you don''t get overwhelmed!'
     - 'Aloe: Thanks Lily without your help, I would definitely be a goner'
-    - "Lily: Oh don't thank me, it\u2019s my fault that we are in this situation
-      in the first place"
+    - "Lily: Oh don't thank me, it\u2019s my fault that we are in this situation in
+      the first place"
     - "Ivy: Bark! Bark! (Well technically it\u2019s my fault Aloe is in this mess,
       but I don't think they understand what I\u2019m saying so I guess I can keep
       that to myself)"
     - "Aloe: Thanks for the support Ivy, I\u2019ll see you tonight no need to worry
       about me!"
+    emotions:
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: d0e07bf25aa4b7c49a8753394aa3b34a, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
   - Scene: INT.INSIDE MANSION - NIGHT
+    Background: {fileID: 21300000, guid: 1b021a415990db341adaf1eb2ca2954d, type: 3}
     dialogue:
     - 'Narrator: After a day of admiring Victorian architecture, and tripping over
       the cobblestone paths that have long been neglected, Lily arrives back at the
@@ -302,18 +431,51 @@ MonoBehaviour:
     - 'Lily: OH MY, OH MY we have to help the poor little fellow'
     - 'Narrator: The two help the poor little pup, and decided to go to bed shortly
       after '
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: df0c40a2fcd236949b65665a567f6776, type: 3}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 0}
   - Scene: EXT. OUTSIDE MANSION - DAY
+    Background: {fileID: 21300000, guid: 2bd514d17a2b26648ba7a5001e143df7, type: 3}
     dialogue:
     - 'Narrator: Our two plant lovers turned heroes continue their campaign to get
       back to the outside world the next day'
     - 'Lily: Aloe, our next problem area is going to be the lake'
-    - 'Lily: It is infested with bugs that will follow you if you are not careful.
-      if they catch you, you could become incapacitated for a short time'
-    - "Aloe: Alright thanks for letting me know I\u2019ll keep that in mind"
-    - "Ivy: Bark (So I can\u2019t go take a dip in the lake that's disappointing,
-      I was looking forward to that)"
+    - 'Lily: It is infested with bugs that will try to eat your plants'
+    - 'Lily: They could come after your plants and try to eat them'
+    - 'Aloe: Alright thanks for letting me know ill keep that in mind'
+    - 'Ivy: Bark(So I cant go take a dip in the lake that''s disappointing, I was
+      looking forward to that)'
     - "Aloe: Alright Ivy I\u2019ll be off, don\u2019t miss me too much"
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
   - Scene: INT.INSIDE MANSION - NIGHT
+    Background: {fileID: 21300000, guid: 1b021a415990db341adaf1eb2ca2954d, type: 3}
     dialogue:
     - 'Narrator: Aloe returns to the mansion sopping wet from falling in the lake
       a few times while fighting through wave and wave of monsters'
@@ -332,13 +494,13 @@ MonoBehaviour:
     - 'Narrator: Lily goes to the kitchen and comes back with a tray of hot cocoa'
     - 'Aloe: I would love to tell you about everything in the future, but we still
       haven''t finished our story'
-    - 'Lily: Well this is the part of the story I like to tell the least, but it
-      might be better to get it off my chest '
-    - 'Lily: I started to grow more of my mutated plants, and started to develop
-      plants with different and useful properties'
+    - 'Lily: Well this is the part of the story I like to tell the least, but it might
+      be better to get it off my chest '
+    - 'Lily: I started to grow more of my mutated plants, and started to develop plants
+      with different and useful properties'
     - 'Lily: It was amazing, but I was making a big mistake'
-    - 'Lily: I didn''t realize that the bugs that were eating the plants and the
-      bugs trying to pollinate them were starting to change as well'
+    - 'Lily: I didn''t realize that the bugs that were eating the plants and the bugs
+      trying to pollinate them were starting to change as well'
     - "Lily: It\u2019s obvious in hindsight, but the time I was only fueled by my
       blind ambition"
     - 'Lily: When I realized the mistake I had made, I tried to kill all of the stargazer
@@ -351,28 +513,68 @@ MonoBehaviour:
     - 'Lily: Exactly, it seems like they know they need to destroy the roots in order
       to destroy the hedges, I don''t really know how. All I know is that along with
       the bugs, I am also stuck behind these hedges, I did try to get back however '
+    - 'Lily: All I know is that along with the bugs, I am also stuck behind these
+      hedges, I did try to get back'
     - 'Aloe: You spend all that time making the spray and the special plants'
-    - 'Lily: Yes that took most of my time, I also read books, and you know gardening
-      isn''t my only hobby'
-    - 'Aloe: So did you die of old age before you could finish clearing up the bugs?'
-    - 'Lily: No that came a lot sooner, I almost eliminated the bugs as a matter
-      of fact, but as I tried to clear the maze I was cornered'
-    - 'Lily: There was just too many of them, and before I could realize it everything
+    - Lily:Yes that took most of my time, I also read books, you know gardening isn't
+      my only hobby
+    - 'Aloe: So did you die of old age before you could finish clearing up the bugs'
+    - 'Lily: No that came a lot sooner, I almost eliminated the bugs as a matter of
+      fact, but as I tried to clear the maze I was cornered'
+    - 'Lily: There was just to many of them, and before I could realize it everything
       started to go dark and when I awoke I was in my home, but I couldn''t go outside'
     - 'Lily: If only I was a little more careful all of this could have been avoided'
-    - "Aloe: You can\u2019t blame yourself forever, you know you made a mistake,
-      but you tried your best to fix it"
+    - 'Aloe: You cant blame yourself forever, you know you made a mistake, but you
+      tried your best to fix it'
     - 'Aloe: You should still be proud of your accomplishments'
     - 'Narrator: Ivy slowly trots up to Aloe and lays his head on Aloe''s lap'
-    - 'Ivy: Bark (I think you should probably take your own advice)'
+    - 'Ivy: Bark(I think you should probably take your own advice)'
     - 'Aloe: I get it buddy, I know that I need to take my own advice'
-    - 'Lily: what do you mean?'
+    - 'Lily: What do you mean?'
     - 'Aloe: Well school has been really hard for me, and I have a hard time getting
       the grades I want'
     - 'Lily: Well it seems we both have our struggles, but it seems that what matters
       isn''t the bad things that happens but how you deal with it'
-    - 'Lily: Maybe you are rubbing off on me Aloe '
+    - 'Lily: Maybe you are rubbing off on me Aloe'
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: d0e07bf25aa4b7c49a8753394aa3b34a, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 78b47ef101ed895499670532bde2c1f6, type: 3}
+    - {fileID: 21300000, guid: 78b47ef101ed895499670532bde2c1f6, type: 3}
+    - {fileID: 21300000, guid: 78b47ef101ed895499670532bde2c1f6, type: 3}
+    - {fileID: 21300000, guid: 78b47ef101ed895499670532bde2c1f6, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 78b47ef101ed895499670532bde2c1f6, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: d0e07bf25aa4b7c49a8753394aa3b34a, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
   - Scene: EXT. OUTSIDE MANSION - DAY
+    Background: {fileID: 21300000, guid: 2bd514d17a2b26648ba7a5001e143df7, type: 3}
     dialogue:
     - "Narrator: The final battle was about to start, there was a dark aura in the
       air, the skies became clouded and thunder could be heard in the distance, it\u2019s
@@ -389,12 +591,22 @@ MonoBehaviour:
       you!)'
     - 'Aloe: Don''t worry Ivy, everything is going to be alright don''t worry I''m
       gonna take you home.'
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 78b47ef101ed895499670532bde2c1f6, type: 3}
+    - {fileID: 21300000, guid: 78b47ef101ed895499670532bde2c1f6, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: df0c40a2fcd236949b65665a567f6776, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
   - Scene: EXT. ON PORCH - TWILIGHT
+    Background: {fileID: 21300000, guid: 2bd514d17a2b26648ba7a5001e143df7, type: 3}
     dialogue:
     - 'Narrator: The battle is won, but it doesn''t feel like the end it all just
-      seems to quiet. Aloe returns to The house to see Lily and Ivy in anxiously
-      waiting for her return. Ivy runs to aloes side running around her, clearly
-      excited They all head back inside the house '
+      seems to quiet. Aloe returns to The house to see Lily and Ivy in anxiously waiting
+      for her return. Ivy runs to aloes side running around her, clearly excited They
+      all head back inside the house '
     - 'Lily: OH IT CANT BE TRUE. Is it really all over'
     - 'Aloe: I told you, you could count on me!'
     - 'Ivy: Bark (THAT''S RIGHT YOU DID TELL HER, YOU DID YOU DID) '
@@ -402,18 +614,17 @@ MonoBehaviour:
     - 'Aloe: Well Lily what do we do now'
     - 'Lily: To be honest I didn''t really think this far ahead, hahahah'
     - 'Aloe: HAHAHHAH'
-    - 'Narrator: As our two heroes embraced in a job well done the ground starts
-      to shake, and the house starts to creek in a violent manner. The floor boards
-      bulges like a dam caving to a powerful river, the wind reaches a fever pitch
-      then in an instant all is calm'
+    - 'Narrator: As our two heroes embraced in a job well done the ground starts to
+      shake, and the house starts to creek in a violent manner. The floor boards bulges
+      like a dam caving to a powerful river, the wind reaches a fever pitch then in
+      an instant all is calm'
     - 'Aloe: Is everyone alright'
     - 'Ivy: Bark (OH NEVER BETTER)'
     - 'Lily: I believe so '
     - "Narrator: Aloe looks through the window to see the sun shining, brighter than
-      normal, the morning light floods into the room, first like drops of water,
-      then like a stream. Aloe can\u2019t understand but it seems like everything
-      around her is starting to lose form Lily collapses to ground, shocking her
-      friends"
+      normal, the morning light floods into the room, first like drops of water, then
+      like a stream. Aloe can\u2019t understand but it seems like everything around
+      her is starting to lose form Lily collapses to ground, shocking her friends"
     - 'Aloe: Lily are you alright'
     - "Lily: Oh I\u2019m alright, it\u2019s just nature taking its course"
     - 'Aloe: No don''t say things like, I still have so much to tell you'
@@ -430,15 +641,54 @@ MonoBehaviour:
     - 'Narrator: The sunlight starts to drown the room, and lily soon finds herself
       engulfed with no reference for what surrounds her then everything comes back
       into focus'
+    emotions:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 21300000, guid: df0c40a2fcd236949b65665a567f6776, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 549ca56c0086a4a479e649318ae9855b, type: 3}
+    - {fileID: 21300000, guid: 00b304a4ef11fa64a8259eaf5f3868f0, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: 930503138a27aa741be38143017ab998, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 21300000, guid: 0bbf8c66d65974c49b701d25a10cd5ad, type: 3}
+    - {fileID: 21300000, guid: 6619714cee64cb443b7589c28e5e8355, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 1ccd963a574dfba46b597e5541a43106, type: 3}
+    - {fileID: 21300000, guid: df0c40a2fcd236949b65665a567f6776, type: 3}
+    - {fileID: 0}
   - Scene: INT.NARRATION
+    Background: {fileID: 21300000, guid: bac8cefd4c5bc12408795ca286c161aa, type: 3}
     dialogue:
-    - 'Aloe: When the light died down I was in a flower field, someone I didn''t
-      know was shining a flashlight in my face'
+    - 'Aloe: When the light died down I was in a flower field, someone I didn''t know
+      was shining a flashlight in my face'
     - 'Aloe: I don''t remember much after that until I woke up in the hospital '
     - 'Aloe: Someone was trying to ask me where I had been for the last week '
     - 'Aloe: I didn''t know what to tell them, I didn''t know if they would believe
       me'
     - 'Aloe: Sometimes I think that Lily''s mansion was never real'
-    - 'Aloe: When I walk Ivy where those flower fields where the hedges once stood,
-      and see those flowers, those stargazer lilies'
-    - 'Aloe: Ivy and I look at each other, and without words we both know the truth'
+    - 'Aloe: Then one day I walked Ivy to where the flower fields where the hedges
+      once stood, and see those flowers, those stargazer lilies'
+    - 'Aloe: I went back to where I was found and among those flowers I found an old
+      picture frame'
+    - 'Aloe: The picture was of a girl tending to a garden'
+    emotions:
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
+    - {fileID: 21300000, guid: 3e058c2b60a824040b13f260d5dac7ec, type: 3}
