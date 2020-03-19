@@ -975,6 +975,28 @@ PrefabInstance:
       propertyPath: m_margin.x
       value: -34.397217
       objectReference: {fileID: 0}
+    - target: {fileID: 5245567698467562616, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245567698467562616, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245567698467562616, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f9d249f0be2e4574394549091e038594,
+        type: 2}
+    - target: {fileID: 5245567698467562616, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8944461732719909085, guid: f9d249f0be2e4574394549091e038594,
+        type: 2}
     - target: {fileID: 5245567698467562623, guid: d928e7fa1eb8e9a42a531302b49465b8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1050,6 +1072,28 @@ PrefabInstance:
       propertyPath: m_margin.x
       value: -36.06152
       objectReference: {fileID: 0}
+    - target: {fileID: 5245567698869559657, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245567698869559657, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245567698869559657, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f9d249f0be2e4574394549091e038594,
+        type: 2}
+    - target: {fileID: 5245567698869559657, guid: d928e7fa1eb8e9a42a531302b49465b8,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8944461732719909085, guid: f9d249f0be2e4574394549091e038594,
+        type: 2}
     - target: {fileID: 5245567698881005377, guid: d928e7fa1eb8e9a42a531302b49465b8,
         type: 3}
       propertyPath: m_IsActive
