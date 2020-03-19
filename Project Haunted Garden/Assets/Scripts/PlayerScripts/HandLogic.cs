@@ -14,9 +14,13 @@ public class HandLogic : MonoBehaviour
     public bool holding = false;
     public bool showHand = false;
     public Sprite handSprite = null;
-    public string pickupControl = "Fire2";
+    public string pickupControl = "E";
     public bool pickupBeingUsed = false;
     private GameObject Store;
+
+    public GameObject player;
+    public Vector3 PlayerPosition;
+    public GameObject[] PlantList;
 
     // tissue test
     public bool shopping = false;
@@ -33,7 +37,7 @@ public class HandLogic : MonoBehaviour
     void Update()
     {
         UseItem();
-        if (Input.GetAxisRaw(pickupControl) != 0 && !pickupBeingUsed)
+        if (Input.GetKeyDown(KeyCode.E) && !pickupBeingUsed)
         {
             pickupBeingUsed = true;
 
@@ -70,14 +74,12 @@ public class HandLogic : MonoBehaviour
 
         }
 
-        if (Input.GetAxisRaw(pickupControl) == 0)
+        if (Input.GetKeyDown(KeyCode.E))
             pickupBeingUsed = false;
 
         if (showHand)
             gameObject.GetComponent<SpriteRenderer>().sprite = handSprite;
-        if (showSeed)
-            gameObject.GetComponent<SpriteRenderer>().sprite = seed;
-        if (showHand == false && showSeed == false)
+        if (showHand == false)
             gameObject.GetComponent<SpriteRenderer>().sprite = null;
     }
     public void createObject(GameObject icon, string name)
@@ -157,40 +159,48 @@ public class HandLogic : MonoBehaviour
     {
         if (Input.GetKeyDown("1"))
         {
-            if (inventory.slots[0].transform.GetChild(0).transform != null)
+            if (inventory.isFull[0] == true)
             {
                 showSeed = true;
-                GameObject temp = Instantiate(inventory.slots[0].transform.GetChild(0).transform, GetComponentInParent<Transform>()).gameObject;
-                closest = temp;
+                PlayerPosition = new Vector3(player.transform.position.x, player.transform.position.y - 1, player.transform.position.x);
+                Instantiate(PlantList[1], PlayerPosition, Quaternion.identity);
                 GameObject.Destroy(inventory.slots[0].transform.GetChild(0).gameObject);
+                inventory.isFull[0] = false;
             }
 
         }
         if (Input.GetKeyDown("2"))
         {
-            if (inventory.isFull[0] != false)
+            if (inventory.isFull[1] == true)
             {
                 showSeed = true;
-//GameObject temp = Instantiate(inventory.slots[1].transform.GetChild(0).transform, transform, false);
+                PlayerPosition = new Vector3(player.transform.position.x, player.transform.position.y -1, player.transform.position.x);
+                Instantiate(PlantList[1], PlayerPosition, Quaternion.identity);
                 GameObject.Destroy(inventory.slots[1].transform.GetChild(0).gameObject);
+                inventory.isFull[1] = false;
             }
         }
         if (Input.GetKeyDown("3"))
         {
-            if (inventory.slots[2].transform.GetChild(0).transform != null)
+            if (inventory.isFull[2] == true)
             {
                 showSeed = true;
-                //Instantiate(inventory.slots[2].transform.GetChild(0).transform, transform, false);
+                PlayerPosition = new Vector3(player.transform.position.x, player.transform.position.y - 1, player.transform.position.x);
+                Instantiate(PlantList[1], PlayerPosition, Quaternion.identity);
                 GameObject.Destroy(inventory.slots[2].transform.GetChild(0).gameObject);
+                inventory.isFull[2] = false;
             }
         }
         if (Input.GetKeyDown("4"))
         {
-            showSeed = true;
-            if (inventory.slots[3].transform.GetChild(0).transform != null)
+            
+            if (inventory.isFull[3] == true)
             {
-               // Instantiate(inventory.slots[3].transform.GetChild(0).transform, transform, false);
+               showSeed = true;
+                PlayerPosition = new Vector3(player.transform.position.x, player.transform.position.y - 1, player.transform.position.x);
+                Instantiate(PlantList[1], PlayerPosition, Quaternion.identity);
                 GameObject.Destroy(inventory.slots[3].transform.GetChild(0).gameObject);
+                inventory.isFull[3] = false;
             }
         }
     }

@@ -109,15 +109,25 @@ public class TowerTimer : MonoBehaviour
                     check++;
                     break;
                 }
+                
             }
             timeElapsed = 0;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        int CheckFree = 0; 
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            if (inventory.isFull[i] == false)
+            {
+                CheckFree++;
+            }
+
+        }
         if (collision.CompareTag("Player"))
         {
-            if (check < 4)
+            if (CheckFree >= 1 )
             {
                 AmountToGive();
                 Destroy(lightPart, .5f);
