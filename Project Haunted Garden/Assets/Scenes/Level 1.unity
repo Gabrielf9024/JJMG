@@ -276,7 +276,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &57655606
 AudioSource:
@@ -1143,7 +1143,6 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159009798}
   m_Enabled: 1
-
   m_CellSize: {x: 1, y: 1, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
@@ -1161,7 +1160,7 @@ Transform:
   m_Children:
   - {fileID: 1189158415}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &292467565
 PrefabInstance:
@@ -1423,6 +1422,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5009489192893909177, guid: dfcc39462df01c74c855a899b773cff0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6625389293675353352, guid: cd70ec2a30f449744bd6ed9c2d596efa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1487,11 +1491,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5009489192893909177, guid: dfcc39462df01c74c855a899b773cff0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd70ec2a30f449744bd6ed9c2d596efa, type: 3}
@@ -1579,7 +1578,7 @@ Transform:
   m_LocalScale: {x: 1.823822, y: 1.3678665, z: 0.911911}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1046747328
 PrefabInstance:
@@ -4891,7 +4890,7 @@ PrefabInstance:
     - target: {fileID: 5245567699840422565, guid: d928e7fa1eb8e9a42a531302b49465b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5245567699840422565, guid: d928e7fa1eb8e9a42a531302b49465b8,
         type: 3}
@@ -5783,6 +5782,11 @@ PrefabInstance:
       propertyPath: waveUI
       value: 
       objectReference: {fileID: 1505160396}
+    - target: {fileID: 1875465053411135737, guid: 156ee2dac1353704495e7864d9295bb8,
+        type: 3}
+      propertyPath: baseHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1875465053411135742, guid: 156ee2dac1353704495e7864d9295bb8,
         type: 3}
       propertyPath: m_Name
