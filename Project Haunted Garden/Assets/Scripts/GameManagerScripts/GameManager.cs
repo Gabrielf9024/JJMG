@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        UpdateUI();
         if ( Input.GetKeyDown(KeyCode.Escape)){
             paused = !paused;
         }
