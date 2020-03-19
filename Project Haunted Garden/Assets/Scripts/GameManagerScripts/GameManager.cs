@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         if (lm.levelIndex > 0)
             waveUI.text = "Level " + lm.levelIndex; // + ": " + lm.Levels[lm.levelIndex-1].GetComponent<Spawn>().currentGroup.Name;
         if (lm.readyForNextLevel)
-            waveUI.text = "Space to Start" + (lm.levelIndex+1);
+            waveUI.text = "Space to Start " + (lm.levelIndex+1);
         if (baseHealth == 0)
             LostGame();
         
