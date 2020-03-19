@@ -280,7 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  boxBorder: {fileID: 0}
+  boxBorder: {fileID: 8314955423595972719, guid: 311095275c611ea4fb8f3dee4ab45fec,
+    type: 3}
   FindingRadius: 10
   StopDistance: 2
   AttackDmg: 0.1
@@ -297,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  splat: {fileID: 7627234301094798061, guid: d7440c8d0989f2f4fa2e2af0fca8063c, type: 3}
+  splat: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
   slider: {fileID: 6499075501700168868}

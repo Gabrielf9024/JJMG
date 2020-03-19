@@ -19,7 +19,31 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Assets/Scenes/Prototype Scene v1.unity");
+        SceneManager.LoadScene(1);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void LevelOne()
+    {
+
+        SceneManager.LoadScene(1);
+    }
+    public void LevelTwo()
+    {
+
+        SceneManager.LoadScene(2);
+    }
+    public void LevelThree()
+    {
+
+        SceneManager.LoadScene(3);
+    }
+    public void LevelFour()
+    {
+
+        SceneManager.LoadScene(4);
     }
 
     public void Quit() { Application.Quit(); }

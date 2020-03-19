@@ -40,6 +40,7 @@ public class DialogueManager : MonoBehaviour
         public string Scene;
         public Sprite Background;
         public string[] dialogue;
+        public Sprite[] emotions;
     }
 
     public DialogueListPerLevel[] DialogueList;
