@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
-    public GameObject init;
 
     public void StartGame()
     {
@@ -34,6 +33,12 @@ public class MenuManager : MonoBehaviour
     {
 
         SceneManager.LoadScene(4);
+    }
+    public void restart()
+    {
+        int saved = SaveLevel.Instance.LevelIndex;
+        SaveLevel.Instance.LevelIndex-=1;
+        SceneManager.LoadScene(saved);
     }
 
     public void Quit() { Application.Quit(); }
